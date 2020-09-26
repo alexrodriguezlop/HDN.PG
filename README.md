@@ -1,4 +1,4 @@
-# [HDN.PG](https://alexrodriguezlop.github.io/IHDN.PG/)
+# [HDN.PG](https://alexrodriguezlop.github.io/HDN.PG/)
 Microservicio para el cifrado de mensajes en imágenes.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
@@ -28,4 +28,4 @@ Aunque aún no está muy decidido es posible que para el desarrolo me apoye en a
 
 [Aún sigo revisando unos cuantos framework](https://blog.nubecolectiva.com/5-principales-frameworks-para-node-js/)
 
-#### [Documentación](alexrodriguezlop.github.io/hdn.pg)
+#### [Documentación](https://alexrodriguezlop.github.io/HDN.PG/)
