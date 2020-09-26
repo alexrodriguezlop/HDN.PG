@@ -18,9 +18,9 @@ Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad.
 
 ### Herramientas
 Este proyecto se escribirá en **node.js**.
-Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se enconde tras este lenguaje.
+Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esconde tras este lenguaje.
 
-Aunque aún no está muy decidido es posible que para el desarrolo me apoye en algunas de estas herramientas.
+Aunque aún no está muy decidido es posible que para el desarrollo me apoye en algunas de estas herramientas.
 
 - [Moleculer](https://moleculer.services/)	(*Framework*)
 - [Prisma](https://www.prisma.io/)		(*Gestión DB*)
