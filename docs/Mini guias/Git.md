@@ -52,6 +52,7 @@ De este modo no habrá ningún conflicto cuando modifiquemos nuestros ficheros l
 ##### Cerrando un Isue con el commit
 `git commit -m "Comentario close #NumIsue "`
 
+Podemos añadir comit a un issue si no utilizamos la orden *close*
 
 
 #### Interfaz gráfica 
