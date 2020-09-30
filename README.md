@@ -42,9 +42,8 @@ ___
 ### Páginas de interés
 
 [Documentación](https://alexrodriguezlop.github.io/HDN.PG/)
+
 [Guía de Git](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Mini%20guias/Git.md)
-
-
 
 
 ___
