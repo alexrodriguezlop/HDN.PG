@@ -45,7 +45,6 @@ ___
 
 [Guía de Git](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Mini%20guias/Git.md)
 
-
 ___
 
 **Autor:** Alejandro Rodríguez López
