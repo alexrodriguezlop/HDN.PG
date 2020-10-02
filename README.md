@@ -37,6 +37,12 @@ Aunque aún no está muy decidido es posible que para el desarrollo me apoye en 
 - [Mocha](https://mochajs.org/)			(*Testeo y pruebas*)
 
 [Aún sigo revisando unos cuantos framework](https://blog.nubecolectiva.com/5-principales-frameworks-para-node-js/)
+___
+### Historias de usuario
+- [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
+- [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
+- [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU3.md)
+
 
 ___
 ### Páginas de interés
