@@ -25,10 +25,5 @@ Entendiendo que una imagen es una matriz de píxeles numéricos que proporcionan
 
 `npm install express --save`
 
-`sudo apt install node-express-generator`
-
-`npm install node-express-generator`
-
-
 
 
