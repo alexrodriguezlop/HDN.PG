@@ -116,9 +116,19 @@ Añade etiqueta y descripción.
 `git push origin <tagname>`
 
 #### Eliminar etiquetas:
+**Local:**
 `$ git tag -d v1.4-lw`
 
+**Remoto:**
+```
+$ git tag -d v2.0.3
+
+$ git push origin :refs/tags/v2.0.3
+```
+Podemos usar solo `:` en lugar de `:refs/tags/`
+
 Tambiem podemos usar el atributo `--tags` para que el push afecte a todas.
+
 ## Resolución de problemas
 
 ### Deshacer el último commit si aun no se ha realizado el *push*
