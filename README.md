@@ -46,6 +46,17 @@ La estructura de directorios se plantea de la siguiente forma:
   - routes (Contendrá el enrutado de las peticiones)
 
 ___
+### Puesta en marcha :new:
+Clonando el repositorio:
+`git clone https://github.com/alexrodriguezlop/HDN.PG.git`
+
+Ejecutar dentro del directorio app para la instalación de dependencias.
+`npm install`
+
+Poner en marcha el servicio en el puerto 3000:
+`DEBUG=app:* npm start`
+
+*Aunque aún no tiene funcionalidad el servicio puede ponerse en marcha.*
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
