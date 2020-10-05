@@ -6,4 +6,4 @@ PARA **Acceder a dicha información**
 
 ## Dado/Y/Entonces/Cuando
 
--Si la imagen no contiene mensaje, se lanzara un excepción.
+- Si la imagen no contiene mensaje, se lanzara un excepción.

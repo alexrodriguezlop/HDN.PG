@@ -6,4 +6,4 @@ PARA **Manipular o clasificar la imagen de forma adecuada**
 
 ## Dado/Y/Entonces/Cuando
 
--Se dará una respuesta binaria.
+- Se dará una respuesta binaria.
