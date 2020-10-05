@@ -16,4 +16,13 @@ Entendiendo que una imagen es una matriz de píxeles numéricos que proporcionan
 
 ![img](img/imagematrix.png) 
 
+## Paquetes necesarios
+[Gulp](https://gulpjs.com/) es un automatizador de tareas, similar a makefile que permite establecer ordenes agrupadas bajo una única orden.
+
+`npm -g install gulp`
+
+[Express](https://expressjs.com/en/starter/generator.html) en un framework ligero y sencillo para la creación de servicios usando javascript.
+
+`npm install express --save`
+
 
