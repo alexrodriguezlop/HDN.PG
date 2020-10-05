@@ -1,0 +1,27 @@
+{
+  "name": "hdn.pg",
+  "version": "0.0.2",
+  "description": "Microservicio de esteganografia usando imagenes",
+  "main": "src/app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexrodriguezlop/HDN.PG.git"
+  },
+  "keywords": [
+    "Esteganografia",
+    "Imagenes",
+    "cifrar"
+  ],
+  "author": "Alejandro Rodriguez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/alexrodriguezlop/HDN.PG/issues"
+  },
+  "homepage": "https://github.com/alexrodriguezlop/HDN.PG#readme"
+}
