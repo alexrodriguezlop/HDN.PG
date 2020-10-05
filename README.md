@@ -18,6 +18,14 @@ Esta maravilla desgrana cada píxel de la imagen, añade la información y lo re
 Después de un trabajo que nada tiene que envidiar al de los ingenieros genéticos de jurassic park tu imagen está lista y si te hemos visto..pues no nos acordamos. 
 
 Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad. Usalo bien.
+___
+### Solución planteada :new:
+El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
+Este microservicio permitirá aplicar el algoritmo de cifrado de un texto sobre una imagen. Previamente ambos enviados al microservicio.
+
+Su estructura en un principio estará formada por una clase **imagen**, que en la cual se codificará la imagen sobre la que se aplicará el cifrado.
+
+### Puesta en marcha 
 
 ___
 ### Configuración 
