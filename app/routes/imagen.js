@@ -1,5 +1,5 @@
 /**
- * Clase objeto imágen 
+ * Clase objeto imagen 
  * */
 class imagen {
 
