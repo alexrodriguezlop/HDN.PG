@@ -19,4 +19,8 @@ Recibirá una imagen y devolverá una nueva imagen generada aplicando las técni
 Será el objeto en que se codifique la imagen cargada en el microservicio para posteriormente operar con ella. 
 
 
+### Funciona!
+Primera prueba:
+
+![ok](ok.png) 
 
