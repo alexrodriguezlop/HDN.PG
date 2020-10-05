@@ -6,13 +6,13 @@ Microservicio para el cifrado y descifrado de mensajes en imágenes.
 ## Hablemos de esteganografía
 La esteganografía es el arte de ocultar información.
 
-En este [Articulo de xataka](https://www.xataka.com/historia-tecnologica/cuando-una-imagen-oculta-mas-informacion-de-lo-que-parece-que-es-y-como-funciona-la-esteganografia) se trata el tema desde sus origenes hasta la actualidad.
+En este [Artículo de xataka](https://www.xataka.com/historia-tecnologica/cuando-una-imagen-oculta-mas-informacion-de-lo-que-parece-que-es-y-como-funciona-la-esteganografia) se trata el tema desde sus orígenes hasta la actualidad.
 
-También podemos dar una vuelta por [wikipedia](https://es.wikipedia.org/wiki/Esteganograf%C3%ADa) para saber un poco mas del asunto.
+También podemos dar una vuelta por [wikipedia](https://es.wikipedia.org/wiki/Esteganograf%C3%ADa) para saber un poco más del asunto.
 
-El microservicio se centrará en la ocultación de información dentro de imágenes utilizando una tecnica que consiste enla inserción de información en el [bit menos significativo](https://es.wikipedia.org/wiki/Bit_menos_significativo) de cada pixel. 
+El microservicio se centrará en la ocultación de información dentro de imágenes utilizando una técnica que consiste en la inserción de información en el [bit menos significativo](https://es.wikipedia.org/wiki/Bit_menos_significativo) de cada píxel. 
 
-Entendiendo que una imagen es una matriz de pixeles numéricos que proporcionan información de cada pixel como su color, etc..
+Entendiendo que una imagen es una matriz de píxeles numéricos que proporcionan información de cada píxel como su color, etc..
 
 ![img](img/imagematrix.png) 
 
