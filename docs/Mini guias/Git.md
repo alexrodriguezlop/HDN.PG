@@ -40,7 +40,11 @@ De este modo no habrá ningún conflicto cuando modifiquemos nuestros ficheros l
 
 
 #### Comentar y añadir
-`git add`
+Añade un fichero a la lista de seguimiento.
+`git add Fichero`
+
+Elimina un fichero de la lista de seguimiento.
+`git rm Fichero`
 
 `git commit -m "Comentario"`
 
@@ -53,6 +57,32 @@ De este modo no habrá ningún conflicto cuando modifiquemos nuestros ficheros l
 `git commit -m "Comentario close #NumIsue "`
 
 Podemos añadir comit a un issue si no utilizamos la orden *close*
+
+## Eliminar fichero y directorios del repositorio
+Podría darse el caso en que eliminamos un directorio dentro de nuestro directorio de trabajo pero este aún sigue en el repositorio. 
+También podría darse el caso de que modificamos nuestro fichero *gitignore* y queremos limpiar esos ficheros que ya no pintan nada.
+
+Punto en el que nos encontramos:
+
+**Antes de hacer commit**
+Podemos dejar de seguir un fichero:
+`git reset HEAD nombre_de_archivo`
+
+O todos:
+`git reset HEAD` 
+
+**Después de hacer commit**
+Podemos eliminarlos usando:
+
+Borrará un fichero de la lista de seguimiento pero se mantendrá en tu directorio de trabajo.
+`git rm --cached nombre_archivo`
+
+Borrará un directorio de forma recursiva de la lista de seguimiento pero se mantendrá en tu directorio de trabajo.
+`git rm -r --cached nombre_directorio`
+
+El parámetro "--cached" es el que nos permite mantener los archivos en nuestro directorio de trabajo. 
+Si lo quitamos lo referenciado se eliminara de ambos sitios.
+
 
 
 #### Interfaz gráfica 
@@ -117,6 +147,8 @@ Tambiem podemos usar el atributo `--tags` para que el push afecte a todas.
 
 
 ## Enlaces de interés
+[Eliminar ficheros y directorios](https://desarrolloweb.com/articulos/eliminar-archivos-git-gitignore.html)
+
 [Configurara SSH](https://medium.com/@ancizj393/crear-una-clave-ssh-en-git-y-vincular-en-tu-cuenta-de-github-e7a6b22bc93f)
 
 [Etiquetas](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
