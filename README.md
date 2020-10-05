@@ -26,7 +26,19 @@ Este microservicio permitirá aplicar el algoritmo de cifrado sobre un texto y u
 
 Previamente ambos enviados al microservicio.
 
-Su estructura en un principio estará formada por una clase **imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado.
+Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado.
+
+El **módulo cifrado** será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen.
+
+El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento se los problemas que presente.
+
+El microservicio no almacenará dato alguno de los usuarios.
+
+Con la idea de simplificar su ejecución el microservicio incluirá **vistas** sencillas.
+
+El microservicio se desarrollará haciendo uso de [Express](https://expressjs.com/), un ligero framework para el desarrollo de aplicaciones en js.
+
+Se ha planteado la incorporación de algunas herramientas más para automatización de tareas y testeo.
 
 ___
 ### Configuración 
