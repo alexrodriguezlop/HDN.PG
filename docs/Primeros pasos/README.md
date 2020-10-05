@@ -12,7 +12,7 @@
 
 Los [primeros pasos](https://expressjs.com/es/starter/installing.html) se encuentran indicados en su manual.
 
-Una vez instalado node.js podemos crear un servicio bási cocreando el fichero *package.json*
+Una vez instalado node.js podemos crear un servicio básico creando el fichero *package.json*.
 
 `$ npm init`
 
@@ -23,7 +23,13 @@ Su configuración ha quedado de la siguiente forma:
 Posteriormente he ejecutado la utilidad [generador express](https://expressjs.com/es/starter/generator.html) la cual ha creado una estructura de directorios que he adaptado a mis necesidades. 
 
 Para ello: 
+`$ npm install express-generator -g`
 
+`$ express --no-view`
+
+*La opción `--no-view` evita que se creen vistas para este proyecto.*
+
+Es interesante ejecutar `$ express -h` para ver las opciones de que dispone.
 
 ![Estructura](estructura.png) 
 
@@ -35,8 +41,15 @@ Recibirá una imagen y devolverá una nueva imagen generada aplicando las técni
 **Imagen**
 Será el objeto en que se codifique la imagen cargada en el microservicio para posteriormente operar sobre ella. 
 
-Resumen de los pasos a seguir:
-**1)** 
+Una vez completados los pasos anteriores podemos instalar las dependencias usando la orden:
+
+`$ npm install`
+ 
+ Las dependencias se especifican en el fichero *package.json*.
+
+Podemos arrancar nuestro servicio!
+
+`DEBUG=app:* npm start`
 
 ### Funciona!
 Primera prueba:
