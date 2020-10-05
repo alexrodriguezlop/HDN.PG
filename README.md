@@ -35,7 +35,8 @@ Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esco
 - [Gulp](https://gulpjs.com/)	(*Automatización de tareas*)
 - [Mocha](https://mochajs.org/)		(*Testeo y pruebas*)
 ___
-### Historias de usuario
+### Historias de usuario :new:
+
 - [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
 - [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
 - [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU3.md)
