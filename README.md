@@ -21,42 +21,49 @@ Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad.
 ___
 ### Solución planteada :new:
 El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
+Esta opción brinda muchísimas ventajas frente a otras arquitecturas. 
 
-Este microservicio permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
+Nos permitirá desarrollar el proyecto de forma ágil basando el desarrollo en test, adquiriendo un ciclo de desarrollo dinámico, rápido y eficaz.
 
-Previamente ambos enviados al microservicio.
+Esta arquitectura presenta gran escalabilidad y versatilidad y node.js es un gran lenguaje para llevar a cabo el desarrollo de este tipo de arquitecturas debido a su simplicidad, ligereza y naturaleza.
 
-Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado.
+El microservicio a desarrollar permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
+No se desarrollará un *frontend* para el servicio con lo que las peticiones se realizaran usando [postman](https://www.postman.com/).
 
-El **módulo cifrado** será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen.
+Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. y un **módulo cifrado**.
+Este será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen.
 
-El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento se los problemas que presente.
-
-El microservicio no almacenará dato alguno de los usuarios.
+El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
 
 El microservicio se desarrollará haciendo uso de [Express](https://expressjs.com/), un ligero framework para el desarrollo de aplicaciones en js.
 
-Se ha planteado la incorporación de algunas herramientas más para automatización de tareas y testeo.
+Se ha planteado la incorporación de algunas herramientas más.  [Gulp](https://gulpjs.com/) para automatización de tareas y  [Mocha](https://mochajs.org/) para testeo aunque no son una elección definitiva.
 
 La estructura de directorios se plantea de la siguiente forma:
 - app
   - app.js (Entidad principal) 
-  - bin 
+  - bin (Contendrá los script de inicio) 
   - class (Contendrá las clases)
   - routes (Contendrá el enrutado de las peticiones)
-
 ___
 ### Puesta en marcha :new:
-Clonando el repositorio:
+*Aunque aún no tiene funcionalidad el servicio puede ponerse en marcha.*
+
+1) Clonando el repositorio:
+
 `git clone https://github.com/alexrodriguezlop/HDN.PG.git`
 
-Ejecutar dentro del directorio app para la instalación de dependencias.
+2) Ejecutar dentro del directorio app para la instalación de dependencias.
+
 `npm install`
 
-Poner en marcha el servicio en el puerto 3000:
+3) Poner en marcha el servicio en modo debug sobre el puerto 3000:
+
 `DEBUG=app:* npm start`
 
-*Aunque aún no tiene funcionalidad el servicio puede ponerse en marcha.*
+Mas adelante se automatizarán estas tareas englobándolas en órdenes simples.
+
+___
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
