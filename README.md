@@ -21,11 +21,12 @@ Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad.
 ___
 ### Solución planteada :new:
 El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
-Este microservicio permitirá aplicar el algoritmo de cifrado de un texto sobre una imagen. Previamente ambos enviados al microservicio.
 
-Su estructura en un principio estará formada por una clase **imagen**, que en la cual se codificará la imagen sobre la que se aplicará el cifrado.
+Este microservicio permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
 
-### Puesta en marcha 
+Previamente ambos enviados al microservicio.
+
+Su estructura en un principio estará formada por una clase **imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado.
 
 ___
 ### Configuración 
