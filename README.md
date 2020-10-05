@@ -34,11 +34,16 @@ El microservicio pretende incorporar un sistema de **log** con el fin de poder r
 
 El microservicio no almacenará dato alguno de los usuarios.
 
-Con la idea de simplificar su ejecución el microservicio incluirá **vistas** sencillas.
-
 El microservicio se desarrollará haciendo uso de [Express](https://expressjs.com/), un ligero framework para el desarrollo de aplicaciones en js.
 
 Se ha planteado la incorporación de algunas herramientas más para automatización de tareas y testeo.
+
+La estructura de directorios se plantea de la siguiente forma:
+- app
+  - app.js (Entidad principal) 
+  - bin 
+  - class (Contendrá las clases)
+  - routes (Contendrá el enrutado de las peticiones)
 
 ___
 ### Configuración 
