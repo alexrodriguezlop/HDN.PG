@@ -6,7 +6,7 @@ Su configuración ha quedado de la siguiente forma:
 
 ![Configuración](Config.png)  
 
-Posteriormente he ejecutado la utilidad [generador express](https://expressjs.com/es/starter/generator.html) la cual ha creado la estructura de directorios necesaria siguiendo un modelo [MVC](https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador)
+Posteriormente he ejecutado la utilidad [generador express](https://expressjs.com/es/starter/generator.html) la cual ha creado la estructura de directorios necesaria. 
 
 ![Estructura](estructura.png) 
 
