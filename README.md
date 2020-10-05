@@ -22,7 +22,8 @@ Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad.
 ___
 ### Configuración 
 
-[Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
+- [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
+- [Primeros pasos con el framewrok](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos) :new:
 
 ___
 ### Herramientas
@@ -30,13 +31,9 @@ ___
 Este proyecto se escribirá en **node.js**.
 Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esconde tras este lenguaje.
 
-Aunque aún no está muy decidido es posible que para el desarrollo me apoye en algunas de estas herramientas.
-
-- [Moleculer](https://moleculer.services/)	(*Framework*)
-- [Prisma](https://www.prisma.io/)		(*Gestión DB*)
-- [Mocha](https://mochajs.org/)			(*Testeo y pruebas*)
-
-[Aún sigo revisando unos cuantos framework](https://blog.nubecolectiva.com/5-principales-frameworks-para-node-js/)
+- [Express](https://expressjs.com/)	(*Framework*)
+- [Gulp](https://gulpjs.com/)	(*Automatización de tareas*)
+- [Mocha](https://mochajs.org/)		(*Testeo y pruebas*)
 ___
 ### Historias de usuario
 - [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
