@@ -11,7 +11,7 @@ class cifrado {
 	La cadena debera tener un tamaño adecuado, en caso de 
 	no caber en la imagen se producirá un error.
 	*/
-	ocultar(cadena){
+	ocultar(A){
 
 	}
 
@@ -25,7 +25,7 @@ class cifrado {
 	Devolverá la cadena oculta en la imagen.
 	Existe el caso de error en que la imagen no contenga mensaje oculto
 	*/
-	revelar(){
+	revelar(A){
 
 	}
 

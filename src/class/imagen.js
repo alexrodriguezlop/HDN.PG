@@ -2,9 +2,11 @@
  * Clase objeto imagen 
  * */
 class imagen {
-	constructor()
-	{
+	constructor(){
+		this.nfilas = 0;
+		this.ncolumnas = 0;
 
+		console.log("CONSTRUYENDO UNA IMAGEN 0x0")
 	}
 
 	/**
