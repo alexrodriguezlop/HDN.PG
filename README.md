@@ -57,7 +57,7 @@ ___
 Este proyecto se escribirá en **node.js**.
 Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esconde tras este lenguaje.
 
-- [Express](https://expressjs.com/)	(*Framework*)
+- [restify](http://restify.com/)	(*Framework*)
 - [Gulp](https://gulpjs.com/)	(*Automatización de tareas*)
 - [Mocha](https://mochajs.org/)		(*Testeo y pruebas*)
 ___
