@@ -3,4 +3,20 @@
  * */
 class cifrado {
 
+    constructor()
+    {
+
+    }
+
+    getDatos (provincia,fecha,estado) {
+
+    }
+    
+    updateDatos (nick,provincia,fecha,estado) {
+
+    }
+
+    addDatos (nick,provincia,fecha,estado) {
+
+    } 
 }
