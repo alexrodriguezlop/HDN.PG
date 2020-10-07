@@ -23,9 +23,6 @@ Entendiendo que una imagen es una matriz de píxeles numéricos que proporcionan
 
 `npm -g install gulp`
 
-[Express](https://expressjs.com/en/starter/generator.html) en un framework ligero y sencillo para la creación de servicios usando javascript.
-
-`npm install express --save`
 
 
 
