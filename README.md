@@ -35,39 +35,21 @@ Este será el encargado de llevar a cabo todas las operaciones sobre el objeto i
 
 El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
 
-El microservicio se desarrollará haciendo uso de [Express](https://expressjs.com/), un ligero framework para el desarrollo de aplicaciones en js.
+El microservicio en un principio se desarrollará haciendo uso de [restify](http://restify.com/), un ligero framework para el desarrollo de aplicaciones en js.
+Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
 
 Se ha planteado la incorporación de algunas herramientas más.  [Gulp](https://gulpjs.com/) para automatización de tareas y  [Mocha](https://mochajs.org/) para testeo aunque no son una elección definitiva.
 
 La estructura de directorios se plantea de la siguiente forma:
-- app
-  - app.js (Entidad principal) 
-  - bin (Contendrá los script de inicio) 
-  - class (Contendrá las clases)
-  - routes (Contendrá el enrutado de las peticiones)
-___
-### Puesta en marcha :new:
-*Aunque aún no tiene funcionalidad el servicio puede ponerse en marcha.*
-
-1) Clonando el repositorio:
-
-`git clone https://github.com/alexrodriguezlop/HDN.PG.git`
-
-2) Ejecutar dentro del directorio app para la instalación de dependencias.
-
-`npm install`
-
-3) Poner en marcha el servicio en modo debug sobre el puerto 3000:
-
-`DEBUG=app:* npm start`
-
-Mas adelante se automatizarán estas tareas englobándolas en órdenes simples.
+- src
+  - class (Entidades) 
+  - class/cifrado.js (Entidad principal)
 
 ___
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
-- [Primeros pasos con el framewrok](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos) :new:
+- [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos) :new:
 
 ___
 ### Herramientas
