@@ -1,7 +1,7 @@
 /**
  * Clase objeto imagen 
  * */
-class imagen {
+class Imagen {
 	constructor(){
 		this.nfilas = 0;
 		this.ncolumnas = 0;
@@ -30,3 +30,5 @@ class imagen {
 	
 
 }
+
+module.exports = Imagen
