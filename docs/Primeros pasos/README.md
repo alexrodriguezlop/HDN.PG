@@ -7,7 +7,7 @@
 
 
 **Estructura**
-Es muy probable que todavía ajuste un poco los ficheros de las clases. Aunque en un principio he decidido utilizar una clase *imagen.js* y una clase *cifrado.js*
+Es muy probable que todavía ajuste un poco los ficheros. Aunque en un principio he decidido utilizar una clase *imagen.js* y un módulo *cifrado.js*
 
 **cifrado** 
 Recibirá una imagen y devolverá una nueva imagen generada aplicando las técnicas de esteganografía sobre la primera y una cadena de texto.
