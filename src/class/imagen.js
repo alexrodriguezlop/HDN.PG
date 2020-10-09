@@ -11,6 +11,10 @@ class Imagen {
 		console.log("CONSTRUYENDO UNA IMAGEN 0x0")
 	}
 
+
+	
+
+
 	/**
 	Carga una imagen desde un fichero 
 	Parámetro A nombre del fichero que contiene la imagen
@@ -32,5 +36,3 @@ class Imagen {
 	
 
 }
-
-module.exports = Imagen
