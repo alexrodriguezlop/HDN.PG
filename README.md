@@ -43,8 +43,16 @@ Se ha planteado la incorporación de algunas herramientas más.  [Gulp](https://
 La estructura de directorios se plantea de la siguiente forma:
 - src
   - class (Entidades) 
-  - class/cifrado.js (Entidad principal)
+    - [cifrado.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/cifrado.js) (Entidad principal)
+    - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
+___
+### Últimos ficheros añadidos :new:
+- [Fichero **cifrado.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/cifrado.js)
+
+- [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
+
+- [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml) 
 ___
 ### Configuración 
 
