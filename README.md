@@ -52,7 +52,9 @@ ___
 
 - [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
-- [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml) 
+- [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml)
+
+- [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json) 
 ___
 ### Configuración 
 
