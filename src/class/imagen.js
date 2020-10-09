@@ -2,7 +2,9 @@
  * Clase objeto imagen 
  * */
 class Imagen {
+
 	constructor(){
+		this.datos //Matriz de píxeles
 		this.nfilas = 0;
 		this.ncolumnas = 0;
 
