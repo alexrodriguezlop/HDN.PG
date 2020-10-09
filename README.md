@@ -30,8 +30,8 @@ Esta arquitectura presenta gran escalabilidad y versatilidad y node.js es un gra
 El microservicio a desarrollar permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
 No se desarrollará un *frontend* para el servicio con lo que las peticiones se realizaran usando [postman](https://www.postman.com/).
 
-Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. y un **módulo cifrado**.
-Este será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen.
+Su estructura en un principio estará formada por dos clases **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. y **clase cifrado**.
+Este será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen dando como resultado una nueva imagen.
 
 El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
 
