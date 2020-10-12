@@ -28,10 +28,9 @@ Nos permitirá desarrollar el proyecto de forma ágil basando el desarrollo en t
 Esta arquitectura presenta gran escalabilidad y versatilidad y node.js es un gran lenguaje para llevar a cabo el desarrollo de este tipo de arquitecturas debido a su simplicidad, ligereza y naturaleza.
 
 El microservicio a desarrollar permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
-No se desarrollará un *frontend* para el servicio con lo que las peticiones se realizaran usando [postman](https://www.postman.com/).
+No se desarrollará un *frontend* para el servicio.
 
-Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. y un **módulo cifrado**.
-Este será el encargado de llevar a cabo todas las operaciones sobre el objeto imagen dando como resultado una nueva imagen.
+Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. 
 
 El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
 
@@ -42,13 +41,11 @@ Se ha planteado la incorporación de algunas herramientas más.  [Gulp](https://
 
 La estructura de directorios se plantea de la siguiente forma:
 - src
-  - class (Entidades) 
-    - [cifrado.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/cifrado.js) (Entidad principal)
-    - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
+ - class (Entidades) 
+  - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
 
 ___
 ### Últimos ficheros añadidos :new:
-- [Fichero **cifrado.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/cifrado.js)
 
 - [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
@@ -70,6 +67,7 @@ Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esco
 - [restify](http://restify.com/)	(*Framework*)
 - [Gulp](https://gulpjs.com/)	(*Automatización de tareas*)
 - [Mocha](https://mochajs.org/)		(*Testeo y pruebas*)
+- [jsdocs](https://jsdoc.app/)     (*Documentación*)
   
 ___
 ### Historias de usuario :new:
