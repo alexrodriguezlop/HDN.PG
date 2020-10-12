@@ -3,20 +3,6 @@
  * */
 class Imagen {
 
-	
-	/**
-	 @constructor sin parámetros
-	 * */ 
-	constructor(){
-		this.datos //Matriz de píxeles
-		this.nfilas = 0;
-		this.ncolumnas = 0;
-
-		console.log("CONSTRUYENDO UNA IMAGEN 0x0");
-	}
-
-
-
 	/**
 	 @constructor con parámetros
 	 * */ 
@@ -25,7 +11,7 @@ class Imagen {
 		this.nfilas = nfilas;
 		this.ncolumnas = ncolumnas;
 
-		console.log("CONSTRUYENDO UNA IMAGEN 0x0");
+		console.log("CONSTRUYENDO UNA IMAGEN");
 	}
 
 
