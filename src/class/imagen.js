@@ -6,12 +6,12 @@ class Imagen {
 	/**
 	 @constructor con parámetros
 	 * */ 
-	constructor(nfilas, ncolumnas){
-		this.datos //Matriz de píxeles
-		this.nfilas = nfilas;
-		this.ncolumnas = ncolumnas;
+	constructor(nfilas = 0, ncolumnas = 0){
+		this._datos = null //Matriz de píxeles
+		this._nfilas = nfilas;
+		this._ncolumnas = ncolumnas;
 
-		console.log("CONSTRUYENDO UNA IMAGEN");
+		//console.log("CONSTRUYENDO UNA IMAGEN");
 	}
 
 
@@ -19,19 +19,19 @@ class Imagen {
 	/**
 	Getter: Obtiene la matriz de píxeles
 	@returns {Array} de píxeles
-	*/ 
-	get datos() {
-		return this.datos();
+	*/
+	get GetDatos() {
+		return this._datos;
 	}
-
+ 
 
 
 	/** 
 	Getter: Obtiene el número de filas 
 	@returns {int} número de filas
 	*/ 
-	get filas() {
-		return this.nfilas();
+	get getFilas() {
+		return this._nfilas;
 	}
 
 
@@ -40,8 +40,8 @@ class Imagen {
 	Getter: Obtiene el número de columnas
 	@returns {int} número de columnas
 	*/ 
-	get columnas() {
-		return this.ncolumnas();
+	get GetColumnas() {
+		return this._ncolumnas;
 	}
 
 
@@ -50,8 +50,8 @@ class Imagen {
 	setter: Establece el número de columnas
 	@param {int} número de columnas
 	*/ 
-	set columnas(ncolumnas) {
-		this.ncolumnas = ncolumnas;
+	set setColumnas(ncolumnas) {
+		this._ncolumnas = ncolumnas;
 	}
 
 
@@ -59,9 +59,9 @@ class Imagen {
 	/** 
 	setter: Establece el número de filas
 	@param {int} número de filas
-	*/ 
-	set filas(nfilas) {
-		this.nfilas = nfilas;
+	*/
+	set setFilas(nfilas) {
+		this._nfilas = nfilas;
 	}
 	
 
@@ -69,11 +69,11 @@ class Imagen {
 	/**
 	Setter: Establece la matriz de píxeles
 	@param {Array} datos de píxeles
-	*/ 
-	set datos(datos) {
-		this.datos = datos;
+	*/
+	set setDatos(datos) {
+		this._datos = datos;
 	}
-
+	 
 
 	/**
 	Carga una imagen desde un fichero 
@@ -81,7 +81,7 @@ class Imagen {
 	@returns {boolean} true	si ha tenido éxito en la lectura o false en caso contrario.
 	*/
 	leerImagen(nombre){
-
+		return true;
 	}
 
 
@@ -91,7 +91,7 @@ class Imagen {
 	@returns {boolean} true	si ha tenido éxito en la escritura o false en caso contrario.
 	*/
 	escribirImagen(nombre){
-	
+		return true;
 	} 
 
 
@@ -106,8 +106,8 @@ class Imagen {
 
 	HU-1 Ocultar mensaje
 	*/
-	ocultar(mensaje){		
-
+	ocultar(mensaje){
+		return true;		
 	}
 
 
@@ -118,8 +118,8 @@ class Imagen {
 
 	HU-2 Comprobar si existe mensaje
 	*/
-	chequear(){		
-
+	chequear(){	
+		return true;	
 	}
 
 
@@ -133,7 +133,7 @@ class Imagen {
 	HU-3 Revelar mensaje oculto
 	*/
 	revelar(){
-
+		return true;
 	}
 
 
@@ -147,7 +147,8 @@ class Imagen {
 	HU-4 Conocer fecha y hora del cifrado
 	*/
 	getMetadatos(){
-
+		return true;
 	}
 
 }
+module.exports = Imagen;
