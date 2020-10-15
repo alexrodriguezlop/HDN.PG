@@ -89,15 +89,19 @@ ___
 ### Instalación :new:
 
 Clonamos el repositorio:
+
 `git clone https://github.com/alexrodriguezlop/HDN.PG.git`
 
 Nos situamos en su directorio:
+
 `cd HDN.PG`
 
 Instalamos las dependencias del proyecto:
+
 `npm install` 
 
 Ejecutar test:
+
 `npm test`
 
 ___
