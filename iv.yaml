@@ -2,3 +2,4 @@ entidad: src/class/imagen.js
 lenguaje: javascript
 test: test/test.js
 taskfile: gulpfile.js
+
