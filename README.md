@@ -64,7 +64,7 @@ ___
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
 - [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos)
-- [Test y entorno](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Test%20y%20entorno) :new:
+- [Testeo y automatización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Testeo%20y%20automatizaci%C3%B3n) :new:
 
 ___
 ### Herramientas
