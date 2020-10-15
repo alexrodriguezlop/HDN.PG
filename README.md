@@ -19,7 +19,7 @@ Después de un trabajo que nada tiene que envidiar al de los ingenieros genétic
 
 Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad. Usalo bien.
 ___
-### Solución planteada :new:
+### Solución planteada 
 El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
 Esta opción brinda muchísimas ventajas frente a otras arquitecturas. 
 
@@ -43,8 +43,8 @@ La estructura de directorios se plantea de la siguiente forma:
 - src
  - class (Entidades) 
   - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
- - test
-  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
+ - test (Directorio de test)
+  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new: 
 
 ___
 ### Últimos ficheros añadidos :new:
@@ -55,9 +55,9 @@ ___
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json) 
 
-- [gulpfile.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) :new:
+- [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) :new:
 
-- [test/test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
+- [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
 
 ___
 ### Configuración 
@@ -84,6 +84,21 @@ ___
 - [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
 - [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU3.md)
 - [HU4](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU4.md)
+
+___
+### Instalación :new:
+
+Clonamos el repositorio:
+`git clone https://github.com/alexrodriguezlop/HDN.PG.git`
+
+Nos situamos en su directorio:
+`cd HDN.PG`
+
+Instalamos las dependencias del proyecto:
+`npm install` 
+
+Ejecutar test:
+`npm test`
 
 ___
 ### Páginas de interés
