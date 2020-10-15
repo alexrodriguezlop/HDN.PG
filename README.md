@@ -43,6 +43,8 @@ La estructura de directorios se plantea de la siguiente forma:
 - src
  - class (Entidades) 
   - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
+ - test
+  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
 
 ___
 ### Últimos ficheros añadidos :new:
@@ -52,11 +54,17 @@ ___
 - [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml)
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json) 
+
+- [gulpfile.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) :new:
+
+- [test/test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
+
 ___
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
-- [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos) :new:
+- [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos)
+- [Test y entorno](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Test%20y%20entorno) :new:
 
 ___
 ### Herramientas
@@ -70,7 +78,7 @@ Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esco
 - [jsdocs](https://jsdoc.app/)     (*Documentación*)
   
 ___
-### Historias de usuario :new:
+### Historias de usuario
 
 - [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
 - [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
@@ -83,6 +91,9 @@ ___
 [Documentación](https://alexrodriguezlop.github.io/HDN.PG/)
 
 [Guía de Git](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Mini%20guias/Git.md)
+
+[Guía de GULP](https://frontendlabs.io/1669--gulp-js-en-espanol-tutorial-basico-primeros-pasos-y-ejemplos)
+[Guía de GULP2](https://www.adictosaltrabajo.com/2016/04/27/primeros-pasos-con-gulp/)
 
 
 ___
