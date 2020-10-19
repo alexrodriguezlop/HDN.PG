@@ -40,7 +40,7 @@ Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
 Se están utilizando algunas herramientas más.  
 He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. 
 Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
-Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que detrás de ella hay una gran comunidad y es un proyecto muy documentado.
+Para complementar utilizaré la librería de aserciones del propio [node.js](https://nodejs-es.github.io/api/assert.html) Ya que detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
 Utilizaré un [Mock](https://es.wikipedia.org/wiki/Objeto_simulado) para simular una imagen subida al microservicio.
 De modo que lo usaré para llevar a cabo el desarrollo basado en test de la clase imagen y de esta forma testear cada uno de sus métodos a medida que los vaya desarrollando.
