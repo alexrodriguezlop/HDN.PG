@@ -38,7 +38,8 @@ El microservicio en un principio se desarrollará haciendo uso de [restify](http
 Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
 
 Se están utilizando algunas herramientas más.  
-He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. [Mocha](https://mochajs.org/) para testeo aunque no son una elección definitiva.
+He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. 
+Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/).
 
 La estructura de directorios se plantea de la siguiente forma:
 - src
