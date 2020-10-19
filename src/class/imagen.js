@@ -7,9 +7,14 @@ class Imagen {
 	 @constructor con parámetros
 	 * */ 
 	constructor(nfilas = 0, ncolumnas = 0){
-		this._datos = null //Matriz de píxeles
+
 		this._nfilas = nfilas;
 		this._ncolumnas = ncolumnas;
+
+		this._datos = new Array(); //Matriz de píxeles
+		for (var i = 0; i < this._nfilas * this._ncolumnas; i++) {
+			this._datos[i] = 0;
+		}
 
 		//console.log("CONSTRUYENDO UNA IMAGEN");
 	}
@@ -20,7 +25,7 @@ class Imagen {
 	Getter: Obtiene la matriz de píxeles
 	@returns {Array} de píxeles
 	*/
-	get GetDatos() {
+	get getDatos() {
 		return this._datos;
 	}
  
@@ -40,7 +45,7 @@ class Imagen {
 	Getter: Obtiene el número de columnas
 	@returns {int} número de columnas
 	*/ 
-	get GetColumnas() {
+	get getColumnas() {
 		return this._ncolumnas;
 	}
 
@@ -94,6 +99,29 @@ class Imagen {
 		return true;
 	} 
 
+
+	/**
+	Devuleve el valor de un pixel dada una posición
+	@param {int} posicion del pixel a devolver.
+	@returns {int} valor entero del pixel correspondiente a la posición.
+
+	Podría leer fuera del array, el método comprobará la posición.
+	*/
+	getPixel(posicion){
+		return this._datos[posicion];
+	} 
+
+
+	/**
+	Establece el valor de un pixel dada una posición
+	@param {int} posicion del a insertar el pixel.
+	@param {int} valor del pixel a insertar.
+
+	Podría insertarse fuera del array, el método comprobará la posición.
+	*/
+	setPixel(posicion, pixel){
+		this._datos[posicion] = pixel;
+	} 
 
 
 	/**
