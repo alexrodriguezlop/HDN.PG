@@ -42,6 +42,11 @@ He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta deci
 Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
 Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
+Utilizaré un [Mock](https://es.wikipedia.org/wiki/Objeto_simulado) para simular una imagen subida al microservicio.
+De modo que lo usaré para llevar a cabo el desarrollo basado en test de la clase imagen y de esta forma testear cada uno de sus métodos a medida que los vaya desarrollando.
+
+
+
 La estructura de directorios se plantea de la siguiente forma:
 - src
  - class (Entidades) 
