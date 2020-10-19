@@ -19,7 +19,7 @@ Después de un trabajo que nada tiene que envidiar al de los ingenieros genétic
 
 Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad. Usalo bien.
 ___
-### Solución planteada 
+### Solución planteada :new:
 El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
 Esta opción brinda muchísimas ventajas frente a otras arquitecturas. 
 
@@ -39,7 +39,8 @@ Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
 
 Se están utilizando algunas herramientas más.  
 He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. 
-Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/).
+Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
+Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
 La estructura de directorios se plantea de la siguiente forma:
 - src
