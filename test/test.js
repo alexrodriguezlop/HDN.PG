@@ -11,16 +11,18 @@ describe("IMAGEN CLASS TEST", function() {
     assert.equal(imagen.getFilas, 3, "Debería ser 3");
     assert.equal(imagen.getColumnas, 3, "Debería ser 3");
 
-      for (var i = 0; i < 9; i++) {
-        assert.equal(imagen.getPixel(i), 0, "Píxel distinto de 0");
-      }
+    for (var i = 0; i < this._nfilas; i++) {
+			for (var j = 0; j < this._ncolumnas; j++) {
+        assert.equal(imagen.getPixel(i,j), 0, "Píxel distinto de 0");
+      } 
+    }
   });
   
   it("Debería cambiar las dimensiones de la imagen a 6x6 ", function() {
     imagen.setFilas = 6;
     imagen.setColumnas = 6;
 
-    assert.notStrictEqual(imagen.columnas, 6);
-    assert.notStrictEqual(imagen.filas, 6);
+    assert.notStrictEqual(imagen.columnas, 6, "El número de columnas no se ha actualizado");
+    assert.notStrictEqual(imagen.filas, 6, "El número de filas no se ha actualizado");
   });
 });
