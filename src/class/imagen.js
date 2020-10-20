@@ -11,11 +11,23 @@ class Imagen {
 		this._nfilas = nfilas;
 		this._ncolumnas = ncolumnas;
 
-		this._datos = new Array(); //Matriz de píxeles
-		for (var i = 0; i < this._nfilas * this._ncolumnas; i++) {
+		this._datos = new ArrayBuffer(this._nfilas * this._ncolumnas);
+		for (var i = 0; i < this._nfilas * this._ncolumnas; i++)
 			this._datos[i] = 0;
-		}
+		
+		//this._datos = new Array(2); //Matriz de píxeles
 
+		//En cada posición de nuevoArray guardamos un nuevo array
+		//this._datos[0] = new Array(this._nfilas);
+		//this._datos[1] = new Array(this._ncolumnas);
+
+		/*
+		for (var i = 0; i < this._nfilas; i++) {
+			for (var j = 0; j < this._ncolumnas; j++) {
+				this._datos[i][j] = 0;
+			}
+		}
+		*/		
 		//console.log("CONSTRUYENDO UNA IMAGEN");
 	}
 
@@ -86,7 +98,6 @@ class Imagen {
 	@returns {boolean} true	si ha tenido éxito en la lectura o false en caso contrario.
 	*/
 	leerImagen(nombre){
-		return true;
 	}
 
 
@@ -96,31 +107,32 @@ class Imagen {
 	@returns {boolean} true	si ha tenido éxito en la escritura o false en caso contrario.
 	*/
 	escribirImagen(nombre){
-		return true;
 	} 
 
 
 	/**
 	Devuleve el valor de un pixel dada una posición
-	@param {int} posicion del pixel a devolver.
+	@param {int} fila del pixel a devolver.
+	@param {int} columna del pixel a devolver.
 	@returns {int} valor entero del pixel correspondiente a la posición.
 
 	Podría leer fuera del array, el método comprobará la posición.
 	*/
-	getPixel(posicion){
-		return this._datos[posicion];
+	getPixel(fila, columna){
+		return this._datos[fila][columna];
 	} 
 
 
 	/**
 	Establece el valor de un pixel dada una posición
-	@param {int} posicion del a insertar el pixel.
+	@param {int} fila del la posición a insertar el pixel.
+	@param {int} columna del la posición a insertar el pixel.
 	@param {int} valor del pixel a insertar.
 
 	Podría insertarse fuera del array, el método comprobará la posición.
 	*/
-	setPixel(posicion, pixel){
-		this._datos[posicion] = pixel;
+	setPixel(fila, columna, pixel){
+		this._datos[fila][columna] = pixel;
 	} 
 
 
@@ -135,7 +147,7 @@ class Imagen {
 	HU-1 Ocultar mensaje
 	*/
 	ocultar(mensaje){
-		return true;		
+			
 	}
 
 
