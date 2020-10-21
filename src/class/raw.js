@@ -32,11 +32,12 @@ class Raw {
 
 
     /**
-	Obtiene un pixel dada una posición.
+    Obtiene un pixel dada una posición.
+    @param {int} posicion.
 	@returns {number} byte de píxeles.
 	*/
-	getPixel() {
-		
+	getPixel(posicion) {
+		return this._datos[posicion];
 	}
  
 
@@ -46,8 +47,8 @@ class Raw {
     @param {int} posicion.
 	*/ 
 	setPixel(pixel, posicion) {
-	}
-
+        this._datos[posicion] = pixel;
+    }
 
 
 	/**
@@ -56,9 +57,24 @@ class Raw {
 
 	*/
 	enciende(posicion){
+        this._datos[posicion] = this._datos[posicion] | '00000001' ; //enciende 
+    }
+
+
+
+    /**
+	Comprueba si el bit menos significativo de un pixel está encendido o apagado. 
+    @param {int} posición del pixel.
+    @returns {boolean} estado. (TRUE - encendido | FALSE - apagado)
+
+	*/
+	check(posicion){
+        if (this._datos[posicion] & '00000001' !== 0)
+            return true;
+        else    
+            return false;  
     }
     
-
 
     /**
 	Apaga el bit menos significativo de un pixel. 
@@ -66,6 +82,7 @@ class Raw {
 
 	*/
 	apaga(posicion){
+        this._datos[posicion] = this._datos[posicion] & '11111110' ; //apaga 
 	} 
 
 }
