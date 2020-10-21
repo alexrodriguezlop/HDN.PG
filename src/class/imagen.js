@@ -164,19 +164,18 @@ class Imagen {
 					pixelTmp = this.getPixel(i);
 	
 					//Modificar el pixel con el bit del mensaje
-					if(get(c[i],j))
-						on(pixelTmp, 0);
+					//Si está encendido
+					if(this._datos.check())
+						this._datos.apaga(i);
 					else
-						off(pixelTmp, 0);
-	
+						this._datos.enciende(i);
+						
 					//Asignando pixel modificado
 					imagen.setPos(pos,pixelTmp);
 					pos ++;
 	
 				}
 			}
-
-
 
 	}
 
