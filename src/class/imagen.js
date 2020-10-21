@@ -167,7 +167,7 @@ class Imagen {
 					//Si está encendido
 					//Extrae cada caracter y de ese caracter sus bits
 					var m = mensaje[i].readUInt8()
-					if(m[j])//Obtiene la letra y el bit correspondiente
+					if(m[j])//True bit a 1 -> enciende el bit en el pixel
 						this._datos.enciende(i);
 					else
 						this._datos.apaga(i);
