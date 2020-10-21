@@ -96,34 +96,39 @@ class Imagen {
 
 
 	/**
+	Calcula una posición dadas sus coordenadas x,y
+	@param {int} x  número de fila.
+	@param {int} y número de columna.
+	@return {int} valor de índice.
+	*/
+	getIndice(x, y){
+		var columnas = getColumnas();
+		var i = y * columanas + x;
+
+		return i;
+	} 
+
+	/**
 	Devuleve el valor de un pixel dada una posición
-	@param {int} fila del pixel a devolver.
-	@param {int} columna del pixel a devolver.
+	@param {int} posicion del pixel a devolver.
 	@returns {int} valor entero del pixel correspondiente a la posición.
 
 	Podría leer fuera del array, el método comprobará la posición.
 	*/
-	getPixel(fila, columna){
-		var columnas = getColumnas();
-		var i = columna * columanas + fila;
-
-		return this._datos[i];
+	getPixel(posicion){
+		return this._datos[posicion];
 	} 
 
 
 	/**
 	Establece el valor de un pixel dada una posición
-	@param {int} fila del la posición a insertar el pixel.
-	@param {int} columna del la posición a insertar el pixel.
+	@param {int} posicion a insertar el pixel.
 	@param {int} valor del pixel a insertar.
 
 	Podría insertarse fuera del array, el método comprobará la posición.
 	*/
-	setPixel(fila, columna, pixel){
-		var columnas = getColumnas();
-		var i = columna * columanas + fila;
-
-		this._datos[i]= pixel;
+	setPixel(posicion, pixel){
+		this._datos[posicion]= pixel;
 	} 
 
 
@@ -138,7 +143,41 @@ class Imagen {
 	HU-1 Ocultar mensaje
 	*/
 	ocultar(mensaje){
+		// Más un caracter para el Centinela
+		//Tamaño de cadena
+		var pixelsCadena = ((mensaje.length +1) * 8);
+
+		//Tamaño de imagen
+		var pixelsImagen = (this.getFilas * this.getColumnas);
+	
+		//Comprobar que la cadena cabe en la imagen
+		if (pixelsCadena < pixelsImagen){
 			
+			//Creando un pixel temporal
+			var pixelTmp;
+			var pos=0;
+	
+			for(var i=0; i <= pixelsCadena; i++){
+	
+				for(var j=7; j>=0; j--){
+					//Obtener el pixel a modificar
+					pixelTmp = this.getPixel(i);
+	
+					//Modificar el pixel con el bit del mensaje
+					if(get(c[i],j))
+						on(pixelTmp, 0);
+					else
+						off(pixelTmp, 0);
+	
+					//Asignando pixel modificado
+					imagen.setPos(pos,pixelTmp);
+					pos ++;
+	
+				}
+			}
+
+
+
 	}
 
 
