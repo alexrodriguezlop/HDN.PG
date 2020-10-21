@@ -1,3 +1,5 @@
+const Raw = require('./raw')
+
 /**
  * Clase objeto imagen 
  * */
@@ -11,24 +13,7 @@ class Imagen {
 		this._nfilas = nfilas;
 		this._ncolumnas = ncolumnas;
 
-		this._datos = new ArrayBuffer(this._nfilas * this._ncolumnas);
-		for (var i = 0; i < this._nfilas * this._ncolumnas; i++)
-			this._datos[i] = 0;
-		
-		//this._datos = new Array(2); //Matriz de píxeles
-
-		//En cada posición de nuevoArray guardamos un nuevo array
-		//this._datos[0] = new Array(this._nfilas);
-		//this._datos[1] = new Array(this._ncolumnas);
-
-		/*
-		for (var i = 0; i < this._nfilas; i++) {
-			for (var j = 0; j < this._ncolumnas; j++) {
-				this._datos[i][j] = 0;
-			}
-		}
-		*/		
-		//console.log("CONSTRUYENDO UNA IMAGEN");
+		this._datos = new Raw(this._nfilas, this._ncolumnas);
 	}
 
 
@@ -119,7 +104,10 @@ class Imagen {
 	Podría leer fuera del array, el método comprobará la posición.
 	*/
 	getPixel(fila, columna){
-		return this._datos[fila][columna];
+		var columnas = getColumnas();
+		var i = columna * columanas + fila;
+
+		return this._datos[i];
 	} 
 
 
@@ -132,7 +120,10 @@ class Imagen {
 	Podría insertarse fuera del array, el método comprobará la posición.
 	*/
 	setPixel(fila, columna, pixel){
-		this._datos[fila][columna] = pixel;
+		var columnas = getColumnas();
+		var i = columna * columanas + fila;
+
+		this._datos[i]= pixel;
 	} 
 
 
@@ -159,7 +150,6 @@ class Imagen {
 	HU-2 Comprobar si existe mensaje
 	*/
 	chequear(){	
-		return true;	
 	}
 
 
@@ -173,7 +163,6 @@ class Imagen {
 	HU-3 Revelar mensaje oculto
 	*/
 	revelar(){
-		return true;
 	}
 
 
@@ -187,7 +176,6 @@ class Imagen {
 	HU-4 Conocer fecha y hora del cifrado
 	*/
 	getMetadatos(){
-		return true;
 	}
 
 }
