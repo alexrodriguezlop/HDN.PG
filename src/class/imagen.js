@@ -165,20 +165,21 @@ class Imagen {
 	
 					//Modificar el pixel con el bit del mensaje
 					//Si está encendido
-					if(this._datos.check())
-						this._datos.apaga(i);
-					else
+					//Extrae cada caracter y de ese caracter sus bits
+					var m = mensaje[i].readUInt8()
+					if(m[j])//Obtiene la letra y el bit correspondiente
 						this._datos.enciende(i);
+					else
+						this._datos.apaga(i);
 						
 					//Asignando pixel modificado
-					imagen.setPos(pos,pixelTmp);
+					this._datos.setPixel(pixelTmp, pos)
 					pos ++;
 	
 				}
 			}
-
+		}
 	}
-
 
 
 	/**
