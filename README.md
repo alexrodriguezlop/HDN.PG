@@ -75,7 +75,7 @@ ___
 
 - [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new:
 
-- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw
+- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new:
 - [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
 
 ___
