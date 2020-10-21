@@ -31,6 +31,7 @@ El microservicio a desarrollar permitirá aplicar el algoritmo de cifrado sobre 
 No se desarrollará un *frontend* para el servicio.
 
 Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. 
+Existirá una segunda **clase Raw** que contendra el vector de píxeles. 
 
 El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
 
@@ -47,24 +48,34 @@ De modo que lo usaré para llevar a cabo el desarrollo basado en test de la clas
 
 
 
-La estructura de directorios se plantea de la siguiente forma:
+La estructura de directorios se plantea de la siguiente forma: :new:
 - src
  - class (Entidades) 
   - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
+  - [raw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) :new: 
  - test (Directorio de test)
   - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new: 
+  - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new: 
+  - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new: 
 
 ___
 ### Últimos ficheros añadidos :new:
 
 - [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
+- [Fichero **raw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) :new:
+
 - [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml)
 
-- [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json) 
+- [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
+
+- [Fichero **package-lock.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package-lock.json) 
 
 - [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) :new:
 
+- [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new:
+
+- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw
 - [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
 
 ___
