@@ -1,6 +1,6 @@
 {
   "name": "hdn.pg",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "description": "Microservicio de esteganografia usando imagenes",
   "main": "src/class/imagen.js",
   "directories": {
@@ -29,6 +29,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "gulp": "^4.0.2",
+    "gulp-mocha": "^7.0.2",
     "mocha": "^8.1.3"
   }
 }
