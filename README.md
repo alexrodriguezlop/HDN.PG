@@ -44,7 +44,7 @@ Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este p
 Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que es muy sencilla, detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
 
-La estructura de directorios se plantea de la siguiente forma: :new:
+La estructura de directorios se plantea de la siguiente forma: 
 - src
  - class (Entidades) 
   - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
@@ -72,27 +72,32 @@ ___
 
 - [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
-- [Fichero **raw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) :new:
+- [Fichero **raw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) 
 
 - [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml)
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
 
 - [Fichero **package-lock.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package-lock.json) 
-
-- [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) :new:
-
-- [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new:
+  
+- [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) 
+  
+- [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js)
 
 - [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new:
-- [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new:
+  
+- [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
 
+- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) :new:
+
+- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) :new:
 ___
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
 - [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos)
-- [Testeo y automatización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Testeo%20y%20automatizaci%C3%B3n) :new:
+- [Testeo y automatización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Testeo%20y%20automatizaci%C3%B3n) 
+
 
 ___
 ### Herramientas
@@ -107,14 +112,14 @@ Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esco
   
 ___
 ### Historias de usuario
-- [Directorio](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/
+- [Directorio](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/)
 - [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
 - [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
 - [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU3.md)
 - [HU4](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU4.md)
 
 ___
-### Instalación :new:
+### Instalación 
 
 Clonamos el repositorio:
 
