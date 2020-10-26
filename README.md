@@ -19,7 +19,7 @@ Después de un trabajo que nada tiene que envidiar al de los ingenieros genétic
 
 Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad. Usalo bien.
 ___
-### Solución planteada :new:
+### Solución planteada 
 El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
 Esta opción brinda muchísimas ventajas frente a otras arquitecturas. 
 
@@ -48,11 +48,11 @@ La estructura de directorios se plantea de la siguiente forma:
 - src
  - class (Entidades) 
   - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
-  - [raw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) :new: 
+  - [raw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) 
  - test (Directorio de test)
-  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) :new: 
-  - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new: 
-  - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new: 
+  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
+  - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
+  - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
 
 ___
 ### Docker :new:
