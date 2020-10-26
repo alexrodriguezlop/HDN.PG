@@ -43,10 +43,6 @@ He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta deci
 Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
 Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que es muy sencilla, detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
-Utilizaré un [Mock](https://es.wikipedia.org/wiki/Objeto_simulado) para simular una imagen subida al microservicio.
-De modo que lo usaré para llevar a cabo el desarrollo basado en test de la clase imagen y de esta forma testear cada uno de sus métodos a medida que los vaya desarrollando.
-
-
 
 La estructura de directorios se plantea de la siguiente forma: :new:
 - src
@@ -58,6 +54,19 @@ La estructura de directorios se plantea de la siguiente forma: :new:
   - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) :new: 
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new: 
 
+___
+### Docker :new:
+He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
+La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
+Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
+
+Como entre las opciones ofertadas en la plataforma no encuentro ninguna que destaque específicamente decido utilizar un contenedor con sistema Ubuntu:
+
+`REPOSITORY TAG IMAGE ID CREATED SIZE
+ubuntu latest d70eaf7277ea 2 days ago 72.9MB
+`
+
+El peso de la imagen es de 72-MB con lo que trataré de optimizar el sistema y crear una versión que será la que posteriormente utilizaré.
 ___
 ### Últimos ficheros añadidos :new:
 
@@ -98,7 +107,7 @@ Dada su flexibilidad y escalabilidad. Además de la activa comunidad que se esco
   
 ___
 ### Historias de usuario
-
+- [Directorio](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/
 - [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU1.md)
 - [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU2.md)
 - [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/HU3.md)
@@ -130,9 +139,14 @@ ___
 
 [Guía de Git](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Mini%20guias/Git.md)
 
+**Gulp:**
 [Guía de GULP](https://frontendlabs.io/1669--gulp-js-en-espanol-tutorial-basico-primeros-pasos-y-ejemplos)
 [Guía de GULP2](https://www.adictosaltrabajo.com/2016/04/27/primeros-pasos-con-gulp/)
 
+**Docker:**
+[Guía instalación](https://www.hostinger.es/tutoriales/como-instalar-y-usar-docker-en-ubuntu/)
+[Guía borrado](https://www.vidaxp.com/tecnologia/como-borrar-imagenes-contenedores-y-volumenes-docker/)
+[Desplegando](https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-application-with-docker-on-ubuntu-20-04)
 
 ___
 
