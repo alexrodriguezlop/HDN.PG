@@ -40,7 +40,7 @@ Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
 
 Se están utilizando algunas herramientas más.  
 He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. 
-Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por[Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
+Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por [Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
 Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que es muy sencilla, detrás de ella hay una gran comunidad y es un proyecto muy documentado.
 
 
@@ -60,13 +60,14 @@ He echado un vistazo a las imágenes que la plataforma docker proporcionaba con 
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
 
-Como entre las opciones ofertadas en la plataforma no encuentro ninguna que destaque específicamente decido utilizar un contenedor con sistema Ubuntu:
+Despues de revisar las opciones ofertadas por la plataforma he centrado mi atención en dos. Concretamiente en la [oficial](https://hub.docker.com/u/nodesource) de node, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
+y en una versión muy ligera de linux llamada [alpine](https://hub.docker.com/_/alpine) ya que es una versión oficial LTS con un tamaño de solo 5MB
 
-`REPOSITORY TAG IMAGE ID CREATED SIZE
-ubuntu latest d70eaf7277ea 2 days ago 72.9MB
-`
+Voy a estudiar ambas opciones para determinar cual es la mas apropiada.
 
-El peso de la imagen es de 72-MB con lo que trataré de optimizar el sistema y crear una versión que será la que posteriormente utilizaré.
+Teniendo en cuenta la siguiente  [comparativa](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa
+%de%docker) de tiempos de arranque he decidido elegir alpine debido a su ligereza, soporte y rapidez. ademas es una versión oficial con lo cual ofrece una serie de garantias a nivel de seguridad. 
+
 ___
 ### Últimos ficheros añadidos :new:
 
@@ -84,7 +85,7 @@ ___
   
 - [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js)
 
-- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) :new:
+- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
   
 - [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
 
@@ -97,6 +98,7 @@ ___
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
 - [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos)
 - [Testeo y automatización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Testeo%20y%20automatizaci%C3%B3n) 
+
 
 
 ___
