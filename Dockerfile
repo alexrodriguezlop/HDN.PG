@@ -3,7 +3,7 @@ FROM node:10-alpine
 
 LABEL version="2.0.1" maintainer="alexrodriguezlop@gmail.com"
 
-# Adaptamos el entorno para trabajar con un usuario nodo.
+# Adaptamos el entorno para trabajar con un usuario nodo
 RUN mkdir -p /home/node/app/node_modules 
 RUN chown -R node:node /home/node/app
 
