@@ -10,4 +10,5 @@ Dockerfile
 .git
 #Otros
 HU
-docs    
+docs
+TOKEN.txt    

@@ -77,7 +77,9 @@ He optimizado la imagen reduciendo el tamaño de su capa ajustando las instrucci
 Al final de cada instrucción RUN docker confirma los cambios como una capa de imagen adicional.
 Con lo cual a menos instrucciones RUN, menos capas y menos peso.
 
+finalmente he encontrado algunas versione de *alpine* que ya incluian node preinstalado pero a nivel de aprendizaje he queriado utilizar una imagen limpia para moldear el sistema totalmente a mi gusto ya que practicamente no hay ganacia en el uso de una imagen preinstalada.
 
+Si en algún momento fuera necesario el cambio de imagen bastaría con editar la linea **FROM** del *dockerfile* y esta se reconstruiria automaticamente en dockerhub.
 ___
 ### Últimos ficheros añadidos :new:
 

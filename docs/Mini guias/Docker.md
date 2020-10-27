@@ -30,6 +30,15 @@
 
 ---
 ### Github
+
+1. Buid:
+
+2. Tag
+`docker tag c233aff39436 docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v2`
+
+3. Login:
 `cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
 
-`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v1`
+4. Push 
+`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v2`
+
