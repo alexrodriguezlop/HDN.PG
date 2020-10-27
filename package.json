@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": ""
+    "start": "node src/class/imagen.js"
   },
   "repository": {
     "type": "git",
