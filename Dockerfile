@@ -3,32 +3,29 @@ FROM alpine:3.12.1
 
 LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
-# Instalar node y npm
-RUN apk update && apk upgrade
-RUN apk add --update nodejs nodejs-npm
-
+# Instalar node y npm. 
 # Crear un usuario del sistema sin home ni contraseña
-RUN adduser -HD user
-
-# Adaptamos el entorno para trabajar con user
-RUN mkdir -p /test
-RUN chown -R user:user /test
+# Adapta el entorno para trabajar con user
+RUN apk update && \
+    apk upgrade && \
+    apk add --update nodejs nodejs-npm && \
+    adduser -HD user && \
+    mkdir -p /test && \
+    chown -R user:user /test
 
 WORKDIR /test
 
 # Copiamos los paquetes JSON
 COPY package*.json ./
 
-# Instalación de dependencias
-RUN npm install --no-optional  && npm update && npm cache clean --force
-
+# Instalar dependencias
+# Limpiar
+RUN npm install --no-optional  && \
+    npm update && npm cache clean --force && \
+    rm package*.json && rm -rf /var/lib/apt/lists/*
 
 # Definir la variable PATH a bin
 ENV PATH=/test/node_modules/.bin:$PATH
-
-
-# Limpiar
-RUN rm package*.json && rm -rf /var/lib/apt/lists/*
 
 USER user
 

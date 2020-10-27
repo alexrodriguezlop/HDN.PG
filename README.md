@@ -60,13 +60,23 @@ He echado un vistazo a las imágenes que la plataforma docker proporcionaba con 
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
 
-Despues de revisar las opciones ofertadas por la plataforma he centrado mi atención en dos. Concretamiente en la [oficial](https://hub.docker.com/u/nodesource) de node, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
-y en una versión muy ligera de linux llamada [alpine](https://hub.docker.com/_/alpine) ya que es una versión oficial LTS con un tamaño de solo 5MB
+Despues de revisar las opciones ofertadas por la plataforma he centrado mi atención en dos. Concretamente. En la [oficial](https://hub.docker.com/u/nodesource) de nodesource, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones y en una versión muy ligera de linux llamada [alpine](https://hub.docker.com/_/alpine) ya que es una versión oficial LTS con un tamaño de solo 5MB
 
 Voy a estudiar ambas opciones para determinar cual es la mas apropiada.
 
-Teniendo en cuenta la siguiente  [comparativa](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa
-%de%docker) de tiempos de arranque he decidido elegir alpine debido a su ligereza, soporte y rapidez. ademas es una versión oficial con lo cual ofrece una serie de garantias a nivel de seguridad. 
+Teniendo en cuenta la siguiente  [comparativa](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker) de tiempos de arranque he decidido elegir alpine debido a su ligereza, soporte y rapidez. 
+
+He intentado que la imagen cumpla con una serie de requisitos:
+- Propósito único y bien definido
+- Diseño genérico con la capacidad de inyectar configuración en tiempo de ejecución
+- Tamaño pequeño
+- Fácil de entender
+
+He optimizado la imagen reduciendo el tamaño de su capa ajustando las instrucciones de RUN.
+
+Al final de cada instrucción RUN docker confirma los cambios como una capa de imagen adicional.
+Con lo cual a menos instrucciones RUN, menos capas y menos peso.
+
 
 ___
 ### Últimos ficheros añadidos :new:
