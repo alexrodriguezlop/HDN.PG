@@ -1,12 +1,13 @@
 # Node
 node_modules
 npm-debug.log
-
 # Docker
 Dockerfile
 .dockerignore
-
 # Git
 .gitignore
 .github
 .git
+#Otros
+HU
+docs    
