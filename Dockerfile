@@ -1,30 +1,37 @@
 # Versión LTS
 FROM alpine:3.12.1
 
-LABEL version="2.0.1" maintainer="alexrodriguezlop@gmail.com"
+LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
-#Instalar node y npm
-RUN apk update
+# Instalar node y npm
+RUN apk update && apk upgrade
 RUN apk add --update nodejs nodejs-npm
 
-# Adaptamos el entorno para trabajar con un usuario nodo
-RUN mkdir -p /testu
-RUN chown -R node:node /test
+# Crear un usuario del sistema sin home ni contraseña
+RUN adduser -HD user
+
+# Adaptamos el entorno para trabajar con user
+RUN mkdir -p /test
+RUN chown -R user:user /test
 
 WORKDIR /test
 
 # Copiamos los paquetes JSON
 COPY package*.json ./
 
-
-# Para que nodo sea propietario de los ficheros generados por npm
-USER node
-
 # Instalación de dependencias
+RUN npm install --no-optional  && npm update && npm cache clean --force
 
-RUN npm install --no-optional && npm cache clean --force
 
-ENV PATH /home/node/app/node_modules/.bin:$PATH
+# Definir la variable PATH a bin
+ENV PATH=/test/node_modules/.bin:$PATH
+
+
+# Limpiar
+RUN rm package*.json && rm -rf /var/lib/apt/lists/*
+
+USER user
 
 # Ejecutar los comandos siguientes
 CMD [ "gulp", "test" ]
+#CMD ["/bin/sh"]
