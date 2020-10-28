@@ -1,17 +1,19 @@
 # Versión LTS
-FROM alpine:3.12.1
+FROM node:lts-slim
+#node:lts-stretch-slim
+#node:lts-stretch
+#node:lts-buster-slim
+#node:lts-buster 
+#node:lts-alpine3.12
+#alpine:3.12.1
 
 LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
-# Instalar node y npm. 
-# Crear un usuario del sistema sin home ni contraseña
-# Adapta el entorno para trabajar con user
-RUN apk update && \
-    apk upgrade && \
-    apk add --update nodejs nodejs-npm && \
-    adduser -HD user && \
-    mkdir -p /test && \
-    chown -R user:user /test
+
+RUN apt-get update && apt-get install -y locales && mkdir -p /test
+    #apk update && \
+    #apk upgrade && \
+    #mkdir -p /test 
 
 WORKDIR /test
 
@@ -27,7 +29,7 @@ RUN npm install --no-optional  && \
 # Definir la variable PATH a bin
 ENV PATH=/test/node_modules/.bin:$PATH
 
-USER user
+USER node
 
 # Ejecutar los comandos siguientes
 CMD [ "gulp", "test" ]
