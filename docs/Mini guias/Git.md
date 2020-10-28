@@ -131,6 +131,25 @@ Tambiem podemos usar el atributo `--tags` para que el push afecte a todas.
 
 ## Resolución de problemas
 
+### Actualizar la copia (fork) de un repositorio de Git:
+0. Agregar la referencia al repositorio remoto original, al cual llamaremos «upstream», esto lo logramos con el comando:
+
+`git remote add upstream repo.git`
+
+1. Traernos todas las ramas de dicho repositorio remoto con: 
+`git fetch upstream`
+
+2. Irnos a la rama que queremos actualizar, por ejemplo master: 
+`git checkout master`
+
+3. Reescribir nuestra rama master con los commits nuevos de la rama master del repositorio original con:
+`git rebase upstream/master`
+
+4. Finalmente si queremos actualizar nuestro fork remoto, lo haremos ejecutando
+ `git push -f origin master`
+
+Recuerda que estos cambios no afectarán al repositorio original, sólo tu fork (sobretodo si no tienes acceso de escritura al mismo).
+
 ### Deshacer el último commit si aun no se ha realizado el *push*
 `git reset --hard/--soft HEAD~1`
 
