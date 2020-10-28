@@ -60,7 +60,7 @@ He echado un vistazo a las imágenes que la plataforma docker proporcionaba con 
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
 
-Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
+Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node (*siempre última LTS*), ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
 
 Voy a estudiar las opciones para determinar cual es la mas apropiada.
 
