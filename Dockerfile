@@ -15,7 +15,7 @@ COPY package*.json ./
 
 # Instalar dependencias
 # Limpiar
-RUN npm install --no-optional  && \
+RUN npm install --no-optional --no-install-recommends && \
     npm update && npm cache clean --force && \
     rm package*.json && rm -rf /var/lib/apt/lists/*
 
