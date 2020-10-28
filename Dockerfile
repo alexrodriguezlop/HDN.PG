@@ -1,11 +1,5 @@
 # Versión LTS
-FROM node:lts-slim
-#node:lts-stretch-slim
-#node:lts-stretch
-#node:lts-buster-slim
-#node:lts-buster 
-#node:lts-alpine3.12
-#alpine:3.12.1
+FROM node:lts-stretch-slim
 
 LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
