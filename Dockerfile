@@ -4,12 +4,11 @@ FROM node:lts-stretch-slim
 LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
 
-RUN apt-get update && apt-get install -y locales && mkdir -p /test
+RUN apt-get update && apt-get install -y locales 
     #apk update && \
     #apk upgrade && \
-    #mkdir -p /test 
 
-WORKDIR /test
+
 
 # Copiamos los paquetes JSON
 COPY package*.json ./
@@ -20,8 +19,10 @@ RUN npm install --no-optional  && \
     npm update && npm cache clean --force && \
     rm package*.json && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /test
+
 # Definir la variable PATH a bin
-ENV PATH=/test/node_modules/.bin:$PATH
+ENV PATH=/node_modules/.bin:$PATH
 
 USER node
 
