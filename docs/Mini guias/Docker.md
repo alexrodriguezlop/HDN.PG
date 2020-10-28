@@ -39,7 +39,7 @@
 ## Github
 
 1. Buid:
-
+`docker build -t alexrodriguezlop/tag .`
 2. Tag
 `docker tag c233aff39436 docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v2`
 
