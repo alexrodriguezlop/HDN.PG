@@ -60,11 +60,30 @@ He echado un vistazo a las imágenes que la plataforma docker proporcionaba con 
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
 
-Despues de revisar las opciones ofertadas por la plataforma he centrado mi atención en dos. Concretamente. En la [oficial](https://hub.docker.com/u/nodesource) de nodesource, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones y en una versión muy ligera de linux llamada [alpine](https://hub.docker.com/_/alpine) ya que es una versión oficial LTS con un tamaño de solo 5MB
+Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node, ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
 
-Voy a estudiar ambas opciones para determinar cual es la mas apropiada.
+Voy a estudiar las opciones para determinar cual es la mas apropiada.
 
-Teniendo en cuenta la siguiente  [comparativa](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker) de tiempos de arranque he decidido elegir alpine debido a su ligereza, soporte y rapidez. 
+
+**Medición del built:**
+`time docker build -t alexrodriguezlop/tag .`
+
+**Medición del run:**
+`time docker run -t -v 'pwd':/test alexrodriguezlop/tag `
+
+#### Comparativa:
+| **Versión** | **Tiempo Build** | **Tiempo Run** | **Tamaño** | **Descripción**|
+| -- | -- | -- | -- | -- |
+|node:lts-alpine3.12| 1m33,689s | 0m14,055s | 168MB | Alpine 3.12 y Node:14.15 |
+|node:lts-buster | 1m32,570s | 0m10,525s | 1GB |  Node:14.15 |
+|node:lts-buster-slim| 1m47,808s| 0m9,684s | 265MB |  Node:14.15 | 
+|node:lts-stretch| 2m41,508s| 0m12,411s | 1.02GB | Node:14.15 |
+|node:lts-stretch-slim| 1m48,063s | 0m8,462s | 244MB |Node:14.15|
+
+Toda la comprartiva se ha documentado [graficamente](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker).
+
+Teniendo en cuenta la comparativa de tiempos he elegido entre **node:lts-buster-slim** y **node:lts-stretch-slim** decidiendome por **node:lts-stretch-slim**.
+No es la más rapida a simple vista pero es la que tiene un mejor equilibrio entre sus tiempos y se encuentra entre las de menor tamaño.
 
 He intentado que la imagen cumpla con una serie de requisitos:
 - Propósito único y bien definido
@@ -76,8 +95,6 @@ He optimizado la imagen reduciendo el tamaño de su capa ajustando las instrucci
 
 Al final de cada instrucción RUN docker confirma los cambios como una capa de imagen adicional.
 Con lo cual a menos instrucciones RUN, menos capas y menos peso.
-
-finalmente he encontrado algunas versione de *alpine* que ya incluian node preinstalado pero a nivel de aprendizaje he queriado utilizar una imagen limpia para moldear el sistema totalmente a mi gusto ya que practicamente no hay ganacia en el uso de una imagen preinstalada.
 
 Si en algún momento fuera necesario el cambio de imagen bastaría con editar la linea **FROM** del *dockerfile* y esta se reconstruiria automaticamente en dockerhub.
 ___
