@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y locales
 # Copiamos los paquetes JSON
 COPY package*.json ./
 
+USER node
+
 # Instalar dependencias
 # Limpiar
 RUN npm install --no-optional --no-install-recommends && \
@@ -24,7 +26,7 @@ WORKDIR /test
 # Definir la variable PATH a bin
 ENV PATH=/node_modules/.bin:$PATH
 
-USER node
+
 
 # Ejecutar los comandos siguientes
 CMD [ "gulp", "test" ]
