@@ -5,13 +5,9 @@ LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
 
 RUN apt-get update && apt-get install -y locales 
-    #apk update && \
-    #apk upgrade && \
-
 
 # Copiamos los paquetes JSON
 COPY package*.json ./
-
 
 # Instalar dependencias
 # Limpiar
