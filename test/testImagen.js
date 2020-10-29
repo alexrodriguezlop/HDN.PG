@@ -25,4 +25,11 @@ describe("IMAGEN CLASS TEST", function() {
         });
     });
 
+    context('14. Ocultar', function(){
+        it("14.1 Debería Ocultar el mensaje en una imagen", function() {
+            var mensaje = "Hola";
+
+        });
+    });
+
 });
