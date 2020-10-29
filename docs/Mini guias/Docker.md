@@ -39,9 +39,10 @@
 ## Github
 
 1. Buid:
-`docker build -t alexrodriguezlop/tag .`
+`docker build -t alexrodriguezlop/TAG .`
+
 2. Tag
-`docker tag c233aff39436 docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v2`
+`docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
 **Nota:** `docker image push is only supported with a tag of the format :owner/:repo_name/:image_name.`
 
@@ -49,6 +50,5 @@
 `cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
 
 4. Push 
-`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/my_alpine:v2`
-
+`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
