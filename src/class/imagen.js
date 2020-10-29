@@ -1,5 +1,9 @@
 const Raw = require('./raw')
 
+//Tamaño maximo de mensaje
+const MAXTAM = 200;
+
+
 /**
  * Clase objeto imagen 
  * */
@@ -124,7 +128,7 @@ class Imagen {
 	Devuleve el tamaño en pixeles de la imagen
 	@returns {int} tamaño en pixeles de la imagen
 	*/
-	getTam(){
+	getNumPixel(){
 		return this.getFilas * this.getColumnas
 	}
 
@@ -157,7 +161,7 @@ class Imagen {
 		var pixelsCadena = ((mensaje.length +1) * 8);
 
 		//Tamaño de imagen
-		var pixelsImagen = this.getTam();
+		var pixelsImagen = this.getNumPixel();
 	
 		//Comprobar que la cadena cabe en la imagen
 		if (pixelsCadena < pixelsImagen){
@@ -200,7 +204,7 @@ class Imagen {
 	*/
 	chequear(){	
 		//Tamaño de imagen
-		var pixelsImagen = (this.getFilas * this.getColumnas);
+		var pixelsImagen = getNumPixel();
 
 		do{
 
@@ -218,6 +222,53 @@ class Imagen {
 	HU-3 Revelar mensaje oculto
 	*/
 	revelar(){
+		
+		//Ir trabajando con cada pixel
+		var pixelTmp;
+		
+		//Para recomponer el caracter
+		var caracter;
+
+		//Recomponer el mensaje
+		var mensaje = new Array(MAXTAM);
+
+		//Permite definir el punto de parada
+		var estado = true;
+
+		//Tamaño de la imagen en pixeles
+		var pixelsImagen = this.getNumPixel();
+
+		var contador=0;
+		var indiceMensaje=0;
+	
+		do{//Mientras caracter no sea centinela
+			for(var j = 7; j >= 0 && estado; j--)
+			{
+
+				pixelTmp = this.getPixel(contador);
+				//if bit menos sognificativo de pixel == 1
+					//Encender en caracter la posicion correspondiente a ese bit
+				//else
+					//Apagar en caracter la posicion correspondiente a ese bit
+
+
+				contador++;
+
+				//Comprobacion de que no hay mensaje, recorre hasta el fin de la imagen.
+				estado = (contador <= pixelsImagen);
+			}
+			
+			//Volcado del caracter recuperado
+			mensaje[indiceMensaje] = caracter;
+			indiceMensaje++;
+
+			if(estado == true)
+				estado=(indiceCadena < MAXTAM);
+
+		//Repite mientras no haya error y no se encuentre el final del mensaje.
+		}while((mensaje[indiceMensaje -1] != '\0') && estado);
+	
+		return mensaje;
 	}
 
 
