@@ -9,11 +9,9 @@ RUN apt-get update && apt-get install -y locales
     #apk upgrade && \
 
 
-
 # Copiamos los paquetes JSON
 COPY package*.json ./
 
-USER node
 
 # Instalar dependencias
 # Limpiar
@@ -26,7 +24,7 @@ WORKDIR /test
 # Definir la variable PATH a bin
 ENV PATH=/node_modules/.bin:$PATH
 
-
+USER node
 
 # Ejecutar los comandos siguientes
 CMD [ "gulp", "test" ]
