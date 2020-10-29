@@ -63,7 +63,8 @@ los pasos a seguir son:
 2. Tag
 `docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
-**Nota:** `docker image push is only supported with a tag of the format :owner/:repo_name/:image_name.`
+**Nota:** 
+`docker image push is only supported with a tag of the format :owner/:repo_name/:image_name.`
 
 3. Login:
 `cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
