@@ -121,6 +121,15 @@ class Imagen {
 
 
 	/**
+	Devuleve el tamaño en pixeles de la imagen
+	@returns {int} tamaño en pixeles de la imagen
+	*/
+	getTam(){
+		return this.getFilas * this.getColumnas
+	}
+
+
+	/**
 	Establece el valor de un pixel dada una posición
 	@param {int} posicion a insertar el pixel.
 	@param {int} valor del pixel a insertar.
@@ -143,12 +152,12 @@ class Imagen {
 	HU-1 Ocultar mensaje
 	*/
 	ocultar(mensaje){
-		// Más un caracter para el Centinela
-		//Tamaño de cadena
+		//Pixeles que ocupará:
+		//(longituda + centinela * 8 bit para calcular cuantos pixeles ocupará)
 		var pixelsCadena = ((mensaje.length +1) * 8);
 
 		//Tamaño de imagen
-		var pixelsImagen = (this.getFilas * this.getColumnas);
+		var pixelsImagen = this.getTam();
 	
 		//Comprobar que la cadena cabe en la imagen
 		if (pixelsCadena < pixelsImagen){
@@ -171,11 +180,12 @@ class Imagen {
 						this._datos.enciende(i);
 					else
 						this._datos.apaga(i);
-						
+					
+					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo del pixel i	
+
 					//Asignando pixel modificado
 					this._datos.setPixel(pixelTmp, pos)
 					pos ++;
-	
 				}
 			}
 		}
@@ -189,6 +199,12 @@ class Imagen {
 	HU-2 Comprobar si existe mensaje
 	*/
 	chequear(){	
+		//Tamaño de imagen
+		var pixelsImagen = (this.getFilas * this.getColumnas);
+
+		do{
+
+		}while(1);
 	}
 
 
