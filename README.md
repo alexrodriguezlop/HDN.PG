@@ -68,7 +68,10 @@ los pasos a seguir son:
 3. Login:
 `cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
 
-4. Push 
+**Nota:**
+Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para poder realizar el login sin problemas. 
+
+1. Push 
 `docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
 ___
