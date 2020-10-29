@@ -160,6 +160,8 @@ class Imagen {
 		//(longituda + centinela * 8 bit para calcular cuantos pixeles ocupará)
 		var pixelsCadena = ((mensaje.length +1) * 8);
 
+		var estado = false;
+
 		//Tamaño de imagen
 		var pixelsImagen = this.getNumPixel();
 	
@@ -192,7 +194,9 @@ class Imagen {
 					pos ++;
 				}
 			}
+			estado = true;
 		}
+		return estado;
 	}
 
 
