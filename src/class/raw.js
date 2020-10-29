@@ -31,16 +31,6 @@ class Raw {
 	}
 
 
-    /**
-    Obtiene un pixel dada una posición.
-    @param {int} posicion.
-	@returns {number} byte de píxeles.
-	*/
-	getPixel(posicion) {
-		return this._datos[posicion];
-	}
- 
-
 	/** 
 	Establece un pixel dada una posición.
     @param {number} pixel.
@@ -49,6 +39,16 @@ class Raw {
 	setPixel(pixel, posicion) {
         this._datos[posicion] = pixel;
     }
+
+
+    /**
+    Obtiene un pixel dada una posición.
+    @param {int} posicion.
+	@returns {number} byte de píxeles.
+	*/
+	getPixel(posicion) {
+		return this._datos[posicion];
+	}
 
 
 	/**
