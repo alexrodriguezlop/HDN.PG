@@ -29,6 +29,7 @@ describe("IMAGEN CLASS TEST", function() {
         it("14.1 Debería Ocultar el mensaje en una imagen", function() {
             var mensaje = "Hola";
 
+            assert.isNotTrue(imagen.ocultar(mensaje));
         });
     });
 
