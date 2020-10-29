@@ -48,8 +48,7 @@ Al final de cada instrucción RUN docker confirma los cambios como una capa de i
 Con lo cual a menos instrucciones RUN, menos capas y menos peso.
 
 Si en algún momento fuera necesario el cambio de imagen bastaría con editar la linea **FROM** del *dockerfile* y esta se reconstruiria automaticamente en dockerhub.
-
-Ademas he configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
+He configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
 
 ___
 ### Registros alternativos :new:
