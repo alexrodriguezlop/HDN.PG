@@ -106,7 +106,7 @@ ___
 ### Registros alternativos :new:
 Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
 
-los pasos a seguir son:
+Los pasos a seguir son:
 
 1. Buid:
 `docker build -t alexrodriguezlop/TAG .`
