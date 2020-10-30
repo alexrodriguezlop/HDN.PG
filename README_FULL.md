@@ -53,16 +53,16 @@ La estructura de directorios se plantea de la siguiente forma:
   - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
   - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
-
+  
 ___
 ### Docker :new:
 He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
 
-Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node (*siempre última LTS*), ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchisimas combinaciones.
+Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node (*siempre última LTS*), ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchísimas combinaciones.
 
-Voy a estudiar las opciones para determinar cual es la mas apropiada.
+Voy a estudiar las opciones para determinar cuál es la más apropiada.
 
 
 **Medición del built:**
@@ -80,10 +80,10 @@ Voy a estudiar las opciones para determinar cual es la mas apropiada.
 |node:lts-stretch| 2m41,508s| 0m12,411s | 1.02GB | Node:14.15 |
 |node:lts-stretch-slim| 1m48,063s | 0m8,462s | 244MB |Node:14.15|
 
-Toda la comprartiva se ha documentado [graficamente](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker).
+Toda la comparativa se ha documentado [gráficamente](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker).
 
-Teniendo en cuenta la comparativa de tiempos he elegido entre **node:lts-buster-slim** y **node:lts-stretch-slim** decidiendome por **node:lts-stretch-slim**.
-No es la más rapida a simple vista pero es la que tiene un mejor equilibrio entre sus tiempos y se encuentra entre las de menor tamaño.
+Teniendo en cuenta la comparativa de tiempos he elegido entre **node:lts-buster-slim** y **node:lts-stretch-slim** decidiéndome por **node:lts-stretch-slim**.
+No es la más rápida a simple vista pero es la que tiene un mejor equilibrio entre sus tiempos y se encuentra entre las de menor tamaño.
 
 He intentado que la imagen cumpla con una serie de requisitos:
 - Propósito único y bien definido
@@ -96,7 +96,33 @@ He optimizado la imagen reduciendo el tamaño de su capa ajustando las instrucci
 Al final de cada instrucción RUN docker confirma los cambios como una capa de imagen adicional.
 Con lo cual a menos instrucciones RUN, menos capas y menos peso.
 
-Si en algún momento fuera necesario el cambio de imagen bastaría con editar la linea **FROM** del *dockerfile* y esta se reconstruiria automaticamente en dockerhub.
+Si en algún momento fuera necesario el cambio de imagen bastaría con editar la línea **FROM** del *dockerfile* y esta se reconstruiría automáticamente en dockerhub.
+He configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
+
+___
+### Registros alternativos :new:
+Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
+
+Los pasos a seguir son:
+
+1. Buid:
+`docker build -t alexrodriguezlop/TAG .`
+
+2. Tag
+`docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
+
+**Nota:** 
+`docker image push is only supported with a tag of the format :owner/:repo_name/:image_name.`
+
+3. Login:
+`cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
+
+**Nota:**
+Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para poder realizar el login sin problemas. 
+
+1. Push 
+`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
+
 ___
 ### Últimos ficheros añadidos :new:
 
@@ -189,6 +215,7 @@ ___
 
 [Desplegando](https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-application-with-docker-on-ubuntu-20-04)
 
+[DockerFile](https://desarrollofront.medium.com/las-10-instrucciones-imprescindibles-para-crear-un-dockerfile-bb439ff836d9)
 ___
 
 **Autor:** Alejandro Rodríguez López
