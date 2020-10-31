@@ -108,10 +108,10 @@ Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
 
 Los pasos a seguir son:
 
-1. Buid:
+1. Buid:  
 `docker build -t alexrodriguezlop/TAG .`
 
-2. Tag
+1. Tag: 
 `docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
 **Nota:** 
@@ -123,8 +123,16 @@ Los pasos a seguir son:
 **Nota:**
 Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para poder realizar el login sin problemas. 
 
-1. Push 
+4. Push:  
 `docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
+___
+### Usando contenedores :new:
+#### DockerHub
+`docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg`
+
+#### GitHub container registry
+`docker run -t -v 'pwd':/test docker.pkg.github.com/alexrodriguezlop/hdn.pg/hdn.pg`
+
 
 ___
 ### Últimos ficheros añadidos :new:
