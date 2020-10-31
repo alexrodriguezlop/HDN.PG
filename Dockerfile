@@ -3,14 +3,15 @@ FROM node:lts-stretch-slim
 
 LABEL version="3.0.0" maintainer="alexrodriguezlop@gmail.com"
 
-
-RUN apt-get update              && \
-    apt-get install -y locales  && \
-    npm install -g gulp         && \  
-    mkdir -p /test/              && \
-    chown -R node:node /test/    && \
-    chown -R node:node /var/lib/apt/lists/
-
+RUN apt-get update                  && \ 
+    apt-get install -y locales      && \
+    npm install -g gulp             && \       
+    mkdir -p /test                  && \     
+    chown -R node:node /test/       && \
+    apt-get purge -y --auto-remove  && \
+    apt-get clean                   && \
+    rm -rf /var/lib/apt/lists/*                  
+    
 USER node
 
 WORKDIR /test
@@ -20,9 +21,9 @@ COPY package*.json ./
 
 # Instalar dependencias
 # Limpiar
-RUN npm install --no-optional --no-install-recommends && \ 
-    npm update && npm cache clean --force && \ 
-    rm /test/package*.json && rm -rf /var/lib/apt/lists/*
+RUN npm install --no-optional --no-install-recommends       && \ 
+    npm update && npm cache clean --force                   && \ 
+    rm /test/package*.json
 
 # Definir la variable PATH a bin
 ENV PATH=/test/node_modules/.bin:$PATH
