@@ -10,7 +10,6 @@ RUN apt-get update                                  && \
     chown -R node:node /test/                       && \
     chown -R node /usr/local/lib/node_modules       && \ 
     chown -R node /usr/local/bin                    && \
-    apt-get purge -y --auto-remove                  && \
     apt-get clean                                   && \
     rm -rf /var/lib/apt/lists/*                  
 
@@ -21,9 +20,11 @@ COPY package*.json ./
 
 # Instalar dependencias
 # Limpiar
-RUN npm install gulp-cli                                    && \
+RUN npm install gulp                                     && \
+    npm install gulp-cli                                 && \
     npm install --no-optional --no-install-recommends       && \ 
-    npm update && npm cache clean --force                   && \ 
+    npm update                                              && \ 
+    npm cache clean --force                                 && \ 
     rm /test/package*.json
 
 # Definir la variable PATH a bin
