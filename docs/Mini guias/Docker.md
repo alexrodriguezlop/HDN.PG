@@ -15,13 +15,22 @@
 
 `$ docker build -t alexrodriguezlop/alpine_v1 .`
 
+### Arrancar
+`docker run -it -v 'pwd':/test hdn.pg`
 
+- `it` Terminal interctivo
+- `t` Muestra el terminal pero no es interactivo
+- `-v 'pwd':/test` Copia el contenido del directorio actual en /test dentro de la maquina.
+
+Nota: Las commilas de `pwd` deben ser comillas a derecha: ```-`-``` 
 ---
 ### Eliminar
 
+Eliminar todas las imágenes: 
+`docker image rm -f $(docker image ls -aq)`
 
 
-##Dockerhub
+## Dockerhub
 
 ---
 ### Commit
