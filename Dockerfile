@@ -22,7 +22,7 @@ COPY package*.json ./
 # Instalar dependencias
 # Limpiar
 RUN npm install -g gulp-cli                                 && \
-    npm install --no-optional --no-install-recommends       && \ 
+    npm install                                             && \ 
     npm update                                              && \ 
     npm cache clean --force                                 && \ 
     rm /test/package*.json
