@@ -8,8 +8,9 @@ WORKDIR /test
 RUN apt-get update                                  && \ 
     apt-get install -y locales                      && \
     chown -R node:node /test/                       && \
-    chown -R node /usr/local/lib/node_modules       && \ 
-    chown -R node /usr/local/bin                    && \
+    chown -R node:node /usr/local/lib/node_modules  && \ 
+    chown -R node:node /usr/local/share             && \
+    chown -R node:node /usr/local/bin               && \
     apt-get clean                                   && \
     rm -rf /var/lib/apt/lists/*                  
 
@@ -20,8 +21,7 @@ COPY package*.json ./
 
 # Instalar dependencias
 # Limpiar
-RUN npm install gulp                                     && \
-    npm install gulp-cli                                 && \
+RUN npm install -g gulp-cli                                 && \
     npm install --no-optional --no-install-recommends       && \ 
     npm update                                              && \ 
     npm cache clean --force                                 && \ 
