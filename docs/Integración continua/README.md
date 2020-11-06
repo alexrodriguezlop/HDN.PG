@@ -10,7 +10,11 @@ Bastará con seguir los siguientes pasos:
 - 4. Integrar el badge en nuestro README
   
 ![URL](1.png) 
+
+
 ![URL](2.png) 
+
+
 ![URL](3.png) 
 
 Para utilizar nuestro docker he incluido las siguientes lineas: 
@@ -36,7 +40,7 @@ Descargamos la imagen
 **script:**
 Ejecutamos la imagen
 
-En notificaciones lo confiro de modo que solo me avise via e-mail en caso de fallo.
+En notificaciones lo configuro de modo que solo me avise via e-mail en caso de fallo.
 
 ### Usando CIrcleCI
 Su configuración es muy similar a la de travis:
@@ -48,8 +52,10 @@ Su configuración es muy similar a la de travis:
 - 4. Integrar el badge en nuestro README siguiendo su [guía](https://circleci.com/docs/2.0/status-badges/).
 
 ![URL](4.png) 
+
+
 ![URL](5.png) 
-![URL](6.png) 
+
 
 ```
 version: 2.1
