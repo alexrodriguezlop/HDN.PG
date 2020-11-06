@@ -5,6 +5,7 @@ Microservicio para el cifrado y descifrado de mensajes en imágenes.
 
 [![Build Status](https://travis-ci.org/alexrodriguezlop/HDN.PG.svg?branch=master)](https://travis-ci.org/alexrodriguezlop/HDN.PG)
 
+[![CircleCI](https://circleci.com/gh/alexrodriguezlop/hdn.pg.svg?style=svg)](https://app.circleci.com/pipelines/github/alexrodriguezlop/HDN.PG)
 
 ___
 ### [README Completo](https://github.com/alexrodriguezlop/HDN.PG/blob/master/README_FULL.md)
@@ -139,7 +140,7 @@ ___
 ___
 ### Integración continua :new:
 ¿Por que TravisCi?
-Me decanté por Travis como primera plataforma por dos motivos fundamentales. Su fácil integración con GitHub y su coste, ya que es gratuito y no tiene costes de mantenimiento. 
+Me decanté por Travis como primera plataforma por dos motivos fundamentales. Su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
 Es una herramienta muy robusta y bien documentada.
 Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
 He utilizado mi propia imagen Docker.
@@ -147,7 +148,7 @@ Es sencillo utilizar tu propio Docker solo hay que editar el fichero [travis.yml
 
 
 ¿Por qué CircleCi?
-Por otro lado CircleCi también dispone de integración con GitHub y su coste es gratuito. 
+Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y dice ser mas rápido que travis. 
 Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero [config.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml).
 Aunque dispone de distintos planes el plan free incluye 1 trabajo simultáneo con acceso a Linux, lo cual es suficiente para mis necesidades.
 Además cuenta con una gran comunidad y es sencillo encontrar información para resolver los problemas que puedan surgir.
