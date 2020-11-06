@@ -128,7 +128,7 @@ Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para p
 4. Push:  
 `docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 ___
-### Usando contenedores :new:
+### Usando contenedores
 #### DockerHub
 `docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg`
 
