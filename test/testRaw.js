@@ -12,4 +12,11 @@ describe("RAW CLASS TEST", function() {
         });
     });
 
+    context('2. setPixel', function(){
+        raw.setPixel(5, 1);
+        it("1.1 Debería haber establecido el pixel 1 a 5", function() {
+            assert.equal(raw.getPixel(1), 5, "Debería ser 5");
+        });
+    });
+
 });
