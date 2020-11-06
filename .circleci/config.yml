@@ -8,4 +8,6 @@ workflows:
       docker:
         - image: alexrodriguezlop/hdn.pg
       steps:
-          - docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg
+        - run:
+          name: "Arrancando maquina"
+          command: docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg
