@@ -4,5 +4,8 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
-
+      #- node/test
+        docker:
+          - image: alexrodriguezlop/hdn.pg
+        steps:
+            - docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg
