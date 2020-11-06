@@ -2,6 +2,18 @@ language: node_js
 node_js:
   - "12"
   - "14"
+os:
+  - linux
+services:
+  - docker
 before_install:
-  - npm install -g gulp-cli
-script: gulp test
+  - docker pull alexrodriguezlop/hdn.pg
+script:
+  - docker run -t -v 'pwd':/test hdn.pg
+notifications:
+  email:
+    recipients:
+      - alexrodriguezlop@gmail.com
+    on_success: never 
+    on_failure: always 
+    #email: false
