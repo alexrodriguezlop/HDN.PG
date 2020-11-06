@@ -135,20 +135,23 @@ ___
 
 ___
 ### Integración continua
-¿Por que travisCi?
-Me decante por travis como primera plataforma por dos motivos fundamentales. Su facíl integración con gitHub y su coste, ya que es gratuito y no tiene costes de mantenimiento. 
+¿Por que TravisCi?
+Me decanté por Travis como primera plataforma por dos motivos fundamentales. Su fácil integración con GitHub y su coste, ya que es gratuito y no tiene costes de mantenimiento. 
 Es una herramienta muy robusta y bien documentada.
-
 Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
-En la versión gratuita anda un poco limitado ya que ni siquiera podemos hacer hacer uso de nuestro propio docker
+He utilizado mi propia imagen Docker.
+Es sencillo utilizar mi propio Docker solo hay que seguir estos [pasos]() en el fichero travis.yml.
 
-¿Por que circle ci?
 
-Usando mi docker
+¿Por qué CircleCi?
+Por otro lado CircleCi también dispone de integración con GitHub y su coste es gratuito. 
+Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero yml.
+Aunque dispone de distintos planes el plan free incluye 1 trabajo simultáneo con acceso a Linux, lo cual es suficiente para mis necesidades.
+Además cuenta con una gran comunidad y es sencillo encontrar información para resolver los problemas que puedan surgir.
+Como su política es de pay-per-use la versión free dispone de 2.500 créditos.
 
-Guía de configuración___
+Además, ambas herramientas proporcionan badges que podemos incluir en nuestro repositorio y nos permiten conocer fácilmente el estado de los test.
 
-Poner badges
 ### Últimos ficheros añadidos :new:
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
