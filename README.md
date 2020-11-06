@@ -154,7 +154,7 @@ Como su política es de pay-per-use la versión free dispone de 2.500 créditos.
 
 Además, ambas herramientas proporcionan badges que podemos incluir en nuestro repositorio y nos permiten conocer fácilmente el estado de los test.
 
-Las configuraciones llevadas a cabo se detallan [aquí](). 
+Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
 
 ### Últimos ficheros añadidos :new:
 
