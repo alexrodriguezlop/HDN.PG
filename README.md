@@ -5,7 +5,7 @@ Microservicio para el cifrado y descifrado de mensajes en imágenes.
 
 [![Build Status](https://travis-ci.org/alexrodriguezlop/HDN.PG.svg?branch=master)](https://travis-ci.org/alexrodriguezlop/HDN.PG)
 
-[![CircleCI](https://circleci.com/gh/alexrodriguezlop/hdn.pg.svg?style=svg)](https://app.circleci.com/pipelines/github/alexrodriguezlop/HDN.PG)
+[![CircleCI](https://circleci.com/gh/alexrodriguezlop/HDN.PG.svg?style=shield)](https://app.circleci.com/pipelines/github/alexrodriguezlop/HDN.PG)
 
 ___
 ### [README Completo](https://github.com/alexrodriguezlop/HDN.PG/blob/master/README_FULL.md)
