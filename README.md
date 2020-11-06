@@ -58,7 +58,7 @@ La estructura de directorios se plantea de la siguiente forma:
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
   - 
 ___
-### Docker :new:
+### Docker 
 He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
@@ -103,7 +103,7 @@ Si en algún momento fuera necesario el cambio de imagen bastaría con editar la
 He configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
 
 ___
-### Registros alternativos :new:
+### Registros alternativos
 Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
 
 Los pasos a seguir son:
@@ -133,8 +133,22 @@ ___
 #### GitHub container registry
 `docker run -t -v 'pwd':/test docker.pkg.github.com/alexrodriguezlop/hdn.pg/hdn.pg`
 
-
 ___
+### Integración continua
+¿Por que travisCi?
+Me decante por travis como primera plataforma por dos motivos fundamentales. Su facíl integración con gitHub y su coste, ya que es gratuito y no tiene costes de mantenimiento. 
+Es una herramienta muy robusta y bien documentada.
+
+Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
+En la versión gratuita anda un poco limitado ya que ni siquiera podemos hacer hacer uso de nuestro propio docker
+
+¿Por que circle ci?
+
+Usando mi docker
+
+Guía de configuración___
+
+Poner badges
 ### Últimos ficheros añadidos :new:
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
@@ -143,9 +157,9 @@ ___
   
 - [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) 
   
-- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) :new:
+- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) 
 
-- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) :new:
+- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) 
 
 ___
 ### Historias de usuario
