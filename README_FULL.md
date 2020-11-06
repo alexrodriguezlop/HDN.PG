@@ -53,9 +53,8 @@ La estructura de directorios se plantea de la siguiente forma:
   - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
   - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
-  
 ___
-### Docker :new:
+### Docker 
 He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
 La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
 Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
@@ -100,15 +99,15 @@ Si en algún momento fuera necesario el cambio de imagen bastaría con editar la
 He configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
 
 ___
-### Registros alternativos :new:
+### Registros alternativos
 Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
 
 Los pasos a seguir son:
 
-1. Buid:
+1. Buid:  
 `docker build -t alexrodriguezlop/TAG .`
 
-2. Tag
+1. Tag: 
 `docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
 
 **Nota:** 
@@ -120,9 +119,52 @@ Los pasos a seguir son:
 **Nota:**
 Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para poder realizar el login sin problemas. 
 
-1. Push 
+4. Push:  
 `docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
+___
+### Usando contenedores :new:
+#### DockerHub
+`docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg`
 
+#### GitHub container registry
+`docker run -t -v 'pwd':/test docker.pkg.github.com/alexrodriguezlop/hdn.pg/hdn.pg`
+
+___
+### Integración continua :new:
+¿Por que TravisCi?
+Me decanté por Travis como primera plataforma por dos motivos fundamentales. Su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
+Es una herramienta muy robusta y bien documentada.
+Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
+He utilizado mi propia imagen Docker.
+Es sencillo utilizar tu propio Docker solo hay que editar el fichero [travis.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml).
+
+
+¿Por qué CircleCi?
+Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y dice ser mas rápido que travis. 
+Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero [config.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml).
+Aunque dispone de distintos planes el plan free incluye 1 trabajo simultáneo con acceso a Linux, lo cual es suficiente para mis necesidades.
+Además cuenta con una gran comunidad y es sencillo encontrar información para resolver los problemas que puedan surgir.
+Como su política es de pay-per-use la versión free dispone de 2.500 créditos.
+
+Además, ambas herramientas proporcionan badges que podemos incluir en nuestro repositorio y nos permiten conocer fácilmente el estado de los test.
+
+Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
+
+### Últimos ficheros añadidos :new:
+
+- [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
+
+- [Fichero **package-lock.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package-lock.json) 
+  
+- [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) 
+  
+- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) 
+
+- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) 
+
+- [Fichero **.travis.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml) :new: 
+
+- [Fichero **config.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml) :new:
 ___
 ### Últimos ficheros añadidos :new:
 
