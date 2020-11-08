@@ -1,14 +1,13 @@
 version: 2.1
-  jobs:
-    build:
-      docker:
-        - image: alexrodriguezlop/hdn.pg
-      working_directory: /app
-      branches:
-        only:
-          - master
-          
-      steps:
-        - checkout
-        - run: gulp test
+jobs:
+  build:
+    docker:
+      - image: alexrodriguezlop/hdn.pg
+    working_directory: /app
+    branches:
+      only:
+        - master
 
+    steps:
+      - checkout
+      - run: gulp test
