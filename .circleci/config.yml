@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: alexrodriguezlop/hdn.pg
     working_directory: /app
-    branches:
-      only:
-        - master
 
     steps:
       - checkout
