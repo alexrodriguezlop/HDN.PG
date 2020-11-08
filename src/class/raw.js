@@ -57,7 +57,7 @@ class Raw {
 
 	*/
 	enciende(posicion){
-        this._datos[posicion] = this._datos[posicion] | '00000001' ; //enciende 
+        this._datos[posicion] = (this._datos[posicion] | '00000001'); //enciende 
     }
 
 
@@ -82,7 +82,7 @@ class Raw {
 
 	*/
 	apaga(posicion){
-        this._datos[posicion] = this._datos[posicion] & '11111110' ; //apaga 
+        this._datos[posicion] = (this._datos[posicion] & '11111110') ; //apaga 
 	} 
 
 }
