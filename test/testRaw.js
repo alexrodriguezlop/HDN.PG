@@ -13,9 +13,26 @@ describe("RAW CLASS TEST", function() {
     });
 
     context('2. setPixel', function(){
-        raw.setPixel(5, 1);
-        it("1.1 Debería haber establecido el pixel 1 a 5", function() {
-            assert.equal(raw.getPixel(1), 5, "Debería ser 5");
+        raw.setPixel(0b00000100, 1);
+
+        it("1.1 Debería haber establecido el pixel 1 a 4 (00000100)", function() {
+            assert.equal(raw.getPixel(1), 0b00000100, "Debería ser 4 (00000100)");
+        });
+    });
+
+    context('3. Enciende', function(){
+        raw.enciende(1);
+
+        it("1.1 Debería Encender el bit menos significativo del pixel 1", function() {
+            assert.isFalse(raw.check(1),"Debería ser True (Último Encendido)")
+        });
+    });
+
+    context('4. Apaga', function(){
+        raw.apaga(1);
+
+        it("1.1 Debería Apagar el bit menos significativo del pixel 1", function() {
+            assert.isFalse(raw.check(1),"Debería ser FALSE (Último apagado)")
         });
     });
 
