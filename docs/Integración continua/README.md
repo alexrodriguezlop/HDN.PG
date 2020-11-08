@@ -59,14 +59,15 @@ Su configuración es muy similar a la de travis:
 
 ```
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+jobs:
+  build:
+    docker:
+      - image: alexrodriguezlop/hdn.pg
+    working_directory: ~/repo
 
-
+    steps:
+      - checkout
+      - run: gulp test
 ```
 
 **Autor:** Alejandro Rodríguez López
