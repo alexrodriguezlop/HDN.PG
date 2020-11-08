@@ -8,5 +8,6 @@ version: 2.1
         only:
           - master
       steps:
+        - checkout
         - run: gulp test
 
