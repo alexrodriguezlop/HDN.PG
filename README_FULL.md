@@ -131,17 +131,22 @@ ___
 
 ___
 ### Integración continua :new:
-¿Por que TravisCi?
-Me decanté por Travis como primera plataforma por dos motivos fundamentales. Su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
+**¿Por que TravisCi?**
+
+Me decanté por Travis como primera plataforma por dos motivos fundamentales. 
+Su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
 Es una herramienta muy robusta y bien documentada.
 Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
-He utilizado mi propia imagen Docker.
-Es sencillo utilizar tu propio Docker solo hay que editar el fichero [travis.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml).
+
+He utilizado mi propia imagen Docker. Para ello basta con especificar su uso en el fichero [travis.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml).
 
 
-¿Por qué CircleCi?
-Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y dice ser mas rápido que travis. 
+**¿Por qué CircleCi?**
+
+Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y dice ser mas rápido que travis.
+ 
 Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero [config.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml).
+
 Aunque dispone de distintos planes el plan free incluye 1 trabajo simultáneo con acceso a Linux, lo cual es suficiente para mis necesidades.
 Además cuenta con una gran comunidad y es sencillo encontrar información para resolver los problemas que puedan surgir.
 Como su política es de pay-per-use la versión free dispone de 2.500 créditos.
@@ -150,6 +155,7 @@ Además, ambas herramientas proporcionan badges que podemos incluir en nuestro r
 
 Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
 
+___
 ### Últimos ficheros añadidos :new:
 
 - [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
