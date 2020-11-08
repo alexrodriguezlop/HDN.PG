@@ -4,12 +4,13 @@ orbs:
 workflows:
   node-tests:
     jobs:
-     - run:
-          name: Instalación de paquetes
-          command: |
-            npm install -g gulp-cli |
-            npm install
-      - run:
-          name: Test
-          command: gulp test
+      build:
+        docker:
+          - image: alexrodriguezlop/hdn.pg
+        working_directory: /app
+        branches:
+          only:
+            - master
+        steps:
+          - run: gulp test
 
