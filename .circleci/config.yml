@@ -4,5 +4,12 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
+     - run:
+          name: Instalación de paquetes
+          command: |
+            npm install -g gulp-cli |
+            npm install
+      - run:
+          name: Test
+          command: gulp test
 
