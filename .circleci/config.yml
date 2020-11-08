@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: alexrodriguezlop/hdn.pg
-    working_directory: /app
+    working_directory: ~/repo
 
     steps:
       - checkout
