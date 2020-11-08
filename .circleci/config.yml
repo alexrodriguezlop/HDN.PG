@@ -1,16 +1,12 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      build:
-        docker:
-          - image: alexrodriguezlop/hdn.pg
-        working_directory: /app
-        branches:
-          only:
-            - master
-        steps:
-          - run: gulp test
+  jobs:
+    build:
+      docker:
+        - image: alexrodriguezlop/hdn.pg
+      working_directory: /app
+      branches:
+        only:
+          - master
+      steps:
+        - run: gulp test
 
