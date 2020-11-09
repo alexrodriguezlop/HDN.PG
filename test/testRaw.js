@@ -6,33 +6,39 @@ describe("RAW CLASS TEST", function() {
   let raw = new Raw(3,3);
 
     context('1. Constructor', function(){
-
         it("1.1 Debería haber sido creado un objeto raw de 3x3", function() {
             assert.equal(raw.getRaw.byteLength, 9, "Debería ser 9");
         });
     });
 
     context('2. setPixel', function(){
-        raw.setPixel(0b00000100, 1);
-        console.log(raw.getPixel(1));
-        it("1.1 Debería haber establecido el pixel 1 a 4 (00000100)", function() {
-            assert.equal(raw.getPixel(1), 0b00000100, "Debería ser 4 (00000100)");
+        raw.setPixel(0b01, 1);
+
+        it("1.1 Debería haber establecido el pixel 1 a 1 (00000001)", function() {
+            assert.equal(raw.getPixel(1), 0b01, "Debería ser 1 (00000001)");
         });
+        
     });
 
     context('3. Enciende', function(){
-        raw.enciende(1,7);
-
-        it("1.1 Debería Encender el bit 0 del pixel 1", function() {
-            assert.equal(raw.getPixel(1), 0b10000100,"Debería ser True")
+        it("1.1 Debería Encender el bit 7 del pixel 1 (10000001)", function() {
+            raw.enciende(1,7);
+            assert.equal(raw.getPixel(1), 0b10000001,"Debería ser 10000001")
+        });
+        it("1.1 Debería Encender el bit 4 del pixel 1 (10010001)", function() {
+            raw.enciende(1,4);
+            assert.equal(raw.getPixel(1), 0b10010001,"Debería ser 10010001")
         });
     });
 
     context('4. Apaga', function(){
-        raw.apaga(1);
-
-        it("1.1 Debería Apagar el bit menos significativo del pixel 1", function() {
-            assert.isFalse(raw.check(1),"Debería ser FALSE (Último apagado)")
+        it("1.1 Debería Apagar el bit 7 del pixel 1 (00010001)", function() {
+            raw.apaga(1, 7);
+            assert.equal(raw.getPixel(1), 0b10001,"Debería ser 00010001")
+        });
+        it("1.1 Debería Apagar el bit 4 del pixel 1 00000001", function() {
+            raw.apaga(1, 4);
+            assert.equal(raw.getPixel(1), 0b01,"Debería ser 00000001")
         });
     });
 
