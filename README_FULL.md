@@ -156,23 +156,7 @@ Además, ambas herramientas proporcionan badges que podemos incluir en nuestro r
 Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
 
 ___
-### Últimos ficheros añadidos :new:
-
-- [Fichero **package.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package.json)
-
-- [Fichero **package-lock.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/package-lock.json) 
-  
-- [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) 
-  
-- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) 
-
-- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) 
-
-- [Fichero **.travis.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml) :new: 
-
-- [Fichero **config.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml) :new:
-___
-### Últimos ficheros añadidos :new:
+### Últimos ficheros añadidos 
 
 - [Fichero **imagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js)
 
@@ -186,22 +170,20 @@ ___
   
 - [Fichero **gulpfile.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js) 
   
-- [Fichero **test/testImagen.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js)
+- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) 
 
-- [Fichero **test/testRaw.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
-  
-- [Fichero **test/test.js**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
+- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) 
 
-- [Fichero **Dockerfile**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile) :new:
+- [Fichero **.travis.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml)  
 
-- [Fichero **.dockerignore**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.dockerignore) :new:
+- [Fichero **config.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml) 
+
 ___
 ### Configuración 
 
 - [Configuración de GitHub y de repositorios](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/configuraci%C3%B3n%20del%20repositorio)
 - [Primeros pasos](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Primeros%20pasos)
 - [Testeo y automatización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Testeo%20y%20automatizaci%C3%B3n) 
-
 
 
 ___
