@@ -54,11 +54,17 @@ class Raw {
 	/**
 	Enciende el bit menos significativo de un pixel. 
 	@param {int} posición del pixel.
+	@param {int} bit a operar.
+	Nota: A tener en cuenta que 0 es la posición menos significativa
+		  y 7 la mas significativa.
 
 	*/
-	enciende(posicion){
-        this._datos[posicion] = (this._datos[posicion] | '00000001'); //enciende 
-    }
+	enciende(posicion, bit){
+		if((bit >= 0) && (bit <8))
+			var mask = 0b1 << bit;
+			console.log(mask);
+		this._datos[posicion] = (this._datos[posicion] | mask); //enciende 
+	}
 
 
 
