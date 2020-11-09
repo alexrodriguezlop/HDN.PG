@@ -60,96 +60,20 @@ La estructura de directorios se plantea de la siguiente forma:
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
   - 
 ___
-### Docker 
-He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
-La idea es que el contenedor sea ligero y contenga los paquetes mínimos para un correcto funcionamiento.
-Es importante también tener en cuenta el tiempo de creación de la imagen, un dato muy importante, ya que influirá en gran medida cuando levantemos el contenedor y se espera que este proceso transcurra lo más rápido posible. 
-
-Después de revisar las opciones ofertadas por la plataforma he centrado mi atención en varias versiones oficiales de node (*siempre última LTS*), ya que me ofrece una gran cantidad de contenedores base y flexibilidad a la hora de elegir una versión de node debido a que dispone de muchísimas combinaciones.
-
-Voy a estudiar las opciones para determinar cuál es la más apropiada.
-
-
-**Medición del built:**
-`time docker build -t alexrodriguezlop/tag .`
-
-**Medición del run:**
-`time docker run -t -v 'pwd':/test alexrodriguezlop/tag `
-
-#### Comparativa:
-| **Versión** | **Tiempo Build** | **Tiempo Run** | **Tamaño** | **Descripción**|
-| -- | -- | -- | -- | -- |
-|node:lts-alpine3.12| 1m33,689s | 0m14,055s | 168MB | Alpine 3.12 y Node:14.15 |
-|node:lts-buster | 1m32,570s | 0m10,525s | 1GB |  Node:14.15 |
-|node:lts-buster-slim| 1m47,808s| 0m9,684s | 265MB |  Node:14.15 | 
-|node:lts-stretch| 2m41,508s| 0m12,411s | 1.02GB | Node:14.15 |
-|node:lts-stretch-slim| 1m48,063s | 0m8,462s | 244MB |Node:14.15|
-
-Toda la comparativa se ha documentado [gráficamente](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Comparativa%20de%20docker).
-
-Teniendo en cuenta la comparativa de tiempos he elegido entre **node:lts-buster-slim** y **node:lts-stretch-slim** decidiéndome por **node:lts-stretch-slim**.
-No es la más rápida a simple vista pero es la que tiene un mejor equilibrio entre sus tiempos y se encuentra entre las de menor tamaño.
-
-He intentado que la imagen cumpla con una serie de requisitos:
-- Propósito único y bien definido
-- Diseño genérico con la capacidad de inyectar configuración en tiempo de ejecución
-- Tamaño pequeño
-- Fácil de entender
-
-He optimizado la imagen reduciendo el tamaño de su capa ajustando las instrucciones de RUN.
-
-Al final de cada instrucción RUN docker confirma los cambios como una capa de imagen adicional.
-Con lo cual a menos instrucciones RUN, menos capas y menos peso.
-
-Si en algún momento fuera necesario el cambio de imagen bastaría con editar la línea **FROM** del *dockerfile* y esta se reconstruiría automáticamente en dockerhub.
-He configurado mi repositorio de DockerHub con un triger que reconstruye la imagen ante cualquier cambio en los ficheros relacionados con ella en mi repositorio de GitHub.
-
-___
-### Registros alternativos
-Como registro alternativo he utilizado GitHub, el uso es muy sencillo.
-
-Los pasos a seguir son:
-
-1. Buid:  
-`docker build -t alexrodriguezlop/TAG .`
-
-1. Tag: 
-`docker tag ID_IMAGEN docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
-
-**Nota:** 
-`docker image push is only supported with a tag of the format :owner/:repo_name/:image_name.`
-
-3. Login:
-`cat ./TOKEN.txt | docker login https://docker.pkg.github.com -u alexrodriguezlop@gmail.com --password-stdin`
-
-**Nota:**
-Es necesario crear un token de acceso y guardarlo en el fichero TOKEN.txt para poder realizar el login sin problemas. 
-
-4. Push:  
-`docker push docker.pkg.github.com/alexrodriguezlop/hdn.pg/TAG:Versión`
-___
-### Usando contenedores
-#### DockerHub
-`docker run -t -v 'pwd':/test alexrodriguezlop/hdn.pg`
-
-#### GitHub container registry
-`docker run -t -v 'pwd':/test docker.pkg.github.com/alexrodriguezlop/hdn.pg/hdn.pg`
-
-___
 ### Integración continua :new:
-**¿Por que TravisCi?**
+**¿Por que [TravisCi](https://travis-ci.org/)?**
 
-Me decanté por Travis como primera plataforma por dos motivos fundamentales. 
-Su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
+Me decanté por Travis como primera plataforma, en este caso por su versión **org** en la que ya disponia de una cuenta. 
+Su elección se centra en dos motivos fundamentales, su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
 Es una herramienta muy robusta y bien documentada.
 Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
 
 He utilizado mi propia imagen Docker. Para ello basta con especificar su uso en el fichero [travis.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml).
 
 
-**¿Por qué CircleCi?**
+**¿Por qué [CircleCi](https://circleci.com/)?**
 
-Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y dice ser mas rápido que travis.
+Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y he verificado que es muchísimo más rápido que travis lo cual ha suscitado mi interés.
  
 Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero [config.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml).
 
