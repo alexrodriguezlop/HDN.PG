@@ -86,6 +86,9 @@ class Raw {
     /**
 	Apaga el bit menos significativo de un pixel. 
 	@param {int} posición del pixel.
+	@param {int} bit a operar.
+	Nota: A tener en cuenta que 0 es la posición menos significativa
+		  y 7 la mas significativa.
 
 	*/
 	apaga(posicion, bit){
