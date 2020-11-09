@@ -60,10 +60,11 @@ class Raw {
 
 	*/
 	enciende(posicion, bit){
-		if((bit >= 0) && (bit <8))
+		if((bit >= 0) && (bit <8)){
 			var mask = 0b1 << bit;
-			console.log(mask);
-		this._datos[posicion] = (this._datos[posicion] | mask); //enciende 
+
+			this._datos[posicion] = (this._datos[posicion] | mask); //enciende
+		}
 	}
 
 
@@ -87,8 +88,12 @@ class Raw {
 	@param {int} posición del pixel.
 
 	*/
-	apaga(posicion){
-        this._datos[posicion] = (this._datos[posicion] & '11111110') ; //apaga 
+	apaga(posicion, bit){
+		if((bit >=0) && (bit <8)){
+			var mask = 0b1 << bit;
+			mask = ~mask;
+			this._datos[posicion] = (this._datos[posicion] & mask) ; //apaga 
+		}
 	} 
 
 }
