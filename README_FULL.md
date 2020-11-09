@@ -1,7 +1,10 @@
 # [HDN.PG](https://alexrodriguezlop.github.io/HDN.PG/)
 Microservicio para el cifrado y descifrado de mensajes en imágenes.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.org/alexrodriguezlop/HDN.PG.svg?branch=master)](https://travis-ci.org/alexrodriguezlop/HDN.PG)
+[![CircleCI](https://circleci.com/gh/alexrodriguezlop/HDN.PG.svg?style=shield)](https://app.circleci.com/pipelines/github/alexrodriguezlop/HDN.PG)
+
 
 ___
 ### Motivación de la idea
