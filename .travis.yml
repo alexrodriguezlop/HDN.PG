@@ -1,14 +1,11 @@
-language: node_js
-services:
-  - docker
-before_install:
-  - docker pull alexrodriguezlop/hdn.pg
+# Arrancamos nuestro docker, la orden RUN implica la orden PULL.
 script:
   - docker run -t -v `pwd`:/test alexrodriguezlop/hdn.pg
+# Configuramos las noticaciones.
+# Denegamos es envío de email
 notifications:
   email:
     recipients:
       - alexrodriguezlop@gmail.com
     on_success: never 
-    on_failure: always 
-    #email: false
+    on_failure: never 
