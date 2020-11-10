@@ -1,6 +1,17 @@
-# Arrancamos nuestro docker, la orden RUN implica la orden PULL.
-script:
-  - docker run -t -v `pwd`:/test alexrodriguezlop/hdn.pg
+language: node_js
+# Establecemos para que versiones de node se testeará
+node_js:
+  - "12"
+  - "14"
+# Indicamos los sistemas donde se realizarán los test
+os:
+  - linux
+  - osx
+# Instalamos Gulp-cli de forma global en la imagen 
+before_install:
+  - npm install -g gulp-cli
+# Lanzamos los test
+script: gulp test 
 # Configuramos las noticaciones.
 # Denegamos es envío de email
 notifications:
@@ -8,4 +19,4 @@ notifications:
     recipients:
       - alexrodriguezlop@gmail.com
     on_success: never 
-    on_failure: never 
+    on_failure: never

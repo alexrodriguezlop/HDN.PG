@@ -2,9 +2,11 @@ version: 2.1
 jobs:
   build:
     docker:
+    # Especificamos la imagen a usar.
       - image: alexrodriguezlop/hdn.pg
+    # Establecemos el directorio de trabajo.
     working_directory: ~/repo
-
+    # Hacemos checkout y lanzamos la tarea test de Gulp.
     steps:
       - checkout
       - run: gulp test
