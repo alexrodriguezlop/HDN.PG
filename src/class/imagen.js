@@ -187,7 +187,7 @@ class Imagen {
 					else
 						this._datos.apaga(i,1);
 					
-					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo del pixel i	
+					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (1) del pixel i	
 
 					//Asignando pixel modificado
 					this._datos.setPixel(pixelTmp, pos)
