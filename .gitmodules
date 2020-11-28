@@ -1,0 +1,3 @@
+[submodule "HashFinderDT"]
+	path = HashFinderDT
+	url = git@github.com:alexrodriguezlop/HashFinderDT.git
