@@ -211,9 +211,12 @@ class Imagen {
 		var pixelsImagen = getNumPixel();
 
 		do{
+			
+			carcater = 0b1
 			//Recorre los pixeles de 8 en 8 extrayendo su bit menos significativo(1).
 			//Cada grupo de 8 sin encontrar el centinela será un caracter.
-		}while(1);//No llegue al final y no encuentre el centinela (\0)
+		}while(pixel < pixelsImagen && caracter != "/0");
+		//No llegue al final y no encuentre el centinela (\0)
 	}
 
 
