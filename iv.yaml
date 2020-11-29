@@ -3,4 +3,3 @@ lenguaje: javascript
 test: test/test.js
 taskfile: gulpfile.js
 URL: https://hash-finder-dt.alexrodriguezlop.vercel.app/api/app?msg=test
-
