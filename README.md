@@ -58,7 +58,7 @@ La estructura de directorios se plantea de la siguiente forma:
   - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
   - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
-  - 
+  
 ___
 ### Integración continua :new:
 **¿Por que [TravisCi](https://travis-ci.org/)?**
@@ -85,6 +85,41 @@ Además, ambas herramientas proporcionan badges que podemos incluir en nuestro r
 
 Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
 
+___
+### Serverless :new:
+
+**Despliegue de una función usando Vercel:**
+
+Se ha desarrollado una función que consulta la fecha y hora en que se cifró un texto en base a su hash.
+Esta información se almacena en un fichero JSON y se compoine de:
+
+```
+{
+    "lista":
+    [
+        { 	
+            "hash": "098f6bcd4621d373cade4e832627b4f6",
+            "fecha": "22-9-2020",
+            "hora": "15:00",
+            "comentario": "test (Los mensajes no se almacenan. esto es un comentario)"
+        }
+    ]
+}
+```
+
+Esta función pretende dar solución a la [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13)
+
+[Explicación de su realización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Vercel)
+[código](https://github.com/alexrodriguezlop/HashFinderDT/blob/1f31f70c455102fb89d7b3222d2125cf8d5edf26/api/app.js)
+
+**Despliegue de un bot para telegram usando vercel:**
+Se ha desarrollado un bot para telegram que proporciona acceso a la fecha y hora en que se cifró un mensaje.
+
+[Repositorio del bot](https://github.com/alexrodriguezlop/HashFinderDT)
+[Acceso al BOT @H20DTbot](https://t.me/H20DTbot)
+[Explicación de su desarrollo](https://github.com/alexrodriguezlop/HashFinderDT/blob/main/README.md)
+
+Tanto el bot como la función han sido desarrolladas en un nuevo repositorio.
 ___
 ### Últimos ficheros añadidos :new:
 
