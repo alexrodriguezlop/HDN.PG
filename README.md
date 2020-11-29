@@ -91,7 +91,7 @@ ___
 **Despliegue de una función usando Vercel:**
 
 Se ha desarrollado una función que consulta la fecha y hora en que se cifró un texto en base a su hash.
-Esta información se almacena en un fichero JSON y se compoine de:
+Esta información se almacena en un fichero JSON y se compone de:
 
 ```
 {
@@ -119,13 +119,13 @@ Se ha desarrollado un bot para telegram que proporciona acceso a la fecha y hora
 [Acceso al BOT @H20DTbot](https://t.me/H20DTbot)
 [Explicación de su desarrollo](https://github.com/alexrodriguezlop/HashFinderDT/blob/main/README.md)
 
-Tanto el bot como la función han sido desarrolladas en un nuevo repositorio.
+Tanto el bot como la función han sido desarrolladas en un nuevo repositorio, en el cual se han creado los [issues](https://github.com/alexrodriguezlop/HashFinderDT/issues?q=is%3Aissue+is%3Aclosed) correspondientes
 ___
 ### Últimos ficheros añadidos :new:
 
-- [Fichero **.travis.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml) :new: 
+- [Fichero **5.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/5.json) :new: 
 
-- [Fichero **config.yml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml) :new:
+- [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml) :new:
 
 
 ___
