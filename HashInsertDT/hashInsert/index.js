@@ -3,7 +3,7 @@ const  md5 = require('md5');
 const Storage = require('node-storage');
 
 // Crea o carga DB
-var db = new Storage('../..data/data.db');
+var db = new Storage('../data/data.db');
 
 // Añade una entrada en DB a partir de una cadena
 function registra(mensaje){
