@@ -1,0 +1,14 @@
+{
+  "name": "hashinsertdt",
+  "version": "1.0.0",
+  "description": "Función para registrar fecha y hora en que se realiza un cifrado",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "md5": "^2.3.0",
+    "node-storage": "0.0.9"
+  },
+  "devDependencies": {}
+}
