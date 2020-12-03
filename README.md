@@ -60,66 +60,41 @@ La estructura de directorios se plantea de la siguiente forma:
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
   
 ___
-### Integración continua :new:
-**¿Por que [TravisCi](https://travis-ci.org/)?**
-
-Me decanté por Travis como primera plataforma, en este caso por su versión **org** en la que ya disponia de una cuenta. 
-Su elección se centra en dos motivos fundamentales, su fácil integración con GitHub y su coste, ya que es gratuito,no tiene costes de mantenimiento y permite el uso de jobs en paralelo. 
-Es una herramienta muy robusta y bien documentada.
-Además tanto su configuración como su uso son muy sencillos y presenta una interfaz muy clara y funcional.
-
-He utilizado mi propia imagen Docker. Para ello basta con especificar su uso en el fichero [travis.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.travis.yml).
-
-
-**¿Por qué [CircleCi](https://circleci.com/)?**
-
-Por otro lado CircleCi también dispone de integración con GitHub, su coste es gratuito y he verificado que es muchísimo más rápido que travis lo cual ha suscitado mi interés.
- 
-Su configuración es similar a la de Travis, se realiza mediante el uso de un fichero [config.yml](https://github.com/alexrodriguezlop/HDN.PG/blob/master/.circleci/config.yml).
-
-Aunque dispone de distintos planes el plan free incluye 1 trabajo simultáneo con acceso a Linux, lo cual es suficiente para mis necesidades.
-Además cuenta con una gran comunidad y es sencillo encontrar información para resolver los problemas que puedan surgir.
-Como su política es de pay-per-use la versión free dispone de 2.500 créditos.
-
-Además, ambas herramientas proporcionan badges que podemos incluir en nuestro repositorio y nos permiten conocer fácilmente el estado de los test.
-
-Las configuraciones llevadas a cabo se detallan [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Integraci%C3%B3n%20continua). 
-
-___
 ### Serverless :new:
 
-**Despliegue de una función usando Vercel:**
+Para el **Hito5** se han desplegado dos funciones del proyecto. 
+Una de ellas haciendo uso de Azure Functions y la otra, como un Bot para Telegram haciendo uso de Vercel.
 
-Se ha desarrollado una función que consulta la fecha y hora en que se cifró un texto en base a su hash.
-Esta información se almacena en un fichero JSON y se compone de:
+Ambas funciones pretenden dar solución a [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13) 
+*(Conocer que día y a que hora fue cifrado el mensaje en una imagen).*
 
-```
-{
-    "lista":
-    [
-        { 	
-            "hash": "098f6bcd4621d373cade4e832627b4f6",
-            "fecha": "22-9-2020",
-            "hora": "15:00",
-            "comentario": "test (Los mensajes no se almacenan. esto es un comentario)"
-        }
-    ]
-}
-```
+Para llevar a cabo dicha solución se han planteado contar con un registro de los cifrados que se realizan.
+Con el fin de salvaguardar la intimida, el sistema no almacenará el mensaje, sino que almacenará su hash, la fecha y la hora del cifrado con lo que el usuario podrá acceder a esta información introduciendo exactamente la misma cadena que fue cifrada.
 
-Esta función pretende dar solución a la [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13)
+Para llevar a cabo el registro de la fecha y hora del cifrado se ha desarrollado una función, la cual ha sido desplegada haciendo uso de Azure function.
 
-[Explicación de su realización](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Vercel)
-[código](https://github.com/alexrodriguezlop/HashFinderDT/blob/1f31f70c455102fb89d7b3222d2125cf8d5edf26/api/app.js)
+[Guía de desarrollo](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Azure/Readme.md)
 
-**Despliegue de un bot para telegram usando vercel:**
-Se ha desarrollado un bot para telegram que proporciona acceso a la fecha y hora en que se cifró un mensaje.
+[URL](https://hashinsert.azurewebsites.net/api/hashInsert?msg=cadena%20de%20prueba) de la función desplegada.
 
-[Repositorio del bot](https://github.com/alexrodriguezlop/HashFinderDT)
+
+Para llevar a cabo la consulta de dichos datos se ha desarrollado un bot de Telegram.
+
+[Guía de desarrollo del bot](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/TelegramBot)
+
 [Acceso al BOT @H20DTbot](https://t.me/H20DTbot)
-[Explicación de su desarrollo](https://github.com/alexrodriguezlop/HashFinderDT/blob/main/README.md)
 
-Tanto el bot como la función han sido desarrolladas en un nuevo repositorio, en el cual se han creado los [issues](https://github.com/alexrodriguezlop/HashFinderDT/issues?q=is%3Aissue+is%3Aclosed) correspondientes
+La decisión de usar Azure ha venido motivada por su potencial, es una plataforma de pago y he tenido la posibilidad de usar su versión educación. Hasta 100$.
+Aunque es una plataforma muy compleja aporta gran cantidad de funcionalidades y diciendo gran cantidad me quedo corto, ya que es una de las más potentes y versátiles del mercado.
+
+Vercel sin embargo el una plataforma muy simple y en su simpleza está su sencillez. 
+Dispone de las funcionalidades justas, ya que se centra únicamente en el despliegue de pequeñas funciones, pero está muy depurada.
+Su uso es muy sencillo al igual que su integración con GitHub.
+Dispone de un log muy útil a la hora de encontrar errores.
+
+**Nota para el corrector:**
+Tanto el desarrollo de la función como del Bot de Telegram comenzaron en un repositorio diferente, con lo cual en la migración al repositorio principal algunos issues han quedado allí. 
+Dejo un [enlace](https://github.com/alexrodriguezlop/HashFinderDT/issues?q=is%3Aissue+is%3Aclosed) por si fuera necesario.
 ___
 ### Últimos ficheros añadidos :new:
 
