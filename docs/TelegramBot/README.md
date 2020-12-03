@@ -87,6 +87,14 @@ Es la encargada de realizar la búsqueda correspondiente a un mensaje mediante s
 
 El bot utiliza un fichero llamado data.json para recuperar los registros.
 
+El fichero tendrá una estructura de la siguiente forma:
+
+```
+"hash": "098f6bcd4621d373cade4e832627b4f6",
+"fecha": "22-9-2020",
+"hora": "15:00"
+```
+
 ```
 const data = require("../data/data.json" )
 const  md5 = require('md5');
