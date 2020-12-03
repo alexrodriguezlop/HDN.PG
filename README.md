@@ -62,7 +62,7 @@ La estructura de directorios se plantea de la siguiente forma:
 ___
 ### Serverless :new:
 
-Para el **Hito5** se han desplegado dos funciones del proyecto. 
+Se han desplegado dos funciones del proyecto. 
 Una de ellas haciendo uso de Azure Functions y la otra, como un Bot para Telegram haciendo uso de Vercel.
 
 Ambas funciones pretenden dar solución a [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13) 
