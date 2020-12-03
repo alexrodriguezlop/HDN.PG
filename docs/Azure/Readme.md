@@ -1,5 +1,5 @@
 ### Despliegue de función usando AZURE functions
-
+____
 #### Creando el proyecto en Visual Estudio
 Para desarrollar la función he usado el IDE visual estudio.
 He instalado el plugin de Azure para el mismo.
@@ -23,7 +23,7 @@ Posteriormente he instalado azure-functions-core-tools:
 `npm i -g azure-functions-core-tools@3 --unsafe-perm true`
 
 Mediante este paquete de herramientas podemos debuguear en local nuestra función y realizar el deploy desde el IDE.
-
+____
 #### Debug local y deploy
 
 Para realizar un debug local de nuestro proyecto únicamente será necesario tener instalado el paquete azure-functions-core-tools.
@@ -43,6 +43,8 @@ El proyecto se subirá y ya estará disponible en Azure.
 
 Nuestra función ya se encuentra en producción y es accesible desde el navegador [aquí](https://hashinsert.azurewebsites.net/api/hashInsert?msg=hola).
 
+![](22.png)
+____
 #### Peticiones desde el portal de Azure
 También podemos comprobar el funcionamiento de la función generando peticiones http desde el propio portal de Azure.
 
@@ -55,7 +57,7 @@ Se aprecia como la función registra la entrada de texto.
 ![](2.png)
 
 
-
+____
 #### Autodeploy desde GitHub
 Nuestra función ya se encuentra en producción desplegada en Azure, ahora queremos que esta se actualice y haga deploy de forma automática cuando actualicemos nuestro código. Para ello haremos uso de una función de GitHub denominada **Actions**
 
@@ -144,7 +146,7 @@ Las cuales se lanzan cuando hagamos un PR, ya que así lo especifica la orden **
 
 Aquí se pueden ver todos los [action del repositorio](https://github.com/alexrodriguezlop/HDN.PG/actions).
   
-
+____
 #### Función
 La función hace uso de dos librerías externas denominadas [md5](https://www.npmjs.com/package/md5) y [node-storage](https://www.npmjs.com/package/node-storage).
 La librería **md5** proporciona la función hash que se aplica sobre la cadena de texto mientras la función **node-storage** proporciona un sistema de persistencia para los registros.
