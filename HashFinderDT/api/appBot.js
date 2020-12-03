@@ -1,9 +1,17 @@
+const data = require("../data/data.json" )
 const  md5 = require('md5');
-const Storage = require('node-storage');
 
-// Crea o carga DB
-var db = new Storage('../data/data.db');
 
+// Extrae una tupla del fichero JSON a partir de una clave hash 
+function obtener(valor){
+  var result = null;
+
+  for(var i = 0; i < data.lista.length; i++){
+    if(data.lista[i].hash === valor)
+     result = data.lista[i];
+  }
+  return result;
+}
 // Función principal manejadora de petición
 module.exports = async (req, res) => {
 
@@ -28,7 +36,7 @@ module.exports = async (req, res) => {
     // /BUSCAR
     case '/buscar':
       if(clave != ''){
-        var result = db.get(md5(clave));
+        var result = obtener(md5(clave));
 
         if(result === null){
           mensaje = '\u{2716} *Su mensaje no ha sido cifrado y por tanto no hay registros*';
