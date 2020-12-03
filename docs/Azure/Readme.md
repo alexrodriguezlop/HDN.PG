@@ -151,6 +151,14 @@ ____
 La función hace uso de dos librerías externas denominadas [md5](https://www.npmjs.com/package/md5) y [node-storage](https://www.npmjs.com/package/node-storage).
 La librería **md5** proporciona la función hash que se aplica sobre la cadena de texto mientras la función **node-storage** proporciona un sistema de persistencia para los registros.
 
+El sistema tendrá una estructura de la siguiente forma:
+
+```
+"hash": "098f6bcd4621d373cade4e832627b4f6",
+"fecha": "22-9-2020",
+"hora": "15:00"
+```
+
 
 ##### Función registra
 Esta función ha sido desarrollada para simplificar a la función handler.
