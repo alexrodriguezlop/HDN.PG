@@ -127,7 +127,7 @@ jobs:
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 ```
 
-Este fichero es un modelo proporcionado por el propio Azure en el cual únicamente he tenido que establecer el valor de las constantes iniciales:
+Este fichero es un [modelo](https://github.com/Azure/actions-workflow-samples/blob/master/FunctionApp/linux-node.js-functionapp-on-azure.yml) proporcionado por el propio Azure en el cual únicamente he tenido que establecer el valor de las constantes iniciales:
 
   - **AZURE_FUNCTIONAPP_NAME:** HashInsertDT    *Nombre de mi función*
   - **AZURE_FUNCTIONAPP_PACKAGE_PATH:** './HashInsertDT'      *Directorio del proyecto*
