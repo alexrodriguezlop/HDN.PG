@@ -42,4 +42,15 @@ describe("RAW CLASS TEST", function() {
         });
     });
 
+    context('5. Checkea', function(){
+        raw.setPixel(0b1, 0);// Pixel0 = 00000001
+
+        it("1.1 Debería devolver True (00000001)", function() {      
+            assert.isTrue(raw.check(0,0),"Debería ser True")
+        });
+        it("1.1 Debería devolver False (00000001)", function() {    
+            assert.isFalse(raw.check(0,1),"Debería ser False")
+        });
+    });
+
 });
