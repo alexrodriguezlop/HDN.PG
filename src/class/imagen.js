@@ -62,10 +62,10 @@ class Imagen {
 
 
 	
-	/** 
-	setter: Establece el número de filas
-	@param {int} número de filas
-	*/
+	/**
+	 * setter: Establece el número de filas
+	 * @param {number} nfilas número de filas
+	 */
 	set setFilas(nfilas) {
 		this._nfilas = nfilas;
 	}
