@@ -24,7 +24,7 @@ class Raw {
 
 	/** 
 	setter: Establece un array de pixeles.
-    @param {ArrayBuffer} raw.
+    @param {ArrayBuffer} raw
 	*/ 
 	set setRaw(raw) {
         this._buffer = raw;
@@ -71,12 +71,13 @@ class Raw {
 
     /**
 	Comprueba si el bit menos significativo de un pixel está encendido o apagado. 
-    @param {int} posición del pixel.
+	@param {int} posición del pixel.
+	@param {int} posición del bit dentro del pixel.
     @returns {boolean} estado. (TRUE - encendido | FALSE - apagado)
 
 	*/
-	check(posicion){
-        if (this._datos[posicion] & '00000001' !== 0)
+	check(posicion, posBit){
+        if (this._datos[posicion].toString(2)[posBit] & 1)
             return true;
         else    
             return false;  
