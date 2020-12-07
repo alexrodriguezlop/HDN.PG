@@ -1,4 +1,4 @@
-const Raw = require('./raw')
+const Raw = require('./raw').default
 
 //Tamaño maximo de mensaje
 const MAXTAM = 200;
