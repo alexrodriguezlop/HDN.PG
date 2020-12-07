@@ -101,4 +101,5 @@ class Raw {
 	} 
 
 }
-module.exports = Raw;
+export default Raw;
+//module.exports = Raw;
