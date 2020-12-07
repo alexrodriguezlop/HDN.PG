@@ -1,4 +1,4 @@
-const Raw = require('../src/class/raw')
+const Raw = require('../src/class/raw').default
 var assert = require('chai').assert;
 
 
