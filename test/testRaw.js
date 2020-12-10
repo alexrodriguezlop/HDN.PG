@@ -1,6 +1,5 @@
-const Raw = require('../src/class/raw').default
+const Raw = require('../src/class/raw');
 var assert = require('chai').assert;
-
 
 describe("RAW CLASS TEST", function() { 
   let raw = new Raw(3,3);
@@ -43,7 +42,7 @@ describe("RAW CLASS TEST", function() {
     });
 
     context('5. Checkea', function(){
-        raw.setPixel(0b1, 0);// Pixel0 = 00000001
+        raw.setPixel(0b01, 0);// Pixel0 = 00000001
 
         it("1.1 Debería devolver True (00000001)", function() {      
             assert.isTrue(raw.check(0,0),"Debería ser True")
