@@ -10,7 +10,7 @@ class Raw {
 	 * */ 
 	constructor(filas = 0, columnas = 0){
         this._buffer = new ArrayBuffer(filas * columnas);
-        this._datos = new Uint8Array(this._buffer);
+		this._datos = new Uint8Array(this._buffer);	
     }
 
 	/**
@@ -62,7 +62,6 @@ class Raw {
 	enciende(posicion, bit){
 		if((bit >= 0) && (bit <8)){
 			var mask = 0b1 << bit;
-
 			this._datos[posicion] = (this._datos[posicion] | mask); //enciende
 		}
 	}
@@ -77,7 +76,8 @@ class Raw {
 
 	*/
 	check(posicion, posBit){
-        if (this._datos[posicion].toString(2)[posBit] & 1)
+		//console.log("Pixel: " + posicion + " Bit: " + posBit + " Result: " + this._datos[posicion].toString(2)[posBit]);
+		if (this._datos[posicion].toString(2)[posBit] == 1)
             return true;
         else    
             return false;  
@@ -99,7 +99,5 @@ class Raw {
 			this._datos[posicion] = (this._datos[posicion] & mask) ; //apaga 
 		}
 	} 
-
 }
-export default Raw;
-//module.exports = Raw;
+module.exports = Raw;
