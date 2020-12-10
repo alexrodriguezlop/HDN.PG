@@ -1,7 +1,7 @@
-const Raw = require('./raw').default
+const Raw = require('./raw');
 
 //Tamaño maximo de mensaje
-const MAXTAM = 200;
+const MAXTAM = (this.getFilas * this.getColumnas)/8;
 
 
 /**
@@ -52,10 +52,10 @@ class Imagen {
 
 
 
-	/** 
-	setter: Establece el número de columnas
-	@param {int} número de columnas
-	*/ 
+	/**
+	 * setter: Establece el número de columnas
+	 * @param {int} ncolumnas número de columnas
+	 */
 	set setColumnas(ncolumnas) {
 		this._ncolumnas = ncolumnas;
 	}
@@ -64,7 +64,7 @@ class Imagen {
 	
 	/**
 	 * setter: Establece el número de filas
-	 * @param {number} nfilas número de filas
+	 * @param {int} nfilas número de filas
 	 */
 	set setFilas(nfilas) {
 		this._nfilas = nfilas;
@@ -120,7 +120,7 @@ class Imagen {
 	Podría leer fuera del array, el método comprobará la posición.
 	*/
 	getPixel(posicion){
-		return this._datos[posicion];
+		return this._datos.getPixel(posicion);
 	} 
 
 
@@ -157,8 +157,13 @@ class Imagen {
 	*/
 	ocultar(mensaje){
 		//Pixeles que ocupará:
-		//(longituda + centinela * 8 bit para calcular cuantos pixeles ocupará)
-		var pixelsCadena = ((mensaje.length +1) * 8);
+		mensaje = mensaje + '\0';
+
+		//(longituda * 8 bit para calcular cuantos pixeles ocupará)
+		var totalPixelesMensaje = ((mensaje.length) * 8);
+
+		//var raw = this.getDatos();
+		var raw = this._datos;
 
 		var estado = false;
 
@@ -166,31 +171,26 @@ class Imagen {
 		var pixelsImagen = this.getNumPixel();
 	
 		//Comprobar que la cadena cabe en la imagen
-		if (pixelsCadena < pixelsImagen){
+		if (totalPixelesMensaje < pixelsImagen){
 			
-			//Creando un pixel temporal
-			var pixelTmp;
 			var pos=0;
-	
-			for(var i=0; i <= pixelsCadena; i++){
-	
-				for(var j=7; j>=0; j--){
-					//Obtener el pixel a modificar
-					pixelTmp = this.getPixel(i);
-	
-					//Modificar el pixel con el bit del mensaje
-					//Si está encendido
-					//Extrae cada caracter y de ese caracter sus bits
-					var m = mensaje[i].readUInt8()
-					if(m[j])//True bit a 1 -> enciende el bit en el pixel
-						this._datos.enciende(i,1);
-					else
-						this._datos.apaga(i,1);
-					
-					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (1) del pixel i	
+			
+			//Recorre pixeles necesarios para almacenar el mensaje
+			for(var i=0; i < mensaje.length; i++){
+				//i = pixel
 
-					//Asignando pixel modificado
-					this._datos.setPixel(pixelTmp, pos)
+				//var m = mensaje[i].readUInt8();
+
+				for(var j=0; j<8; j++){
+					//Modificar el pixel con el bit del mensaje
+
+					//True bit a 1 -> enciende el bit en el pixel
+					if(mensaje[i].toString(2)[j])
+						raw.enciende(pos,0);
+					else
+						raw.apaga(pos,0);
+					
+					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (1)o 0 ? del pixel	
 					pos ++;
 				}
 			}
@@ -231,51 +231,52 @@ class Imagen {
 	*/
 	revelar(){
 		
-		//Ir trabajando con cada pixel
-		var pixelTmp;
-		
-		//Para recomponer el caracter
-		var caracter;
-
-		//Recomponer el mensaje
-		var mensaje = new Array(MAXTAM);
-
 		//Permite definir el punto de parada
 		var estado = true;
 
 		//Tamaño de la imagen en pixeles
 		var pixelsImagen = this.getNumPixel();
 
-		var contador=0;
-		var indiceMensaje=0;
+		//Recomponer el mensaje*******************************************|||||||||||||||
+		//var mensaje = new Raw(MAXTAM, 1);
+		var mensaje = new Raw(39,39);
+
+		//Contadores
+		var pixelActual = 0; 
+		var caracterActual = 0;
+		var raw = this._datos; 
 	
 		do{//Mientras caracter no sea centinela
-			for(var j = 7; j >= 0 && estado; j--)
+
+			//Recorre los 8 bits de cada caracter
+			for(var j = 0; j < 8  && estado; j++)
 			{
-
-				pixelTmp = this.getPixel(contador);
-				//if bit menos sognificativo de pixel == 1
+				if(raw.check(pixelActual, 0))
 					//Encender en caracter la posicion correspondiente a ese bit
-				//else
+					mensaje.enciende(caracterActual, j);
+				else
 					//Apagar en caracter la posicion correspondiente a ese bit
+					mensaje.apaga(caracterActual, j);
 
-
-				contador++;
+				pixelActual++;
 
 				//Comprobacion de que no hay mensaje, recorre hasta el fin de la imagen.
-				estado = (contador <= pixelsImagen);
+				estado = (pixelActual <= pixelsImagen);
 			}
-			
-			//Volcado del caracter recuperado
-			mensaje[indiceMensaje] = caracter;
-			indiceMensaje++;
+			console.log("CaracterActual: " + mensaje.getPixel(caracterActual));
+			caracterActual++;
 
 			if(estado == true)
-				estado=(indiceCadena < MAXTAM);
+				estado=(mensaje.length <= MAXTAM);
 
+
+			console.log("Que es? " + mensaje[caracterActual -1]);
+		
 		//Repite mientras no haya error y no se encuentre el final del mensaje.
-		}while((mensaje[indiceMensaje -1] != '\0') && estado);
-	
+		}while((mensaje[caracterActual -1] != '\0') && estado);
+		
+		String.fromCharCode(parseInt(mensaje, 2));
+		
 		return mensaje;
 	}
 
