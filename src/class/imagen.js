@@ -182,10 +182,7 @@ class Imagen {
 
 		//(longituda * 8 bit para calcular cuantos pixeles ocupará)
 		var totalPixelesMensaje = ((mensaje.length) * 8);
-
 		var raw = this.getDatos();
-		//var raw = this._datos;
-
 		var estado = false;
 
 		//Tamaño de imagen
@@ -196,23 +193,24 @@ class Imagen {
 			var pos = this.getPosBin();
 			var bit;
 
-			//Recorre pixeles necesarios para almacenar el mensaje
+			//Recorre caracteres del mensaje
 			for(var i=0; i < mensaje.length; i++){
 				//i = pixel
 
 				//var m = mensaje[i].readUInt8();
-
+				
+				//Recorre los 8 bits de cada caracter
 				for(var j=0; j<8; j++){
 					//Calcula el pixel menos significativo
 					bit = raw.cuentaBits(pos);
 
 					//Modificar el pixel con el bit del mensaje
 					//True bit a 1 -> enciende el bit en el pixel
-					if(mensaje[i].toString(2)[j]){
-						raw.enciende(pos,0);
+					if(mensaje[i].charCodeAt().toString(2)[j]){
+						raw.enciende(pos,bit);
 					}
 					else{
-						raw.apaga(pos,0);
+						raw.apaga(pos,bit);
 					}
 					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (8) del pixel	
 					pos ++;
