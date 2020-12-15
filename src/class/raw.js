@@ -6,19 +6,21 @@ class Raw {
 
 	/**
      @constructor con parámetros
-     Crea un buffer de bytes (pixeles) con valor 0x0. del tamaño de la imagen.   
+     Crea un buffer de bytes (pixeles) con valor de la imagen.   
 	 * */ 
-	constructor(filas = 0, columnas = 0){
-        this._buffer = new ArrayBuffer(filas * columnas);
-		this._datos = new Uint8Array(this._buffer);	
-    }
+	constructor(data, n){
+		if(data === undefined)
+			this._datos = Buffer.alloc(n, 0, 'ascii');
+		else
+			this._datos = Buffer.from(data);	
+	}
 
 	/**
 	Getter: Obtiene un array de pixeles.
 	@returns {ArrayBuffer} array de píxeles.
 	*/
-	get getRaw() {
-        return this._buffer;
+	getRaw() {
+    	return this._datos;
 	}
  
 
@@ -26,8 +28,8 @@ class Raw {
 	setter: Establece un array de pixeles.
     @param {ArrayBuffer} raw
 	*/ 
-	set setRaw(raw) {
-        this._buffer = raw;
+	setRaw(raw) {
+        this._datos = raw;
 	}
 
 
@@ -52,11 +54,27 @@ class Raw {
 
 
 	/**
+	 * Cuenta el número de bit para hallar el menos significativo
+	 * @param {*} pos Posición en el buffer 
+	 */
+	cuentaBits(pos){
+		var x = this._datos[pos].toString(2);
+		var i = 0;
+
+		while(x[i] != undefined)
+			i++;
+		return i-1; //restamos para devolver la posición del bit menos significativo
+}
+
+
+
+
+	/**
 	Enciende el bit menos significativo de un pixel. 
 	@param {int} posición del pixel.
 	@param {int} bit a operar.
 	Nota: A tener en cuenta que 0 es la posición menos significativa
-		  y 7 la mas significativa.
+		  y 7 la mas significativa.??
 
 	*/
 	enciende(posicion, bit){
