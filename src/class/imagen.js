@@ -178,7 +178,7 @@ class Imagen {
 	*/
 	ocultar(mensaje){
 		//Pixeles que ocupará:
-		mensaje = mensaje + '\0'; //\0 10?????????????
+		mensaje = mensaje + '\0'; 
 
 		//(longituda * 8 bit para calcular cuantos pixeles ocupará)
 		var totalPixelesMensaje = ((mensaje.length) * 8);
@@ -191,27 +191,32 @@ class Imagen {
 		//Comprobar que la cadena cabe en la imagen
 		if (totalPixelesMensaje < pixelsImagen){	
 			var pos = this.getPosBin();
-			var bit;
+			var longitud;
 
 			//Recorre caracteres del mensaje
 			for(var i=0; i < mensaje.length; i++){
-				//i = pixel
-
-				//var m = mensaje[i].readUInt8();
+				longitud = mensaje.charCodeAt(i).toString(2).length;
 				
-				//Recorre los 8 bits de cada caracter
-				for(var j=0; j<8; j++){
-					//Calcula el pixel menos significativo
-					bit = raw.cuentaBits(pos);
+				//Recorre los bits validos de cada caracter
+				for(var j=0; j<mensaje.charCodeAt(i).toString(2).length; j++){
+
+					// Salva los 0s a la izq
+					while(longitud < 8){
+						longitud ++;
+						raw.apaga(pos,0);
+						pos ++;
+					}
 
 					//Modificar el pixel con el bit del mensaje
 					//True bit a 1 -> enciende el bit en el pixel
-					if(mensaje[i].charCodeAt().toString(2)[j]){
-						raw.enciende(pos,bit);
+					if(mensaje.charCodeAt(i).toString(2)[j] == 1){
+						//Chequea el estado y solo enciende cuando está apagado
+						raw.enciende(pos,0);	
 					}
-					else{
-						raw.apaga(pos,bit);
-					}
+					else
+						if(mensaje.charCodeAt(i).toString(2)[j] == 0)
+							raw.apaga(pos,0);
+					
 					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (8) del pixel	
 					pos ++;
 				}
@@ -266,19 +271,22 @@ class Imagen {
 		var pixelActual = this.getPosBin(); 
 		var caracterActual = 0;
 		var raw = this.getDatos(); 
-	
-		do{//Mientras caracter no sea centinela
+		var bit;
 
+		do{//Mientras caracter no sea centinela
+			
 			//Recorre los 8 bits de cada caracter
-			for(var j = 0; j < 8  && estado; j++)
-			{
+			for(var j = 0; j < 8  && estado; j++){
+				//Calcula el bit menos significativo
+				//bit = raw.cuentaBits(pixelActual);
+
 				if(raw.check(pixelActual, 0))
 					//Encender en caracter la posicion correspondiente a ese bit
 					mensaje.enciende(caracterActual, j);
 				else
 					//Apagar en caracter la posicion correspondiente a ese bit
 					mensaje.apaga(caracterActual, j);
-
+					
 				pixelActual++;
 
 				//Comprobacion de que no hay mensaje, recorre hasta el fin de la imagen.
@@ -290,15 +298,11 @@ class Imagen {
 			if(estado == true)
 				estado=(mensaje.length <= this.getMaxTam());
 
-
-			//console.log("Que es? " + mensaje[caracterActual -1]);
-console.log("XX:" + mensaje.getPixel(caracterActual -1));
 		//Repite mientras no haya error y no se encuentre el final del mensaje.
-		}while((mensaje.getPixel(caracterActual -1) != 10) && estado);//'\0'
+		}while((mensaje.getPixel(caracterActual -1) !== "\0".charCodeAt()) && estado); 
 		
 		//String.fromCharCode(parseInt(mensaje, 2));
-		//console.log("ZZ: " + mensaje.getRaw());
-		return mensaje.getRaw();
+		return mensaje.getRaw().toString();
 	}
 
 
