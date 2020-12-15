@@ -1,7 +1,5 @@
 const Raw = require('./raw');
-
-//Tamaño maximo de mensaje
-const MAXTAM = (this.getFilas * this.getColumnas)/8;
+const fs = require('fs');
 
 
 /**
@@ -12,12 +10,16 @@ class Imagen {
 	/**
 	 @constructor con parámetros
 	 * */ 
-	constructor(nfilas = 0, ncolumnas = 0){
-
-		this._nfilas = nfilas;
-		this._ncolumnas = ncolumnas;
-
-		this._datos = new Raw(this._nfilas, this._ncolumnas);
+	constructor(data, tipo, ancho, alto, valorMax, posBin){
+		// Tipo de imágen: 5: Binaria, 2: Ascii.
+		this._tipo = tipo;
+		this._ncolumnas = ancho;
+		this._nfilas = alto;
+		// Maximo valor de pixel en la imágen
+		this._valorMax = valorMax;
+		// Posición donde comienza la imágen
+		this._posBin = posBin;
+		this._datos = new Raw(data);
 	}
 
 
@@ -26,7 +28,7 @@ class Imagen {
 	Getter: Obtiene la matriz de píxeles
 	@returns {Array} de píxeles
 	*/
-	get getDatos() {
+	getDatos() {
 		return this._datos;
 	}
  
@@ -36,8 +38,17 @@ class Imagen {
 	Getter: Obtiene el número de filas 
 	@returns {int} número de filas
 	*/ 
-	get getFilas() {
+	getFilas() {
 		return this._nfilas;
+	}
+
+
+		/** 
+	Getter: Obtiene el el comienzo de la imagen 
+	@returns {int} pos binaria en el bufer
+	*/ 
+	getPosBin() {
+		return this._posBin;
 	}
 
 
@@ -46,17 +57,25 @@ class Imagen {
 	Getter: Obtiene el número de columnas
 	@returns {int} número de columnas
 	*/ 
-	get getColumnas() {
+	getColumnas() {
 		return this._ncolumnas;
 	}
 
 
+	/** 
+	Getter: Obtiene el número de carcateres maximo de un mensaje
+	@returns {int} número caracteres
+	*/ 
+	getMaxTam() {
+		return parseInt((this._ncolumnas * this._nfilas)/8);
+	}
+	
 
 	/**
 	 * setter: Establece el número de columnas
 	 * @param {int} ncolumnas número de columnas
 	 */
-	set setColumnas(ncolumnas) {
+	setColumnas(ncolumnas) {
 		this._ncolumnas = ncolumnas;
 	}
 
@@ -66,7 +85,7 @@ class Imagen {
 	 * setter: Establece el número de filas
 	 * @param {int} nfilas número de filas
 	 */
-	set setFilas(nfilas) {
+	setFilas(nfilas) {
 		this._nfilas = nfilas;
 	}
 	
@@ -76,7 +95,7 @@ class Imagen {
 	Setter: Establece la matriz de píxeles
 	@param {Array} datos de píxeles
 	*/
-	set setDatos(datos) {
+	setDatos(datos) {
 		this._datos = datos;
 	}
 	 
@@ -86,7 +105,8 @@ class Imagen {
 	@param {string}  nombre del fichero que contiene la imagen
 	@returns {boolean} true	si ha tenido éxito en la lectura o false en caso contrario.
 	*/
-	leerImagen(nombre){
+	leerImagen(path){
+
 	}
 
 
@@ -96,6 +116,7 @@ class Imagen {
 	@returns {boolean} true	si ha tenido éxito en la escritura o false en caso contrario.
 	*/
 	escribirImagen(nombre){
+		fs.writeFileSync(nombre,  this._datos.getRaw());
 	} 
 
 
@@ -129,7 +150,7 @@ class Imagen {
 	@returns {int} tamaño en pixeles de la imagen
 	*/
 	getNumPixel(){
-		return this.getFilas * this.getColumnas
+		return 	this._ncolumnas * this._nfilas;
 	}
 
 
@@ -157,24 +178,24 @@ class Imagen {
 	*/
 	ocultar(mensaje){
 		//Pixeles que ocupará:
-		mensaje = mensaje + '\0';
+		mensaje = mensaje + '\0'; //\0 10?????????????
 
 		//(longituda * 8 bit para calcular cuantos pixeles ocupará)
 		var totalPixelesMensaje = ((mensaje.length) * 8);
 
-		//var raw = this.getDatos();
-		var raw = this._datos;
+		var raw = this.getDatos();
+		//var raw = this._datos;
 
 		var estado = false;
 
 		//Tamaño de imagen
 		var pixelsImagen = this.getNumPixel();
-	
+
 		//Comprobar que la cadena cabe en la imagen
-		if (totalPixelesMensaje < pixelsImagen){
-			
-			var pos=0;
-			
+		if (totalPixelesMensaje < pixelsImagen){	
+			var pos = this.getPosBin();
+			var bit;
+
 			//Recorre pixeles necesarios para almacenar el mensaje
 			for(var i=0; i < mensaje.length; i++){
 				//i = pixel
@@ -182,15 +203,18 @@ class Imagen {
 				//var m = mensaje[i].readUInt8();
 
 				for(var j=0; j<8; j++){
-					//Modificar el pixel con el bit del mensaje
+					//Calcula el pixel menos significativo
+					bit = raw.cuentaBits(pos);
 
+					//Modificar el pixel con el bit del mensaje
 					//True bit a 1 -> enciende el bit en el pixel
-					if(mensaje[i].toString(2)[j])
+					if(mensaje[i].toString(2)[j]){
 						raw.enciende(pos,0);
-					else
+					}
+					else{
 						raw.apaga(pos,0);
-					
-					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (1)o 0 ? del pixel	
+					}
+					//Nota: Enciende y apaga lo hacen sobre el bit menos significativo (8) del pixel	
 					pos ++;
 				}
 			}
@@ -215,7 +239,7 @@ class Imagen {
 			carcater = 0b1
 			//Recorre los pixeles de 8 en 8 extrayendo su bit menos significativo(1).
 			//Cada grupo de 8 sin encontrar el centinela será un caracter.
-		}while(pixel < pixelsImagen && caracter != "/0");
+		}while(pixel < pixelsImagen && caracter != 10);// \0
 		//No llegue al final y no encuentre el centinela (\0)
 	}
 
@@ -237,14 +261,13 @@ class Imagen {
 		//Tamaño de la imagen en pixeles
 		var pixelsImagen = this.getNumPixel();
 
-		//Recomponer el mensaje*******************************************|||||||||||||||
 		//var mensaje = new Raw(MAXTAM, 1);
-		var mensaje = new Raw(39,39);
+		var mensaje = new Raw(undefined,this.getMaxTam());
 
 		//Contadores
-		var pixelActual = 0; 
+		var pixelActual = this.getPosBin(); 
 		var caracterActual = 0;
-		var raw = this._datos; 
+		var raw = this.getDatos(); 
 	
 		do{//Mientras caracter no sea centinela
 
@@ -263,21 +286,21 @@ class Imagen {
 				//Comprobacion de que no hay mensaje, recorre hasta el fin de la imagen.
 				estado = (pixelActual <= pixelsImagen);
 			}
-			console.log("CaracterActual: " + mensaje.getPixel(caracterActual));
+			//console.log("CaracterActual: " + mensaje.getPixel(caracterActual));
 			caracterActual++;
 
 			if(estado == true)
-				estado=(mensaje.length <= MAXTAM);
+				estado=(mensaje.length <= this.getMaxTam());
 
 
-			console.log("Que es? " + mensaje[caracterActual -1]);
-		
+			//console.log("Que es? " + mensaje[caracterActual -1]);
+console.log("XX:" + mensaje.getPixel(caracterActual -1));
 		//Repite mientras no haya error y no se encuentre el final del mensaje.
-		}while((mensaje[caracterActual -1] != '\0') && estado);
+		}while((mensaje.getPixel(caracterActual -1) != 10) && estado);//'\0'
 		
-		String.fromCharCode(parseInt(mensaje, 2));
-		
-		return mensaje;
+		//String.fromCharCode(parseInt(mensaje, 2));
+		//console.log("ZZ: " + mensaje.getRaw());
+		return mensaje.getRaw();
 	}
 
 
