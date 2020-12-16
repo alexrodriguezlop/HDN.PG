@@ -9,7 +9,7 @@ class Raw {
      Crea un buffer de bytes (pixeles) con valor de la imagen.   
 	 * */ 
 	constructor(data, n){
-		if(data === undefined)
+		if(data === null)
 			this._datos = Buffer.alloc(n, 0, 'ascii');
 		else
 			this._datos = Buffer.from(data);	
@@ -94,7 +94,6 @@ class Raw {
 
 	*/
 	check(posicion, posBit){
-		//console.log("Pixel: " + posicion + " Bit: " + posBit + " Result: " + this._datos[posicion].toString(2)[posBit]);
 		if (this._datos[posicion].toString(2)[posBit] == 1)
             return true;
         else    
