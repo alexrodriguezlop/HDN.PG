@@ -185,7 +185,7 @@ class Imagen {
 
 		//Tamaño de imagen
 		var pixelsImagen = this.getNumPixel();
-		
+
 		//Comprobar que la cadena cabe en la imagen
 		if (totalPixelesMensaje < pixelsImagen){	
 			var pos = this.getPosBin();
@@ -254,13 +254,12 @@ class Imagen {
 	HU-3 Revelar mensaje oculto
 	*/
 	revelar(){
-		
 		//Permite definir el punto de parada
 		var estado = true;
 
 		//Tamaño de la imagen en pixeles
 		var pixelsImagen = this.getNumPixel();
-console.log("TAM: " + this.getMaxTam());
+
 		//var mensaje = new Raw(MAXTAM, 1);
 		var mensaje = new Raw(null,this.getMaxTam());
 
@@ -269,20 +268,15 @@ console.log("TAM: " + this.getMaxTam());
 		var caracterActual = 0;
 		var raw = this.getDatos(); 
 		var bit;
-/**/ 
-for(var x=pixelActual; x<pixelActual+24;x++){
-	console.log("\n Pixel" + raw.getPixel(x).toString(2));
-}
-/**/ 	
+	
 		do{//Mientras caracter no sea centinela
 			
 			//Recorre los 8 bits de cada caracter
 			for(var j = 7; j >=0  && estado; j--){
 				//Calcula el bit menos significativo
-				//bit = raw.cuentaBits(pixelActual);
-console.log("PX0: " + raw.getPixel(pixelActual).toString(2)[6]);			
-console.log("PX0: " + raw.check(pixelActual, 6));
-				if(raw.check(pixelActual, 6))
+				bit = raw.cuentaBits(pixelActual);
+
+				if(raw.check(pixelActual, bit))
 					//Encender en caracter la posicion correspondiente a ese bit
 					mensaje.enciende(caracterActual, j);
 				else
@@ -302,10 +296,6 @@ console.log("PX0: " + raw.check(pixelActual, 6));
 
 		//Repite mientras no haya error y no se encuentre el final del mensaje.
 		}while((mensaje.getPixel(caracterActual -1) !== "\0".charCodeAt()) && estado); 
-console.log(estado);
-console.log("\n Pixel" + mensaje.getPixel(0).toString(2));		
-console.log("\n Pixel" + mensaje.getPixel(1).toString(2));
-console.log("\n Pixel" + mensaje.getPixel(2).toString(2));
 
 		//String.fromCharCode(parseInt(mensaje, 2));
 		return mensaje.getRaw().toString();
