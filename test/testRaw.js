@@ -4,7 +4,7 @@ const fs = require('fs')
 const fu = require('../src/class/funciones')
 
 describe("RAW CLASS TEST", function() { 
-    let file = fs.readFileSync('./Img/3.pgm');
+    let file = fs.readFileSync('./Img/Ejemplo.pgm');
     let raw = new Raw(file);
 
     context('2. setPixel', function(){
