@@ -9,7 +9,7 @@ class Imagen {
 
 	/**
 	 @constructor con parámetros
-	 * */ 
+	**/ 
 	constructor(data, tipo, ancho, alto, valorMax, posBin){
 		// Tipo de imágen: 5: Binaria, 2: Ascii.
 		this._tipo = tipo;
@@ -148,7 +148,7 @@ class Imagen {
 	@returns {int} tamaño en pixeles de la imagen
 	*/
 	getNumPixel(){
-		return 	this._ncolumnas * this._nfilas;
+		return 	parseInt(this._ncolumnas * this._nfilas);
 	}
 
 
@@ -191,6 +191,7 @@ class Imagen {
 			var pos = this.getPosBin();
 			var longitud;
 
+			var bit;
 			//Recorre caracteres del mensaje
 			for(var i=0; i < mensaje.length; i++){
 				longitud = mensaje.charCodeAt(i).toString(2).length;
@@ -209,7 +210,7 @@ class Imagen {
 					//True bit a 1 -> enciende el bit en el pixel
 					if(mensaje.charCodeAt(i).toString(2)[j] == 1){
 						//Chequea el estado y solo enciende cuando está apagado
-						raw.enciende(pos,0);	
+						raw.enciende(pos,0);
 					}
 					else
 						if(mensaje.charCodeAt(i).toString(2)[j] == 0)
