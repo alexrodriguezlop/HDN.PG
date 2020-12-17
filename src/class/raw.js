@@ -64,7 +64,7 @@ class Raw {
 		while(x[i] != undefined)
 			i++;
 		return i-1; //restamos para devolver la posición del bit menos significativo
-}
+	}
 
 
 
