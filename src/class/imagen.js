@@ -254,7 +254,7 @@ class Imagen {
 		//Tamaño de la imagen en pixeles
 		var pixelsImagen = this.getNumPixel();
 
-		//var mensaje = new Raw(MAXTAM, 1);
+		//maximo valor posible de mensaje
 		var mensaje = new Raw(null,this.getMaxTam());
 
 		//Contadores
@@ -291,8 +291,8 @@ class Imagen {
 		//Repite mientras no haya error y no se encuentre el final del mensaje.
 		}while((mensaje.getPixel(caracterActual -1) !== "\0".charCodeAt()) && estado); 
 
-		//String.fromCharCode(parseInt(mensaje, 2));
-		return mensaje.getRaw().toString();
+		// Eliminar el sobrante de ceros
+		return mensaje.getRaw().toString().slice(0,caracterActual-1);
 	}
 
 
