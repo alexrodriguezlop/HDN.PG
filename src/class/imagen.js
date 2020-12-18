@@ -233,15 +233,8 @@ class Imagen {
 	HU-2 Comprobar si existe mensaje
 	*/
 	chequear(){	
-		//Tamaño de imagen
-		var pixelsImagen = getNumPixel();
-
-		do{
-			
-			carcater = 0b1
-			//Recorre los pixeles de 8 en 8 extrayendo su bit menos significativo(1).
-			//Cada grupo de 8 sin encontrar el centinela será un caracter.
-		}while(pixel < pixelsImagen && caracter != 10);// \0
+		var msg = this.revelar();
+		return msg.length > 1;
 	}
 
 
