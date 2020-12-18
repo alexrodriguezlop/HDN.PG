@@ -5,8 +5,6 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 
 
-
-
 describe("IMAGEN CLASS TEST", function() {
     // Carga una imágen 
     let file = fs.readFileSync('./Img/Ejemplo.pgm');
@@ -17,23 +15,25 @@ describe("IMAGEN CLASS TEST", function() {
         it("5.1 Debería calcular el máximo número de caractéres que cabe en una imágen", function() {
             var maxTam = imagen.getMaxTam();
 
+            // Comprobar que es un número entero.
             expect(maxTam).to.be.a('number');
             expect(maxTam % 1).to.equal(0);
         });
     });
 
-    context('14. Ocultar', function(){
+    context('14. Ocultar (HU1)', function(){
         it("14.1 Debería OCULTAR el mensaje en una imagen", function() {
             var mensaje = "!ADIOS MUNDO 20202!";
             console.log("        Mensaje: " + mensaje);
 
             assert.isTrue(imagen.ocultar(mensaje), "Deberia devolver True");
-
+            
+            // Guarda la imagen resultante
             imagen.escribirImagen("./Img/oculto.pgm");
         });
     });
 
-    context('16. Revelar', function(){
+    context('16. Revelar (HU2)', function(){
         it("16.1 Debería REVELAR el mensaje oculto en una imagen", function() {
             let fileMensaje = fs.readFileSync('./Img/oculto.pgm');
             let meta = fu.leerMeta(fileMensaje);
@@ -41,7 +41,7 @@ describe("IMAGEN CLASS TEST", function() {
         
             var revelado = imagenMensaje.revelar();
             console.log("        Mensaje: " + revelado);
-            assert.isString(revelado, "Deberia devolver un string (Hola)");
+            assert.isString(revelado, "Deberia devolver un string");
         });
     });
 });
