@@ -1,5 +1,5 @@
 const Imagen = require('../src/class/imagen');
-const fu = require('../src/class/funciones');
+const fu = require('../src/funciones');
 const fs = require('fs');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
@@ -26,7 +26,7 @@ describe("IMAGEN CLASS TEST", function() {
         it("14.1 Debería OCULTAR el mensaje en una imagen", function() {
             var mensaje = "!ADIOS MUNDO 20202!";
             console.log("        Mensaje: " + mensaje);
-            
+
             assert.isTrue(imagen.ocultar(mensaje), "Deberia devolver True");
 
             imagen.escribirImagen("./Img/oculto.pgm");
