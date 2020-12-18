@@ -1,7 +1,7 @@
 const Raw = require('../src/class/raw');
 var assert = require('chai').assert;
 const fs = require('fs')
-const fu = require('../src/class/funciones')
+const fu = require('../src/funciones')
 
 describe("RAW CLASS TEST", function() { 
     let file = fs.readFileSync('./Img/Ejemplo.pgm');
