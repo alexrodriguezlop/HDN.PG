@@ -1,4 +1,6 @@
 const Imagen = require('../src/class/imagen');
+const eC = require('./storageControler');
+const md5 = require('md5');
 const fs = require('fs');
 
 /**
@@ -17,14 +19,31 @@ function cargar(path){
 }
 
 /**
+ * HU-2 Comprobar si existe mensaje
  * chequear una imagen 
  * @param {*} path ruta de la imagen
  * @returns {boolean} True en caso de contener mensaje
  */
 function chequear(path){
     let img = cargar(path);
-    return img.chequear();
+    var hash = md5(img.getDatos().getRaw());
+    
+    return (eC.buscar(hash) != undefined);
 }
+
+
+/**
+ * HU-4 Conocer fecha y hora en que se cifró un mensaje
+ * @param {*} path ruta de la imagen
+ * @returns {JSON} metadatos
+ */
+function getMetadatos(path){
+    let img = cargar(path);
+    var hash = md5(img.getDatos().getRaw());
+    
+    return (eC.buscar(hash));
+}
+
 
 /**
  * Cargar una imagen y oculta el mensaje 
@@ -38,7 +57,12 @@ function ocultar(path,nombre, mensaje){
     img.ocultar(mensaje);
     
     //img.escribirImagen('../Img/'+nombre);
-    
+    //fs.writeFileSync(path,  this._datos.getRaw())
+
+    //Registra el hash de la imagen
+    var hash = md5(img.getDatos().getRaw());
+    eC.registrar(hash);
+
     return img.getDatos().getRaw();
 }
 
@@ -129,7 +153,8 @@ function leerMeta(file){
 module.exports = {
     "ocultar": ocultar,
     "revelar": revelar,
-    "chequear": chequear
+    "chequear": chequear,
+    "getMetadatos": getMetadatos,
 };
 
 //module.exports = {imgController}
