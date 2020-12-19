@@ -1,5 +1,5 @@
 const Raw = require('./raw');
-const fs = require('fs');
+//const fs = require('fs');
 
 
 /**
@@ -114,7 +114,7 @@ class Imagen {
 	Guarda una imagen desde un fichero 
 	*/
 	escribirImagen(path){
-		fs.writeFileSync(path,  this._datos.getRaw());
+		//fs.writeFileSync(path,  this._datos.getRaw());
 	} 
 
 
@@ -232,9 +232,8 @@ class Imagen {
 
 	HU-2 Comprobar si existe mensaje
 	*/
-	chequear(){	
-		var msg = this.revelar();
-		return msg.length > 1;
+	chequear(){
+		
 	}
 
 
