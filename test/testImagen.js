@@ -3,11 +3,18 @@ const fu = require('../src/funciones');
 const fs = require('fs');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
+const path = require("path");
+const homedir = require('os').homedir();
 
+
+// Estableciendo rutas relativas para las imagenes de testeo
+const ORIGINAL = path.resolve(__dirname, "Img/original.pgm");
+const MENSAJE = "Hola mundo!!";
+const PATH = homedir+"/TestClases.pgm"
 
 describe("IMAGEN CLASS TEST", function() {
     // Carga una imágen 
-    let file = fs.readFileSync('./Img/Ejemplo.pgm');
+    let file = fs.readFileSync(ORIGINAL);
     let metadatos = fu.leerMeta(file);
     let imagen = new Imagen(file, metadatos[0], metadatos[1], metadatos[2], metadatos[3], metadatos[4]);
 
@@ -23,25 +30,22 @@ describe("IMAGEN CLASS TEST", function() {
 
     context('14. Ocultar (HU1)', function(){
         it("14.1 Debería OCULTAR el mensaje en una imagen", function() {
-            var mensaje = "!ADIOS MUNDO 20202!";
-            console.log("        Mensaje: " + mensaje);
-
-            assert.isTrue(imagen.ocultar(mensaje), "Deberia devolver True");
-            
+            assert.isTrue(imagen.ocultar(MENSAJE), "Deberia devolver True");
             // Guarda la imagen resultante
-            imagen.escribirImagen("./Img/oculto.pgm");
+            //imagen.escribirImagen("./test/Img/oculto.pgm");
+            fs.writeFileSync(PATH,  imagen.getDatos().getRaw());
         });
     });
 
     context('16. Revelar (HU2)', function(){
         it("16.1 Debería REVELAR el mensaje oculto en una imagen", function() {
-            let fileMensaje = fs.readFileSync('./Img/oculto.pgm');
+            let fileMensaje = fs.readFileSync(PATH);
             let meta = fu.leerMeta(fileMensaje);
             let imagenMensaje = new Imagen(fileMensaje, meta[0], meta[1], meta[2], meta[3], meta[4]);
         
             var revelado = imagenMensaje.revelar();
-            console.log("        Mensaje: " + revelado);
-            assert.isString(revelado, "Deberia devolver un string");
+            assert.isString(revelado);
+            expect(revelado).to.equal(MENSAJE);
         });
     });
 });
