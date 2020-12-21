@@ -3,3 +3,4 @@ lenguaje: javascript
 test: test/test.js
 taskfile: gulpfile.js
 URL: https://hashinsert.azurewebsites.net/api/hashInsert?msg=cadena%20de%20prueba
+make: gulp
