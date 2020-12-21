@@ -1,7 +1,10 @@
 const Storage = require('node-storage');
+const homedir = require('os').homedir();
+
+const PATH = homedir+"/data/data.db"
 
 // Crea o carga DB
-var db = new Storage('./data/data.db');
+var db = new Storage(PATH);
 
 // Añade una entrada en DB a partir de una imagen cifrada
 function registrar(hash){
