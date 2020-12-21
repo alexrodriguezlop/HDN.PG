@@ -1,14 +1,14 @@
 const Storage = require('node-storage');
 
 // Crea o carga DB
-var db = new Storage('../data/data.db');
+var db = new Storage('./data/data.db');
 
 // Añade una entrada en DB a partir de una imagen cifrada
 function registrar(hash){
     var now = new Date();
 
     var hora = now.getHours() + ":" + now.getMinutes();
-    var fecha = now.getDate() + '-' + now.getMonth() + '-' + now.getFullYear();
+    var fecha = now.getDate() + '-' + (now.getMonth()+1) + '-' + now.getFullYear();
 
     var obj = { 	
         "fecha":fecha,
