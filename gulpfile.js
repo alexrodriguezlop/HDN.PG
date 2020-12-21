@@ -1,30 +1,29 @@
-
 var gulp = require('gulp');
-const { series } = require('gulp');
 const mocha = require('gulp-mocha');
+const shell = require('gulp-shell')
+const { series } = require('gulp');
 
-gulp.task('test', done => {
-    gulp
+function build() {
+    return gulp
+        .src('*.js', { read: false })
+        .pipe(shell(['ls']))
+}
+
+function install() {
+    return gulp
+        .src('*.js', { read: false })
+        .pipe(shell(['npm install']))
+}
+
+function test() {
+    return gulp
         .src('./test/test.js')
         .pipe(mocha())
-        .on('error', function () {
-            this.emit('end');   
-        })
-        ;done();
-});
-
-function clean(cb) {
-    cb();
-}
-
-function build(cb) {
-    cb();
-}
-
-function install(cb) {
-cb();
 }
 
 // Define que tarea será la tarea por defecto o agrupaciones bajo etiquetas
-//exports.default = defaultTask
-exports.default = series(clean, build);
+exports.default = series(build, install, test);
+exports.test = test;
+exports.install = install;
+exports.build = build;
+
