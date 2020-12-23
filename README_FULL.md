@@ -56,6 +56,43 @@ La estructura de directorios se plantea de la siguiente forma:
   - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
   - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
   - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
+
+___
+### Serverless :new:
+
+Se han desplegado dos funciones del proyecto. 
+Una de ellas haciendo uso de Azure Functions y la otra, como un Bot para Telegram haciendo uso de Vercel.
+
+Ambas funciones pretenden dar solución a [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13) 
+*(Conocer que día y a que hora fue cifrado el mensaje en una imagen).*
+
+Para llevar a cabo dicha solución se han planteado contar con un registro de los cifrados que se realizan.
+Con el fin de salvaguardar la intimida, el sistema no almacenará el mensaje, sino que almacenará su hash, la fecha y la hora del cifrado con lo que el usuario podrá acceder a esta información introduciendo exactamente la misma cadena que fue cifrada.
+
+Para llevar a cabo el registro de la fecha y hora del cifrado se ha desarrollado una función, la cual ha sido desplegada haciendo uso de Azure function.
+
+[Guía de desarrollo](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Azure/Readme.md)
+
+[URL](https://hashinsert.azurewebsites.net/api/hashInsert?msg=cadena%20de%20prueba) de la función desplegada.
+
+
+Para llevar a cabo la consulta de dichos datos se ha desarrollado un bot de Telegram.
+
+[Guía de desarrollo del bot](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/TelegramBot)
+
+[Acceso al BOT @H20DTbot](https://t.me/H20DTbot)
+
+La decisión de usar Azure ha venido motivada por su potencial, es una plataforma de pago y he tenido la posibilidad de usar su versión educación. Hasta 100$.
+Aunque es una plataforma muy compleja aporta gran cantidad de funcionalidades y diciendo gran cantidad me quedo corto, ya que es una de las más potentes y versátiles del mercado.
+
+Vercel sin embargo el una plataforma muy simple y en su simpleza está su sencillez. 
+Dispone de las funcionalidades justas, ya que se centra únicamente en el despliegue de pequeñas funciones, pero está muy depurada.
+Su uso es muy sencillo al igual que su integración con GitHub.
+Dispone de un log muy útil a la hora de encontrar errores.
+
+**Nota para el corrector:**
+Tanto el desarrollo de la función como del Bot de Telegram comenzaron en un repositorio diferente, con lo cual en la migración al repositorio principal algunos issues han quedado allí. 
+Dejo un [enlace](https://github.com/alexrodriguezlop/HashFinderDT/issues?q=is%3Aissue+is%3Aclosed) por si fuera necesario.
 ___
 ### Docker 
 He echado un vistazo a las imágenes que la plataforma docker proporcionaba con el fin de encontrar una que se adapte a las necesidades del proyecto.
