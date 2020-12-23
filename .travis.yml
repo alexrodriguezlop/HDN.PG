@@ -11,7 +11,7 @@ os:
 before_install:
   - npm install -g gulp-cli
 # Lanzamos los test
-script: gulp test 
+script: gulp 
 # Configuramos las noticaciones.
 # Denegamos es envío de email
 notifications:
