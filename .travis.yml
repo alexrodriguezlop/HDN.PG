@@ -6,7 +6,6 @@ node_js:
 # Indicamos los sistemas donde se realizarán los test
 os:
   - linux
-  - osx
 # Instalamos Gulp-cli de forma global en la imagen 
 before_install:
   - npm install -g gulp-cli
