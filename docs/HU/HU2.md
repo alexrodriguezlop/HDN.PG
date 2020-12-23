@@ -3,6 +3,9 @@
 
 Ruta para dar solución a [HU2](https://github.com/alexrodriguezlop/HDN.PG/issues/11):
 
+**Solución:**
+Consultamos en el sistema de persistencia el hash de la imagen con el mensaje oculto.
+
 La imagen usada para los test la imagen creada en el test HU1.1 y la imagen modelo.
 
 #### Ruta:

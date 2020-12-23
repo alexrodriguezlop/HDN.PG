@@ -3,6 +3,10 @@
 
 Ruta para dar solución a [HU3](https://github.com/alexrodriguezlop/HDN.PG/issues/12):
 
+**Solución:**
+Comprobamos que esa imagen ha sido cifrada consultando su hash en el sistema de persistencia.
+En caso afirmativo recorremos cada byte extrayendo su bit menos significativo y agrupándolos de ocho en ocho hasta llegar al carácter que indica el fin del mensaje.
+
 La imagen usada para los test la imagen creada en el test HU1.1 y la imagen modelo.
 
 #### Ruta:

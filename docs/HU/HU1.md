@@ -3,6 +3,11 @@
 
 Ruta para dar solución a [HU1](https://github.com/alexrodriguezlop/HDN.PG/issues/10):
 
+**Solución:**
+Para ocultar el mensaje se utiliza el bit menos significativo de cada byte. De forma que cada 8 bytes podemos almacenar un carácter. 
+
+Cuando se oculta un mensaje en una imagen se almacena en un sistema de persistencia la información referente a su hash una vez oculto el mensaje y la fecha y hora.
+
 La imagen usada para los test es una imagen modelo alojada en test/Img/original.pgm
 
 #### Ruta:

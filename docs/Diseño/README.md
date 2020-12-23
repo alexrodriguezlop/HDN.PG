@@ -43,3 +43,7 @@ Contiene la información de la imagen y un objeto de la clase Raw que representa
 >Es una capa de abstracción para la persistencia de datos.
 
 >Esta interfaz permite guardar y recuperar datos haciendo uso de la persistencia.
+
+#### Persistencia:
+
+Se utiliza una pequeña librería llamada **node-storage** que permite almacenar información en un fichero y gestionar los accesos a este.

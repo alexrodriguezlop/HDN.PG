@@ -3,6 +3,9 @@
 
 Ruta para dar solución a [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13):
 
+**Solución:**
+Consultamos los datos en el sistema de persistencia mediante el hash de la imagen.
+
 La imagen usada para los test la imagen creada en el test HU1.1 y la imagen modelo.
 
 #### Ruta:
