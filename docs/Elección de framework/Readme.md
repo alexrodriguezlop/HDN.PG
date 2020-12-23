@@ -4,7 +4,7 @@ Para la elección de framework investigué sobre comparativas existentes que com
 
 - [Comparativa](https://raygun.com/blog/2015/03/node-performance-hapi-express-js-restify/)
 
-al comienzo del proyecto.
+Al comienzo del proyecto.
 Restify me pareció un framework muy interesante por su similitud con express y al mismo tiempo su diferenciación total de este, ya que no tienen nada que ver que el uno con el otro.
 
 Ya que mi proyecto se centra en el tratamiento de imágenes me interesaba mucho la simplicidad, eficiencia y velocidad que pudiera aportar el framework.
