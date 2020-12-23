@@ -25,7 +25,8 @@ WORKDIR /app
 COPY package*.json *.js ./
 
 # Instalar dependencias
-RUN npm install -g gulp-cli
+RUN npm install -g gulp-cli                         &&\
+    npm install -g gulp-shell
 
 # Definir la variable PATH a bin
 ENV PATH=/node_modules/.bin:$PATH
