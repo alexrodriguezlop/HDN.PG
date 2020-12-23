@@ -23,90 +23,87 @@ Esta maravilla desgrana cada píxel de la imagen, añade la información y lo re
 Después de un trabajo que nada tiene que envidiar al de los ingenieros genéticos de jurassic park tu imagen está lista y si te hemos visto..pues no nos acordamos. 
 
 Eso si, como dijo Ben Parker… Un gran poder conlleva una gran responsabilidad. Usalo bien.
+
 ___
-### Solución planteada 
-El planteamiento de la solución consiste en desarrollar un microservicio Restfull.
-Esta opción brinda muchísimas ventajas frente a otras arquitecturas. 
+### Microservicio :new:  
 
-Nos permitirá desarrollar el proyecto de forma ágil basando el desarrollo en test, adquiriendo un ciclo de desarrollo dinámico, rápido y eficaz.
+Se ha dado solución a todas las HU y se ha alcanzado la funcionalidad completa de la aplicación.
 
-Esta arquitectura presenta gran escalabilidad y versatilidad y node.js es un gran lenguaje para llevar a cabo el desarrollo de este tipo de arquitecturas debido a su simplicidad, ligereza y naturaleza.
+#### Framework:
 
-El microservicio a desarrollar permitirá aplicar el algoritmo de cifrado sobre un texto y una imagen dando como resultado una nueva imagen. 
-No se desarrollará un *frontend* para el servicio.
+La elección del framework ha venido condicionada principalmente por la velocidad, ya que el proyecto se basa en el manejo de imágenes y buscaba transferencias muy rápidas.
 
-Su estructura en un principio estará formada por una **clase imagen**, objeto en el cual se codificará la imagen sobre la que se aplicará el cifrado. 
-Existirá una segunda **clase Raw** que contendra el vector de píxeles. 
+Antes de determinar a **Restify** como el elegido he realizado una serie de comparativas que se pueden ver [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Elecci%C3%B3n%20de%20framework).
 
-El microservicio pretende incorporar un sistema de **log** con el fin de poder realizar un mejor seguimiento de los problemas que presente, para ello se utilizará el paquete npm [morgan](https://www.npmjs.com/package/morgan).
+En ese documento se detallan los test realizados sobre **Restify** y **Express** junto con tablas comparativas.
 
-El microservicio en un principio se desarrollará haciendo uso de [restify](http://restify.com/), un ligero framework para el desarrollo de aplicaciones en js.
-Aunque quizás use la libreria [micro](https://github.com/vercel/micro).
+También se detalla como he usado el framework.
 
-Se están utilizando algunas herramientas más.  
-He elegido [Gulp](https://gulpjs.com/) para automatización de tareas, esta decisión ha estado motivada en gran medida por su facilidad de uso. Aunque también me ha gustado por ser una herramienta muy bien documentada y que aporta una gran cantidad de soluciones a la automatización de tareas. 
-Entre sus opciones destaco que Optimiza y comprime imágenes, cosa que en este proyecto puede resultar de gran utilidad. Aunque también sirve para testeo en ese caso me he decantado por [Mocha](https://mochajs.org/). Su elección ha venido motivada por sencillez y flexibilidad.
-Para complementar utilizaré la librería de aserciones [Chai](https://www.chaijs.com/). Ya que es muy sencilla, detrás de ella hay una gran comunidad y es un proyecto muy documentado.
+#### Diseño:
 
+El avance del proyecto ha obligado a realizar cambios en la estructura de ficheros.
 
-La estructura de directorios se plantea de la siguiente forma: 
-- src
- - class (Entidades) 
-  - [imagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/imagen.js) (Entidad principal)
-  - [raw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js) 
- - test (Directorio de test)
-  - [test.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/test.js) 
-  - [testImagen.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testImagen.js) 
-  - [testRaw.js](https://github.com/alexrodriguezlop/HDN.PG/blob/master/test/testRaw.js) 
-  
-___
-### Serverless :new:
+A medida que he ido avanzando he encontrado dificultades para el tratamiento de las imágenes de forma que finalmente he tenido que desarrollar todos los métodos y funciones desde cero sin poder hacer uso de librerías para el manejo de imágenes. 
 
-Se han desplegado dos funciones del proyecto. 
-Una de ellas haciendo uso de Azure Functions y la otra, como un Bot para Telegram haciendo uso de Vercel.
+Una explicación más detallada del diseño se puede ver [aquí](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Dise%C3%B1o/README.md)
 
-Ambas funciones pretenden dar solución a [HU4](https://github.com/alexrodriguezlop/HDN.PG/issues/13) 
-*(Conocer que día y a que hora fue cifrado el mensaje en una imagen).*
+En ese documento se detalla la estructura y jerarquía seguida.
 
-Para llevar a cabo dicha solución se han planteado contar con un registro de los cifrados que se realizan.
-Con el fin de salvaguardar la intimida, el sistema no almacenará el mensaje, sino que almacenará su hash, la fecha y la hora del cifrado con lo que el usuario podrá acceder a esta información introduciendo exactamente la misma cadena que fue cifrada.
+#### HU y Test:
 
-Para llevar a cabo el registro de la fecha y hora del cifrado se ha desarrollado una función, la cual ha sido desplegada haciendo uso de Azure function.
+Para el testeo de la API he realizado una serie de test que lanzando la una petición POST como si se realizara mediante el envío desde un formulario desde un frontend.
+ 
+Se evalúa la respuesta proporcionada por la API en varios contextos:
 
-[Guía de desarrollo](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Azure/Readme.md)
+- 1) Status de la respuesta
 
-[URL](https://hashinsert.azurewebsites.net/api/hashInsert?msg=cadena%20de%20prueba) de la función desplegada.
+- 2) Formato de la respuesta
+
+- 3) Contenido de respuesta correcto
 
 
-Para llevar a cabo la consulta de dichos datos se ha desarrollado un bot de Telegram.
+A continuación se detalla más profundamente los test y las soluciones adoptadas para cada HU.
 
-[Guía de desarrollo del bot](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/TelegramBot)
+- [HU1](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/HU/HU1.md)
+- [HU2](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/HU/HU2.md)
+- [HU3](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/HU/HU3.md)
+- [HU4](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/HU/HU4.md)
 
-[Acceso al BOT @H20DTbot](https://t.me/H20DTbot)
 
-La decisión de usar Azure ha venido motivada por su potencial, es una plataforma de pago y he tenido la posibilidad de usar su versión educación. Hasta 100$.
-Aunque es una plataforma muy compleja aporta gran cantidad de funcionalidades y diciendo gran cantidad me quedo corto, ya que es una de las más potentes y versátiles del mercado.
+#### Sistema de logs:
 
-Vercel sin embargo el una plataforma muy simple y en su simpleza está su sencillez. 
-Dispone de las funcionalidades justas, ya que se centra únicamente en el despliegue de pequeñas funciones, pero está muy depurada.
-Su uso es muy sencillo al igual que su integración con GitHub.
-Dispone de un log muy útil a la hora de encontrar errores.
+He implementado el midleware [Morgan](https://www.npmjs.com/package/morgan) como sistema de log.
 
-**Nota para el corrector:**
-Tanto el desarrollo de la función como del Bot de Telegram comenzaron en un repositorio diferente, con lo cual en la migración al repositorio principal algunos issues han quedado allí. 
-Dejo un [enlace](https://github.com/alexrodriguezlop/HashFinderDT/issues?q=is%3Aissue+is%3Aclosed) por si fuera necesario.
-___
-### Últimos ficheros añadidos :new:
+Lo he elegido por su simplicidad y fácil manejo además de su diseño como midelware.
 
-- [Fichero **5.json**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/5.json) :new: 
+```
+var logger  = require('morgan')
 
-- [Fichero **iv.yaml**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/iv.yaml) :new:
+server.use(logger('dev'));
+```
 
+#### Gestor de tareas:
+
+He venido utilizando Gulp durante todo el proyecto.
+
+Para la automatización he creado tres tareas y posteriormente las he unificado bajo default.
+
+De esta forma la orden gulp ejecutará las tres tareas en el orden correcto. Además dichas tareas pueden ser lanzadas por separado.
+
+[GulpFile](https://github.com/alexrodriguezlop/HDN.PG/blob/master/gulpfile.js)
+
+
+#### Docker:
+
+He creado un nuevo fichero dockerFile para adaptar el docker a las nuevas tareas de automatización.
+
+También he reconfigurado Travis y CircleCi para lanzar los nuevos test.
+
+[DockerFile](https://github.com/alexrodriguezlop/HDN.PG/blob/master/Dockerfile)
 
 ___
 ### Historias de usuario
 - [Directorio](https://github.com/alexrodriguezlop/HDN.PG/blob/master/HU/)
-
 
 ___
 **Autor:** Alejandro Rodríguez López
