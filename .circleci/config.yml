@@ -9,4 +9,4 @@ jobs:
     # Hacemos checkout y lanzamos la tarea test de Gulp.
     steps:
       - checkout
-      - run: gulp test
+      - run: gulp
