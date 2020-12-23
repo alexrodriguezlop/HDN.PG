@@ -29,12 +29,13 @@ describe("API TEST", function() {
 
         it("HU1.1 Debería OCULTAR el mensaje en una imagen", async function() {
             await new Promise(resolve =>
-                chai.request(server)
-                .post('/ocultar')
-                .attach('', fs.createReadStream(ORIGINAL))
-                .field('msg', MENSAJE)
-                .pipe(fs.createWriteStream(PATH))
-                .on('finish', resolve));
+                        chai.request(server)
+                        .post('/ocultar')
+                        .attach('', fs.createReadStream(ORIGINAL))
+                        .field('msg', MENSAJE)
+                        .pipe(fs.createWriteStream(PATH))
+                        .on('finish', resolve)
+                    )
         });
 
 
@@ -43,7 +44,7 @@ describe("API TEST", function() {
                 .post('/ocultar')
                 .attach('','')
                 .field('msg', MENSAJE)
-                .end(async function(err,res) {
+                .end(function(err,res) {
                     expect(res).to.have.status(400);
                 });
         });
@@ -52,7 +53,7 @@ describe("API TEST", function() {
             chai.request(server)
                 .post('/ocultar')
                 .attach('', fs.createReadStream(ORIGINAL))
-                .end(async function(err,res) {
+                .end(function(err,res) {
                     expect(res).to.have.status(400);
                 });
         });
