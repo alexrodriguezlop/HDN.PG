@@ -36,6 +36,6 @@ Es la interfaz que permite crear objetos de esta clase y manipularlos.
 Dispone de funciones para leer la imagen y sus metadatos.
 
 
-**[storageControler]** Es una capa de abstracción para la persistencia de datos.
+**storageControler** Es una capa de abstracción para la persistencia de datos.
 
 Esta interfaz permite guardar y recuperar datos haciendo uso de la persistencia.
