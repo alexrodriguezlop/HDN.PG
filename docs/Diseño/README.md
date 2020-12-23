@@ -4,14 +4,14 @@
 
 He mantenido un diseño estructurado respetando las responsabilidades de cada capa de la aplicación.
 
-####Directorios:
+#### Directorios:
 
 ![](1.png)
 
 La carpeta **src** contiene todo el código fuente de la api.
 Dentro encontramos una segunda carpeta denominada **class** que contiene las clases del proyecto.
 
-####Clases:
+#### Clases:
 Las clases del proyecto son dos:
 
 [**Raw**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/class/raw.js)
@@ -29,7 +29,7 @@ Contiene la información de la imagen y un objeto de la clase Raw que representa
 
 
 
-####Controladores:
+#### Controladores:
 
 [**imagenController**](https://github.com/alexrodriguezlop/HDN.PG/blob/master/src/imagenController.js)
 >Es una capa de abstracción sobre la clase Imagen. 
