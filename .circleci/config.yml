@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     # Especificamos la imagen a usar.
-      - image: alexrodriguezlop/despliegue
+      - image: alexrodriguezlop/hdn.pg
     # Establecemos el directorio de trabajo.
     working_directory: ~/repo
     # Hacemos checkout y lanzamos la tarea test de Gulp.
