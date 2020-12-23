@@ -10,6 +10,9 @@ os:
 # Instalamos Gulp-cli de forma global en la imagen 
 before_install:
   - npm install -g gulp-cli
+  -  npm install gulp-shell
+  -  npm install gulp-mocha
+  -  npm install gulp   
 # Lanzamos los test
 script: gulp 
 # Configuramos las noticaciones.
