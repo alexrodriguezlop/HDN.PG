@@ -33,7 +33,7 @@ Se ha dado solución a todas las HU y se ha alcanzado la funcionalidad completa 
 
 La elección del framework ha venido condicionada principalmente por la velocidad, ya que el proyecto se basa en el manejo de imágenes y buscaba transferencias muy rápidas.
 
-Antes de determinar a **Restify** como el elegido he realizado una serie de comparativas que se pueden ver [aquí](https://github.com/alexrodriguezlop/HDN.PG/tree/master/docs/Elecci%C3%B3n%20de%20framework).
+Antes de determinar a **Restify** como el elegido he realizado una serie de comparativas que se pueden ver [aquí](https://github.com/alexrodriguezlop/HDN.PG/blob/master/docs/Elecci%C3%B3n%20de%20framework/Readme.md).
 
 En ese documento se detallan los test realizados sobre **Restify** y **Express** junto con tablas comparativas.
 
