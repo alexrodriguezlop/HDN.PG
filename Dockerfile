@@ -5,10 +5,11 @@ LABEL version="6.0.0" maintainer="alexrodriguezlop@gmail.com"
 
     RUN apt-get update                              && \ 
     apt-get install -y locales                      && \
-    # Directorio de modulos y ficheros
-    chown -R node:node /test/                       &&\ 
+    # Directorio de modulos y ficheros 
     mkdir -p /app/node_modules                      && \
+    mkdir -p /test                                  && \
     chown -R node:node /app                         && \
+    chown -R node:node /test                        && \
     ln -s /app/node_modules /node_modules           && \
     # Permisos npm install sin privilegio
     chown -R node:node /usr/local/lib/node_modules  && \ 
