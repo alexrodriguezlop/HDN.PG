@@ -5,7 +5,8 @@ LABEL version="6.0.0" maintainer="alexrodriguezlop@gmail.com"
 
     RUN apt-get update                              && \ 
     apt-get install -y locales                      && \
-    # Directorio de modulos y ficheros 
+    # Directorio de modulos y ficheros
+    chown -R node:node /test/                       &&\ 
     mkdir -p /app/node_modules                      && \
     chown -R node:node /app                         && \
     ln -s /app/node_modules /node_modules           && \
