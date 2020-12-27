@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/alexrodriguezlop/HDN.PG#readme",
   "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-mocha": "^7.0.2",
-    "gulp-shell": "^0.8.0"
+    "gulp-cli": "^2.3.0"
   },
-  "devDependencies": {
+  "devDependencies": {    
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^7.0.2",
+    "gulp-shell": "^0.8.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "md5": "^2.3.0",
