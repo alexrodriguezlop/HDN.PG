@@ -24,14 +24,15 @@ USER node
 WORKDIR /app
 
 # Copiamos los paquetes JSON
-COPY package*.json ./
+#COPY package*.json ./
 
 # Instalar dependencias
-RUN npm install -g gulp-cli                                 && \
-    npm install --no-optional --no-install-recommends       && \
-    npm update                                              && \ 
-    npm cache clean --force                                 && \ 
-    rm ./package*.json                                
+RUN npm install -g gulp-cli       && \
+    npm install gulp-shell        && \
+    npm install gulp-mocha        && \
+    npm install gulp
+
+#USER node                           
 
 WORKDIR /test
 
@@ -39,5 +40,5 @@ WORKDIR /test
 ENV PATH=/node_modules/.bin:$PATH
 
 # Ejecutar los comandos siguientes
-CMD [ "gulp","test"  ]
+CMD [ "gulp" ]
 #CMD ["/bin/sh"]
