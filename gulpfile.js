@@ -6,13 +6,13 @@ const { series } = require('gulp');
 function build() {
     return gulp
         .src('*.js', { read: false })
-        .pipe(shell(['']))
+        .pipe(shell([]))
 }
 
 function install() {
     return gulp
         .src('*.js', { read: false })
-        .pipe(shell(['']))
+        .pipe(shell([]))
 }
 
 function test() {
