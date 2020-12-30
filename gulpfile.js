@@ -12,8 +12,7 @@ function build() {
 function install() {
     return gulp
         .src('*.js', { read: false })
-        .pipe(shell(['npm install --no-optional --no-install-recommends', 
-                     'npm update '
+        .pipe(shell(['npm install --no-optional --no-install-recommends --prefix /app' 
                     ]))
 }
 
